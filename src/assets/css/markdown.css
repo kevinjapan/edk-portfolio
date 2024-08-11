@@ -1,0 +1,23 @@
+/*
+   We group rules for our markdown -> html here since we can't use 'scoped' style,
+   they are not picked up by the raw html generated from markdown (timing/order issue)
+*/
+.markdown_content h1 {
+   /* background:lightgreen; */
+   margin-top:5rem;
+}
+/* .markdown_content h2 {
+   background:lightblue;
+} */
+
+/* .markdown_content blockquote  {
+   background:yellow;
+} */
+/* 
+.markdown_content code {
+   background:pink;
+} */
+
+.markdown_content img {
+   width:300px;
+}

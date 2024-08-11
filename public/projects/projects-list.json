@@ -1,0 +1,210 @@
+[
+   {
+      "title":"Portfolio",
+      "slug":"portfolio",
+      "status":"",
+      "file":"",
+      "tagline":"Static Portfolio Site",
+      "desc":[
+         ""
+      ],
+      "img":"",
+      "github":"",
+      "site":"",
+      "tech":[
+         {"name":"Vue.js"},
+         {"name":"TypeScript"},
+         {"name":"Markdown"}
+      ]
+   },
+   {
+      "title":"WeeSongs",
+      "slug":"weesongs",
+      "status":"on-going",
+      "file":"weesongs.md",
+      "tagline":"Song Catalog",
+      "desc":[
+         "Front-end application for cataloging a SongWriter's collection."
+      ],
+      "img":"weesongs-homepage.jpg",
+      "github":"https://github.com/kevinjapan/weesongs",
+      "site":"",
+      "tech":[
+         {"name":"Vue.js"},
+         {"name":"JavaScript"}
+      ]
+   },
+   {
+      "title":"Signal Tower Capture",
+      "slug":"signal-tower-capture",
+      "status":"",
+      "file":"signal-tower-capture.md",
+      "tagline":"Local Collections",
+      "desc":[
+         "Desktop collections solution for managing files and folders on your local machine."
+      ],
+      "img":"stc-homepage.jpg",
+      "github":"https://github.com/kevinjapan/SignalTowerCapture",
+      "site":"",
+      "tech":[
+         {"name":"Electron"},
+         {"name":"JavaScript"},
+         {"name":"Node.js"},
+         {"name":"SQLite"}
+      ]
+   },
+   {
+      "title":"Outline CSS",
+      "slug":"outlinecss",
+      "status":"",
+      "file":"",
+      "tagline":"CSS component framework",
+      "desc":[
+         "Deploy component styling rapidly."
+      ],
+      "img":"outline-css-homepage.jpg",
+      "github":"https://github.com/kevinjapan/OutlineCSS",
+      "site":"https://outlinecss.netlify.app/",
+      "tech":[
+         {"name":"CSS"}
+      ]
+   },
+   {
+      "title":"Barebones Router",
+      "slug":"barebones-router",
+      "status":"",
+      "file":"",
+      "tagline":"PHP Router Class",
+      "desc":[
+         "Single PHP Class performing simple routing."
+      ],
+      "img":"barebonesrouter.jpg",
+      "github":"https://github.com/kevinjapan/Barebones-PHP-Router",
+      "site":"",
+      "tech":[
+         {"name":"PHP"}
+      ]
+   },
+   {
+      "title":"Wed Dev Agent",
+      "slug":"web-dev-agent",
+      "status":"",
+      "file":"",
+      "tagline":"for Web Agencies",
+      "desc":[
+         "WordPress Theme and Plugins for Web Dev Agencies."
+      ],
+      "img":"wda-homepage.jpg",
+      "github":"https://github.com/kevinjapan/Web-Dev-Agent",
+      "site":"https://web-dev-agent.netlify.app/",
+      "tech":[
+         {"name":"WordPress"},
+         {"name":"PHP"}
+      ]
+   },
+   {
+      "title":"The Educator",
+      "slug":"the-educator",
+      "status":"",
+      "file":"",
+      "tagline":"for Education websites",
+      "desc":[
+         "WordPress Theme and Plugins for colleges and online learning."
+      ],
+      "img":"te-homepage.jpg",
+      "github":"https://github.com/kevinjapan/The-Educator",
+      "site":"https://the-educator.netlify.app/",
+      "tech":[
+         {"name":"WordPress"},
+         {"name":"PHP"}
+      ]
+   },
+   {
+      "title":"WeeProjects",
+      "slug":"weeprojects",
+      "status":"parked",
+      "file":"",
+      "tagline":"Project Management",
+      "desc":[
+         "Client React project management application."
+      ],
+      "img":"weeprojects-homepage.jpg",
+      "github":"https://github.com/kevinjapan/weeprojects",
+      "site":"",
+      "tech":[
+         {"name":"React.js"},
+         {"name":"MySQL"},
+         {"name":"Tailwind CSS"}
+      ]
+   },
+   {
+      "title":"WeeProjects API",
+      "slug":"weeprojects-api",
+      "status":"parked",
+      "file":"",
+      "tagline":"PHP MVC Backend",
+      "desc":[
+         "Simple Model-View-Controller back-end with routing and authentication."
+      ],
+      "img":"",
+      "github":"https://github.com/kevinjapan/WeeProjects-Backend",
+      "site":"",
+      "tech":[
+         {"name":"PHP"},
+         {"name":"MySQl"}
+      ]
+   },
+   {
+      "title":"Kanji Study Sets",
+      "slug":"kanji-study-sets",
+      "status":"",
+      "file":"",
+      "tagline":"Japanese Kanji study site",
+      "desc":[
+         "More than 2000 regular use Kanji listed."
+      ],
+      "img":"kss-homepage.jpg",
+      "github":"",
+      "site":"https://kanjistudysets.netlify.app/",
+      "tech":[
+         {"name":"React.js"},
+         {"name":"JavaScript"},
+         {"name":"JSON"}
+      ]
+   },
+   {
+      "title":"The English Shelf",
+      "slug":"the-english-shelf",
+      "status":"",
+      "file":"",
+      "tagline":"English Lesson Share",
+      "desc":[
+         "Lesson sharing for teachers of English as a second language."
+      ],
+      "img":"tes-homepage.jpg",
+      "github":"https://github.com/kevinjapan/theenglishshelf",
+      "site":"https://theenglishshelf.netlify.app/",
+      "tech":[
+         {"name":"React.js"},
+         {"name":"JavaScript"},
+         {"name":"JSON"}
+      ]
+   },
+   {
+      "title":"Delicous Demo",
+      "slug":"delicious-demo",
+      "status":"",
+      "file":"",
+      "tagline":"Demo delicatessen site",
+      "desc":[
+         "Static site with Intersection Observers and custom text-file configuration."
+      ],
+      "img":"delicious-homepage.jpg",
+      "github":"",
+      "site":"https://delicious-demo.netlify.app/",
+      "tech":[
+         {"name":"React.js"},
+         {"name":"Intersection Observer"}
+      ]
+   }
+]
