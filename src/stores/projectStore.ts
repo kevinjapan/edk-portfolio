@@ -11,7 +11,9 @@ export const useProjectStore = defineStore('project_store', () => {
    const project_md = ref('')
 
    // projects_list
-   const projects_list = ref(<any>[])  // to do : as <Project> ?
+   // we tell TypeScript we intend to store Projects in this array
+   // we pass a type parameter to the ref function
+   const projects_list = ref<Project[]>([])
 
    // we use current_filter to filter list of 'back' to list from ProjectView
    const current_filter = ref('')
@@ -85,11 +87,12 @@ export const useProjectStore = defineStore('project_store', () => {
       }
    }
 
-   async function get_single_project_meta(project_slug: string): Promise<Project> {
+   async function get_single_project_meta(project_slug: string): Promise<Project | null> {
       const single_project = projects_list.value.find((project:Project) => {
          return project.slug === <string>project_slug
       })
-      return single_project
+      // note : Array.prototype.find() returns undefined if no element found
+      return single_project ? single_project : null
    }
 
    // Store Interface

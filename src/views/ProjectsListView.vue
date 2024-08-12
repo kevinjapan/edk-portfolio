@@ -10,7 +10,10 @@ import ProjectTeaser from '../components/ProjectTeaser/ProjectTeaser.vue'
 
 const projectStore = useProjectStore()
 
-const projects_list = ref(<any>[])  // to do :  <Project> ?
+// projects_list
+// we tell TypeScript we intend to store Projects in this array
+// we pass a type parameter to the ref function
+const projects_list = ref<Project[]>([])
 
 // the current tech filter
 const filter = ref(projectStore.current_filter)
@@ -75,9 +78,12 @@ const current_filter_label = computed(() => {
 
    <section class="view_section projects_list relative mt_0">
       
-      <h1 style="background:white;">Projects</h1>
+      <h1>Projects</h1>
       <ProjectFilter v-model="filter" class="sticky"/>
       
+      
+   <!-- we should simply filter the 'projects_list' from projectStore, but we
+     wanted to explore the rendering mechanism; ok method for our dataset size -->
       <ul v-if="updating === false" class="projects_list_grid ">
          <div id='list' v-for="project in projects_list" key="project.slug" class="wrapper">
             <li class="project_teaser" v-if="matches_filter(project)">
@@ -101,27 +107,8 @@ section.projects_list {
    padding-bottom:5rem;
    background:var(--bg_light);
 }
-.relative {
-   position:relative;
-}
-.fixed {
-   position:fixed;
-}
-.sticky {
-   position:sticky;
-   top:0;
-   background:white;
-   border-bottom:solid 1px lightgrey;
-   z-index:999999;
-}
-.top_0 {
-   top:0;
-}
 h1 {
-   width:100%;
-   text-align:center;
-   margin:2rem 0 0 0;
-   padding-bottom:1rem;
+   background:white;
 }
 .projects_list_header {
    width:100%;
@@ -130,13 +117,14 @@ h1 {
 ul.projects_list_grid {
    list-style:none;
    display:grid;
-   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
    gap:0rem;
+   max-width:100%;
    margin:0;
    padding:0;
    padding-top:2rem;
 }
-/* to do : check on mobile / ipad views */
+
 @media screen and (max-width: 1100px) {
    ul.projects_list_grid {
       grid-template-columns: 1fr 1fr;
@@ -150,26 +138,15 @@ ul.projects_list_grid {
       margin-top:3rem;
    }
 }
-
 li.project_teaser {
    margin:1rem;
 }
-h1 {
-   font-weight:200;
-}
-h2 {
-   font-size:2.5rem;
-   font-weight:200;
-}
-.mt_0 {margin-top:0;}
-.mt_3 {margin-top:3rem;}
 .teaser_tagline {
    font-size:1.2rem;
 }
 .teaser_slot {
    margin-top:1rem;
 }
-
 .loading {
    white-space: nowrap;
    font-size:9rem;
@@ -184,9 +161,10 @@ h2 {
 }
 @media screen and (max-width: 768px) {
    .loading {
-      font-size:6rem;
+      font-size:4rem;
    }
 }
+
 /* 
    we use v-if to conditionally show li - 
    but we have to account for wrapping v-for always 
@@ -202,6 +180,8 @@ h2 {
    display:none;
    width:0;
    height:0;
+   margin:0;
+   padding:0;
 }
 .wrapper:has(li) {
    display:block;
