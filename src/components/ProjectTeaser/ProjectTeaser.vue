@@ -83,10 +83,18 @@ section {
    box-shadow: 1px 2px 3px 1px hsl(0, 0%, 90%);
    background:white;
 }
+
+/* override (limit widths) on main styles */
 h2 {
    font-size:2.5rem;
    /* border:solid 1px orange; */
+   width:100%;
 }
+p {
+   width:90%;
+}
+
+
 .no_link_title {
    font-weight:100;
 }

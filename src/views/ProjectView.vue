@@ -6,7 +6,7 @@ import { useRoute, useRouter } from 'vue-router'
 import markdownit from 'markdown-it'
 
 
-// issue : 'not finding module' - try this:
+// issue : if 'not finding module' - try this:
 // restart the TS server: type: ctrl + Shift + P 
 
 
@@ -14,9 +14,6 @@ const route = useRoute()
 const router = useRouter()
 const projectStore = useProjectStore()
 
-
-// to do : review : using ' .. | null' ok here? 
-// not sure how to init w/out a valid typed obj here
 
 const project: Ref<Project | null> = ref(null)
 
@@ -76,10 +73,10 @@ watchEffect(async() => {
 
       <!-- future : transition not working here : cf ProjectsListView -->
       <Transition>
-      <p v-if="project?.site" class="teaser_slot">
-         <span class="slot_label">site : </span>
-         <a :href="project.site" target="_blank">{{  project.site }}</a>
-      </p>
+         <p v-if="project?.site" class="teaser_slot">
+            <span class="slot_label">site : </span>
+            <a :href="project.site" target="_blank">{{  project.site }}</a>
+         </p>
       </Transition>
 
       <p v-if="project?.github" class="teaser_slot">
@@ -99,22 +96,12 @@ note : 'scoped' styles don't get applied to the rawHtml we generate from markdow
 so we need to pre-set these styles earlier - see markdown.css
 */
 
-h1 {
-   width:100%;
-   text-align:center;
-   margin:.5rem 0 0 0;
-   padding-bottom:1rem;
-}
-h1 {
-   font-weight:200;
-}
+
 p {
    max-width:40rem;
    margin-left:auto;
    margin-right:auto;
 }
-
-.mt_0 {margin-top:0;}
 
 @media screen and (max-width: 768px) {
    section.view_section {
@@ -124,18 +111,6 @@ p {
 .slot_label {
    font-style:italic;
    color:grey;
-}
-a {
-   font-weight:300;
-   color:black;
-   cursor:pointer;
-   padding:.25rem;
-   padding-left:.5rem;
-   padding-right:.5rem;
-   border-radius:.25rem;
-}
-a:hover {
-   background:hsl(0, 0%, 92%);
 }
 
 /* vue transition config */

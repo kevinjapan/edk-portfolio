@@ -1,35 +1,5 @@
 <script setup lang="ts">
-import { ref, onBeforeMount } from 'vue'
-import type { Ref } from 'vue'
-
-
-// to do : apply and comment clear example of the following:
-
-// Typing ref()​
-// ============
-// Refs infer the type from the initial value: Types by Inference
-const year = ref(2020)
-// Sometimes we may need to specify complex types for a ref's inner value. 
-const year_2: Ref<string | number> = ref('2020')
-year.value = 2020 // ok!
-year_2.value = '2021'
-
-
-// Typing Component Props
-// ======================
-// 1. runtime declaration
-// the defineProps() macro supports inferring the props types based on its argument:
-// const props = defineProps({
-//   foo: { type: String, required: true },
-//   bar: Number
-// })
-// 2. type-based declaration 
-// it is usually more straightforward to define props with pure types via a generic type argument:
-// const props = defineProps<{
-//   foo?: string
-//   bar?: number
-//   book?: Book
-// }>()
+import { onBeforeMount } from 'vue'
 
 
 const user: User = {
@@ -94,27 +64,6 @@ onBeforeMount(async() => {
 
 <style scoped>
 
-/* to do : these classes duplicated in other views -> move to global css file */
-h1 {
-   width:100%;
-   text-align:center;
-   margin:2rem 0 0 0;
-   padding-bottom:1rem;
-}
-h1 {
-   font-weight:200;
-}
-h2 {
-   font-size:2.25rem;
-   font-weight:200;
-}
-p {
-   width:36rem;
-   margin-left:auto;
-   margin-right:auto;
-   line-height:2rem;
-}
-.mt_0 {margin-top:0;}
 @media screen and (max-width: 768px) {
    section.view_section {
       margin-top:3rem;
