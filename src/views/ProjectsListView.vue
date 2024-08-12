@@ -192,6 +192,11 @@ h2 {
    but we have to account for wrapping v-for always 
    showing the wrapper div for each project - 
    so we use css has() to exclude from UI display
+
+   future : we should simply filter the 'projects_list' from 
+   projectStore and display the local filtered_list - but we
+   wanted to explore the rendering mechanism; this method is 
+   good enough given our projects lists will never be large.
 */
 .wrapper {
    display:none;
