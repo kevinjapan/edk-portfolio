@@ -25,7 +25,7 @@ onBeforeMount(async() => {
       </p>
 
       <p><span class="slot_label">current learning :</span>
-         Vue.js
+         <span class="item">Vue.js</span>
       </p>
 
       <p><span class="slot_label">technologies :</span>

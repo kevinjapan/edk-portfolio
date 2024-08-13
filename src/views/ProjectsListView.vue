@@ -19,7 +19,7 @@ const projects_list = ref<Project[]>([])
 const filter = ref(projectStore.current_filter)
 
 // we scroll to this height on changing filter to set filter_nav at top
-const filter_nav_height = 140
+const filter_nav_height = 110
 
 // our 'loading' flag
 const updating = ref(false)
@@ -79,11 +79,11 @@ const current_filter_label = computed(() => {
    <section class="view_section projects_list relative mt_0">
       
       <h1>Projects</h1>
-      <ProjectFilter v-model="filter" class="sticky"/>
+
+      <ProjectFilter v-model="filter" class="sticky"/>      
       
-      
-   <!-- we should simply filter the 'projects_list' from projectStore, but we
-     wanted to explore the rendering mechanism; ok method for our dataset size -->
+      <!-- we should simply filter the 'projects_list' from projectStore, but we
+         wanted to explore the rendering mechanism; ok method for our dataset size -->
       <ul v-if="updating === false" class="projects_list_grid ">
          <div id='list' v-for="project in projects_list" key="project.slug" class="wrapper">
             <li class="project_teaser" v-if="matches_filter(project)">
@@ -101,7 +101,9 @@ const current_filter_label = computed(() => {
 </template>
 
 <style scoped>
+
 section.projects_list {
+   position:relative;
    width:100%;
    min-height:120vh;
    padding-bottom:5rem;
@@ -151,7 +153,7 @@ li.project_teaser {
    white-space: nowrap;
    font-size:9rem;
    font-weight:200;
-   color:hsl(0, 0%, 70%);
+   color:hsl(0, 0%, 75%);
    width:fit-content;
    margin-left:auto;
    margin-right:auto;

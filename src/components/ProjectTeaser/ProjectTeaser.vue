@@ -60,7 +60,7 @@ const teaser_img_path = computed(() => {
       </p>
 
       <p v-if="project.file !== ''" class="teaser_slot details_link">
-         <RouterLink :to="{name:'project', params:{project_slug:project.slug}}">details</RouterLink>
+         <RouterLink :to="{name:'project', params:{project_slug:project.slug}}">read more..</RouterLink>
       </p>
    </section></Transition>
    
@@ -80,14 +80,13 @@ section {
    padding-top:1rem;
    border:solid 1px hsl(0, 0%, 90%);
    border-radius:1rem;
-   box-shadow: 1px 2px 3px 1px hsl(0, 0%, 90%);
+   box-shadow: 1px 2px 3px 1px hsl(0, 0%, 80%);
    background:white;
 }
 
 /* override (limit widths) on main styles */
 h2 {
    font-size:2.5rem;
-   /* border:solid 1px orange; */
    width:100%;
 }
 p {
@@ -99,13 +98,17 @@ p {
    font-weight:100;
 }
 a {
-   font-weight:300;
-   color:black;
+   font-weight:400;
+   color:black;color:blue;
    cursor:pointer;
    padding:.25rem;
    padding-left:.5rem;
    padding-right:.5rem;
    border-radius:.25rem;
+}
+h2 a {
+   color:black;
+   font-weight:300;
 }
 a:hover {
    background:hsl(0, 0%, 92%);
@@ -113,6 +116,7 @@ a:hover {
 p.teaser_tagline {
    font-size:2rem;
    font-weight:300;
+   margin:0 auto 0 auto;
 }
 img {
    margin-top:1rem;
