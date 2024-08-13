@@ -9,7 +9,7 @@
          ""
       ],
       "img":"",
-      "github":"",
+      "github":"https://github.com/kevinjapan/edk-portfolio",
       "site":"",
       "tech":[
          {"name":"Vue.js"},
@@ -21,7 +21,7 @@
       "title":"WeeSongs",
       "slug":"weesongs",
       "status":"on-going",
-      "file":"weesongs.md",
+      "file":"",
       "tagline":"Song Catalog",
       "desc":[
          "Front-end application for cataloging a SongWriter's collection."
@@ -37,7 +37,7 @@
    {
       "title":"Signal Tower Capture",
       "slug":"signal-tower-capture",
-      "status":"",
+      "status":"on-going",
       "file":"signal-tower-capture.md",
       "tagline":"Local Collections",
       "desc":[
@@ -57,8 +57,8 @@
       "title":"Outline CSS",
       "slug":"outlinecss",
       "status":"",
-      "file":"",
-      "tagline":"CSS component framework",
+      "file":"outline-css.md",
+      "tagline":"component framework",
       "desc":[
          "Deploy component styling rapidly."
       ],
