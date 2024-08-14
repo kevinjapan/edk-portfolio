@@ -19,7 +19,7 @@ const projects_list = ref<Project[]>([])
 const filter = ref(projectStore.current_filter)
 
 // we scroll to this height on changing filter to set filter_nav at top
-const filter_nav_height = 110
+const filter_nav_top = 125
 
 // our 'loading' flag
 const updating = ref(false)
@@ -39,7 +39,7 @@ onMounted(() => {
 
 onUpdated(() => {
    if(mounting.value === false) {
-      window.scroll(0,filter_nav_height)
+      window.scroll(0,filter_nav_top)
    }
 })
 
