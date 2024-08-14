@@ -16,21 +16,28 @@
    font-size:3.25rem;
    margin-top:4rem;
    margin-bottom:2rem;
-   max-width:56rem;
+   max-width:48rem;
 }
 .markdown_content h3 {
    font-size:2.35rem;
    font-weight:300;
    margin-top:2rem;
    margin-bottom:0;
-   max-width:56rem;
+   max-width:48rem;
 }
 .markdown_content h4 {
    font-size:2rem;
    font-weight:300;
    margin-top:2rem;
    margin-bottom:0;
-   max-width:56rem;
+   max-width:48rem;
+}
+.markdown_content h5 {
+   font-size:1.5rem;
+   font-weight:300;
+   margin-top:2rem;
+   margin-bottom:0;
+   max-width:48rem;
 }
 
 .markdown_content blockquote  {
@@ -46,6 +53,10 @@
    margin:0;
 } 
 
+.markdown_content a {
+   font-weight:400;
+   color:blue;
+}
 .markdown_content code {
    background:pink;
 }
@@ -56,4 +67,16 @@
 
 .markdown_content p {
    max-width:min(90%,36rem);
+}
+.markdown_content ul {
+   list-style:none;
+   margin:1rem auto 1rem auto;
+}
+.markdown_content ul li {
+   display:inline;
+   background:hsl(60, 100%, 80%);
+   border-radius:.5rem;
+   padding:.25rem;
+   padding-left:.5rem;
+   padding-right:.5rem;
 }
