@@ -1,9 +1,20 @@
-
 # Barebones Router
-
-## PHP Router Class
+![BareBones Router code](/imgs/BareBonesRouter.jpg)
+### PHP Router Class
 
 Single PHP Class performing simple routing.
 
 
-![BareBones Router code](/imgs/BareBonesRouter.jpg)
+## the pitch
+
+### Problem
+Lorem ipsum dolor sit amet consectetur adipisicing elit...
+
+
+### Appetite
+Lorem ipsum dolor sit amet consectetur adipisicing elit...
+
+
+
+### Solution
+Lorem ipsum dolor sit amet consectetur adipisicing elit...
