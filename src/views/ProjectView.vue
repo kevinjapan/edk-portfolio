@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { computed } from 'vue'
+// import { computed } from 'vue'
 import { onBeforeMount, onMounted, ref, watchEffect } from 'vue'
 import { useProjectStore } from '@/stores/projectStore.ts'
 import { useRoute, useRouter } from 'vue-router'
@@ -40,7 +40,18 @@ onBeforeMount(async() => {
 
 onMounted(async() => {
    window.scroll(0,0)
+   setTimeout(() => enable_links(),200)
 })
+
+// we set all markdown-internal links to open in new tab
+const enable_links = () =>{
+   const links = document.querySelectorAll('.markdown_content a')
+   if(links) {
+      links.forEach((link) => {
+         link.setAttribute('target', '_blank');
+      })
+   }
+}
 
 watchEffect(async() => {
 
@@ -59,13 +70,15 @@ watchEffect(async() => {
    rawHtml.value = rcvd_markdown
 })
 
-const strip_http_site = computed(() => {
-   return project.value?.site?.replace('https://','')
-})
-const strip_http_github = computed(() => {
-   return project.value?.github?.replace('https://github.com/','')
-})
+// const strip_http_site = computed(() => {
+//    return project.value?.site?.replace('https://','')
+// })
+// const strip_http_github = computed(() => {
+//    return project.value?.github?.replace('https://github.com/','')
+// })
 
+
+// to do : handle tech list in .md file
 
 </script>
 
