@@ -76,5 +76,6 @@ main {
 }
 .selected_view {
    background:var(--bg_light);
+   border-radius:1rem;
 }
 </style>

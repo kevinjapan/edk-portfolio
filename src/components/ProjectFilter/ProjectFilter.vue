@@ -11,7 +11,7 @@ const set_filter = (filter_value: string) => {
 
 
 <template>
-   <ul class="flex skill_tag_list w_full">
+   <ul class="flex skill_tag_list w_full pt_0.5">
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('')" :class="{selected_filter: filter === ''}">
             All</a>

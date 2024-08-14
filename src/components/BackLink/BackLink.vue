@@ -30,7 +30,8 @@ const props = defineProps<{
    width:fit-content;
    align-items:center;
    gap:.5rem;
-   font-weight:300;
+   font-weight:400;
+   color:blue;
    margin-top:.25rem;
    margin:.25rem auto .25rem auto;
    padding:.15rem;
