@@ -78,8 +78,6 @@ watchEffect(async() => {
 // })
 
 
-// to do : handle tech list in .md file
-
 </script>
 
 <template>
@@ -158,9 +156,6 @@ see markdown.css
    margin:.5rem;
    margin-top:.75rem;
 }
-/* .meta_section span {
-   border:solid 1px orange;
-} */
 .meta_links_section {
    
    display:grid;

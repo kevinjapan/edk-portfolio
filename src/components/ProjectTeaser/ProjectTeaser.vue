@@ -43,19 +43,19 @@ const teaser_img_path = computed(() => {
 
       <!-- flex align techs -->
       <div class="teaser_slot tech_list">
-         <span class="slot_label">tech :</span>
+         <span class="slot_label">tech&nbsp;:</span>
          <div v-for="tech in props.project.tech" class="tech" >
             {{ tech.name }}
          </div>
       </div>
 
       <p v-if="props.project.site" class="teaser_slot">
-         <span class="slot_label">site :</span>
+         <span class="slot_label">site&nbsp;:</span>
          <a :href="props.project.site" target="_blank">{{ strip_http_site }}</a>
       </p>
 
       <p v-if="props.project.github" class="teaser_slot">
-         <span class="slot_label">github :</span>
+         <span class="slot_label">github&nbsp;:</span>
          <a :href="props.project.github" target="_blank">{{ strip_http_github }}</a>
       </p>
 
@@ -136,9 +136,14 @@ div.teaser_slot.tech_list {
    margin-left:auto;
    margin-right:auto;
 }
+@media screen and (max-width: 768px) {
+   div.teaser_slot.tech_list {
+      flex-direction:column;
+   }
+}
 div.tech {
    display:inline;
-   background:hsl(60, 100%, 80%);
+   background:hsl(60, 100%, 82%);
    padding-left:.25rem;
    padding-right:.25rem;
 }

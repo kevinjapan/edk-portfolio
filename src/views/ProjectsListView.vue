@@ -130,11 +130,21 @@ ul.projects_list_grid {
 @media screen and (max-width: 1100px) {
    ul.projects_list_grid {
       grid-template-columns: 1fr 1fr;
+      gap:1rem;
+      margin-left:auto;
+      margin-right:auto;
    }
 }
 @media screen and (max-width: 768px) {
    ul.projects_list_grid {
       grid-template-columns: 1fr;
+      width:90%;
+   }
+   ul.projects_list_grid li {
+      width:90%;
+      margin:0;
+      margin-left:auto;
+      margin-right:auto;
    }
    section.view_section {
       margin-top:3rem;

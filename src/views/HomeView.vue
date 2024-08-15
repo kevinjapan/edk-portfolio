@@ -68,10 +68,15 @@ onBeforeMount(async() => {
    section.view_section {
       margin-top:3rem;
    }
+   /* improve UI readability on sm */
+   p {
+      margin-top:2rem;
+      margin-bottom:2rem;
+   }
 }
 .slot_label {
    font-style:italic;
-   color:hsl(0, 0%, 60%);
+   color:hsl(0, 0%, 55%);
 }
 
 span.item {
