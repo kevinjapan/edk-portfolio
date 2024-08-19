@@ -118,7 +118,9 @@ h1 {
 }
 ul.projects_list_grid {
    list-style:none;
+   display:-ms-grid;
    display:grid;
+   -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
    gap:0rem;
    max-width:100%;
@@ -129,6 +131,7 @@ ul.projects_list_grid {
 
 @media screen and (max-width: 1100px) {
    ul.projects_list_grid {
+      -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
       gap:1rem;
       margin-left:auto;
@@ -137,6 +140,7 @@ ul.projects_list_grid {
 }
 @media screen and (max-width: 768px) {
    ul.projects_list_grid {
+      -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       width:90%;
    }
@@ -197,7 +201,7 @@ li.project_teaser {
 }
 .wrapper:has(li) {
    display:block;
-   width:fit-content;width:100%;
+   width:100%;
    height:fit-content;
 }
 </style>

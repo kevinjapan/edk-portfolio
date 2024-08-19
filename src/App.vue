@@ -5,11 +5,10 @@ import Footer from './components/Footer/footer.vue'
 
 <template>
 
-   <nav class="flex gap_1 fixed pr_3">
+   <nav class="flex justify_end gap_1 fixed pr_3">
       <div class="flex justify_around gap_1 mr_2 bg_white">
          <RouterLink to="/" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Home</RouterLink>
          <RouterLink to="/projects" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Projects</RouterLink>
-         <!-- <RouterLink to="/about" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">About</RouterLink> -->
       </div>
    </nav>
    
@@ -31,6 +30,9 @@ nav {
    font-size:1.3rem;
    background:white;
    /* border-bottom:solid 1px hsl(0, 0%, 98%); */
+
+   -webkit-box-pack:end;
+   -ms-flex-pack:end;
    justify-content:end;
 }
 
@@ -39,6 +41,8 @@ nav {
    tles  */
    nav {
       border-bottom:solid 1px hsl(0, 0%, 92%);
+      -webkit-box-pack:center;
+      -ms-flex-pack:center;
       justify-content:center;
    }
 }
@@ -69,10 +73,12 @@ main {
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+   -webkit-filter: drop-shadow(0 0 2em #646cffaa);
+   filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+   -webkit-filter: drop-shadow(0 0 2em #42b883aa);
+   filter: drop-shadow(0 0 2em #42b883aa);
 }
 .selected_view {
    background:var(--bg_light);

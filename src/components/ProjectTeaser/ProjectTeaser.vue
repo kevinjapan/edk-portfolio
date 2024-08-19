@@ -21,7 +21,7 @@ const strip_http_github = computed(() => {
    return props.project.github?.replace('https://github.com/','')
 })
 const teaser_img_path = computed(() => {
-   return `../../src/assets/imgs/${props.project.img}`
+   return `/imgs/${props.project.img}`
 })
 
 </script>
@@ -72,15 +72,26 @@ const teaser_img_path = computed(() => {
 * { margin:0;}
 
 section {
+
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+
+   -webkit-box-orient:vertical;
+   -webkit-box-direction:normal;
+   -ms-flex-direction:column;
    flex-direction:column;
+
    gap:.15rem;
+
    margin:0;
    padding:1rem;
    padding-top:1rem;
    border:solid 1px hsl(0, 0%, 90%);
    border-radius:1rem;
+   -webkit-box-shadow: 1px 2px 3px 1px hsl(0, 0%, 80%);
    box-shadow: 1px 2px 3px 1px hsl(0, 0%, 80%);
+
    background:white;
 }
 
@@ -99,7 +110,7 @@ p {
 }
 a {
    font-weight:400;
-   color:black;color:blue;
+   color:blue;
    cursor:pointer;
    padding:.25rem;
    padding-left:.5rem;
@@ -127,10 +138,21 @@ img {
    border-radius:.25rem;
 }
 div.teaser_slot.tech_list {
+
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+
    gap:.25rem;
+
+   -webkit-box-pack:start;
+   -ms-flex-pack:start;
    justify-content:start;
+
+   -webkit-box-align:center;
+   -ms-flex-align:center;
    align-items:center;
+
    margin-top:.5rem;
    margin-bottom:.5rem;
    margin-left:auto;
@@ -138,6 +160,9 @@ div.teaser_slot.tech_list {
 }
 @media screen and (max-width: 768px) {
    div.teaser_slot.tech_list {
+      -webkit-box-orient:vertical;
+      -webkit-box-direction:normal;
+      -ms-flex-direction:column;
       flex-direction:column;
    }
 }
@@ -158,12 +183,16 @@ div.tech {
 /* vue transition config */
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.5s ease;
+   -webkit-transition: opacity 0.5s ease;
+   -o-transition: opacity 0.5s ease;
+   transition: opacity 0.5s ease;
 }
 .v-enter-from,
 .v-leave-to {
-  opacity: 0;
-  /* we hide immediately since we have non-shown list elements */
-  transition: opacity 0s ease;
+   opacity: 0;
+   /* we hide immediately since we have non-shown list elements */
+   -webkit-transition: opacity 0s ease;
+   -o-transition: opacity 0s ease;
+   transition: opacity 0s ease;
 }
 </style>

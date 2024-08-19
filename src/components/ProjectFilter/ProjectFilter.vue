@@ -46,8 +46,14 @@ const set_filter = (filter_value: string) => {
 
 <style scoped>
 .flex {
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+
+   -webkit-box-pack:center;
+   -ms-flex-pack:center;
    justify-content:center;
+
    flex-wrap:wrap;
 
 }

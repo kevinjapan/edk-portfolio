@@ -137,10 +137,17 @@ see markdown.css
 
 */
 .meta_section {
+   display:-ms-grid;
    display:grid;
+
+   -ms-grid-columns: 1fr 2fr 1fr;
    grid-template-columns:1fr 2fr 1fr;
+
    max-width:100%;
+
+   -ms-flex-pack:distribute;
    justify-content:space-around;
+
    gap:0;
    position:sticky;
    top:30px;
@@ -158,11 +165,17 @@ see markdown.css
 }
 .meta_links_section {
    
+   display:-ms-grid;
    display:grid;
-   display:grid;
+   
+   -ms-grid-columns: 1fr 1fr;
    grid-template-columns:1fr 1fr;
+
    max-width:100%;
+
+   -ms-flex-pack:distribute;
    justify-content:space-around;
+
    gap:0;
    position:sticky;
    top:83px;

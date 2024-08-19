@@ -26,9 +26,16 @@ const props = defineProps<{
 <style scoped>
 
 .view_link {
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+
    width:fit-content;
+   
+   -webkit-box-align:center;
+   -ms-flex-align:center;
    align-items:center;
+
    gap:.5rem;
    font-weight:400;
    color:blue;
