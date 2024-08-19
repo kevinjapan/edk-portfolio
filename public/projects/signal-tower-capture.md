@@ -42,7 +42,7 @@ archive by providing an **application** to better facilitate access to the colle
 
 Given the typical **use-case** - whereby an individual contacts the museum to request for
 information regarding a local interest topic, and the staff search the collection folders
-for relevant on-site material; a desktop application solution was chosen.
+for relevant on-site material - a desktop application solution was chosen.
 
 
 ### Appetite
