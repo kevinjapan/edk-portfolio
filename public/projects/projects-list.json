@@ -8,7 +8,7 @@
       "desc":[
          ""
       ],
-      "img":"",
+      "img":"edk-portfolio-homepage.jpg",
       "github":"https://github.com/kevinjapan/edk-portfolio",
       "site":"",
       "tech":[
@@ -133,6 +133,7 @@
       "site":"",
       "tech":[
          {"name":"React.js"},
+         {"name":"JavaScript"},
          {"name":"MySQL"},
          {"name":"Tailwind CSS"}
       ]
