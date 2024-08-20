@@ -5,8 +5,8 @@ import Footer from './components/Footer/footer.vue'
 
 <template>
 
-   <nav class="flex justify_end gap_1 fixed pr_3">
-      <div class="flex justify_around gap_1 mr_2 bg_white">
+   <nav class="fixed flex gap_1 pr_3">
+      <div class="flex justify_around mr_2 bg_white">
          <RouterLink to="/" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Home</RouterLink>
          <RouterLink to="/projects" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Projects</RouterLink>
       </div>
@@ -22,66 +22,50 @@ import Footer from './components/Footer/footer.vue'
 
 <style scoped>
 nav {
-   height:fit-content;
-   width:100%;
-   text-align:right;
-   padding-right:2rem;
    z-index:9999;
+
+   display:-webkit-box;
+   display:-ms-flexbox;
+   display:flex;
+   
+
+   /* we need 'flex-end' here for IOS safari - 'end' won't suffice */
+   -webkit-box-pack:flex-end;
+   -ms-flex-pack:flex-end;
+   justify-content:flex-end;
+
+   gap:1.5;
+
+   width:100vw;
+   height:fit-content;
+   padding-right:4rem;
    font-size:1.3rem;
    background:white;
-   /* border-bottom:solid 1px hsl(0, 0%, 98%); */
-
-   -webkit-box-pack:end;
-   -ms-flex-pack:end;
-   justify-content:end;
 }
 
-@media screen and (max-width: 768px) {
-   /* we only have bg on sm to cover scrolling ti
-   tles  */
-   nav {
-      border-bottom:solid 1px hsl(0, 0%, 92%);
-      -webkit-box-pack:center;
-      -ms-flex-pack:center;
-      justify-content:center;
-   }
+
+
+main {
+   width:100%;
+   min-height:100vh;
 }
+
+
 .bg_white {
    background:white;
 }
 .view_link {
    font-weight:300;
+   margin-left:.5rem;
+   margin-right:.5rem;
    margin-top:.25rem;
    padding:.15rem;
-   padding-left:.25rem;
-   padding-right:.25rem;
+   padding-left:1rem;
+   padding-right:1rem;
    border-radius:.5rem;
-}
-.fixed {
-   position:fixed;
-   top:0;
-   left:0;
-}
-main {
-   width:100%;
-   min-height:100vh;
-}
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-   -webkit-filter: drop-shadow(0 0 2em #646cffaa);
-   filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-   -webkit-filter: drop-shadow(0 0 2em #42b883aa);
-   filter: drop-shadow(0 0 2em #42b883aa);
 }
 .selected_view {
    background:var(--bg_light);
-   border-radius:1rem;
+   border-radius:.5rem;
 }
 </style>

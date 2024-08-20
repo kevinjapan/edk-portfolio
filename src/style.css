@@ -216,9 +216,9 @@ button:focus-visible {
    display:flex;
 }
 .justify_end {
-   -webkit-box-pack:end;
-   -ms-flex-pack:end;
-   justify-content:end;
+   -webkit-box-pack:flex-end;
+   -ms-flex-pack:flex-end;
+   justify-content:flex-end;
 }
 .justify_around {
    -ms-flex-pack:distribute;
@@ -228,6 +228,9 @@ button:focus-visible {
    -webkit-box-align:center;
    -ms-flex-align:center;
    align-items:center;
+}
+.align_self_end {
+   align-self:flex-end;
 }
 .gap_1 {
    gap:1rem;
@@ -258,6 +261,7 @@ button:focus-visible {
    z-index:999999;
 }
 
+.w_100 {width:100%;}
 .m_0 {margin:0;}
 .m_1 {margin:1rem;}
 .mt_0 {margin-top:0;}
@@ -274,3 +278,6 @@ button:focus-visible {
 
 .bg_yellow {background:yellow;}
 
+.text_right {
+   text-align:right;
+}

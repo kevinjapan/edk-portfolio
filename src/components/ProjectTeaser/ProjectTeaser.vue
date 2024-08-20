@@ -145,9 +145,9 @@ div.teaser_slot.tech_list {
 
    gap:.25rem;
 
-   -webkit-box-pack:start;
-   -ms-flex-pack:start;
-   justify-content:start;
+   -webkit-box-pack:flex-start;
+   -ms-flex-pack:flex-start;
+   justify-content:flex-start;
 
    -webkit-box-align:center;
    -ms-flex-align:center;
