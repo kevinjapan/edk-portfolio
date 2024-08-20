@@ -3,8 +3,31 @@
 // we use Component v-model to implement two-way binding
 const filter = defineModel()
 
+
+const props = defineProps<{
+   projects_list: Project[]
+}>()
+
+// to do : get no. of each project w/ each filter from props.projects_list
+console.log('props',props.projects_list)
+
 const set_filter = (filter_value: string) => {
    filter.value = filter_value
+}
+
+const num_with_filter = (filter: string) : number => {
+
+   const filter_uc = filter.toUpperCase()
+
+   if(filter_uc === 'ALL' || filter === '') return props.projects_list.length
+
+   const relevant_projects = props.projects_list.filter((project) => {
+      return project.tech.some((tech) => {
+         return tech.name.toUpperCase() === filter_uc
+      })
+      // if(has_tech) return project
+   })
+   return relevant_projects.length
 }
 
 </script>
@@ -14,31 +37,31 @@ const set_filter = (filter_value: string) => {
    <ul class="flex skill_tag_list w_full pt_0.5">
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('')" :class="{selected_filter: filter === ''}">
-            All</a>
+            All ({{ num_with_filter('all') }})</a>
       </li>
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('javascript')" :class="{selected_filter: filter === 'javascript'}">
-            JavaScript</a>
+            JavaScript ({{ num_with_filter('javascript') }})</a>
       </li>
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('vue.js')" :class="{selected_filter: filter === 'vue.js'}">
-            Vue.js</a>
+            Vue.js ({{ num_with_filter('vue.js') }})</a>
       </li>
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('react.js')" :class="{selected_filter: filter === 'react.js'}">
-            React.js</a>
+            React.js ({{ num_with_filter('react.js') }})</a>
       </li>
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('php')" :class="{selected_filter: filter === 'php'}">
-            PHP</a>
+            PHP ({{ num_with_filter('php') }})</a>
       </li>
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('css')" :class="{selected_filter: filter === 'css'}">
-            CSS</a>
+            CSS ({{ num_with_filter('css') }})</a>
       </li>
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('wordpress')" :class="{selected_filter: filter === 'wordpress'}">
-            WordPress</a>
+            WordPress ({{ num_with_filter('wordpress') }})</a>
       </li>
    </ul>
 </template>

@@ -11,8 +11,7 @@ import ProjectTeaser from '../components/ProjectTeaser/ProjectTeaser.vue'
 const projectStore = useProjectStore()
 
 // projects_list
-// we tell TypeScript we intend to store Projects in this array
-// we pass a type parameter to the ref function
+// we pass a type parameter to the ref function - we intend to store Projects in this array
 const projects_list = ref<Project[]>([])
 
 // filtered display list
@@ -83,7 +82,7 @@ const current_filter_label = computed(() => {
       
       <h1>Projects</h1>
 
-      <ProjectFilter v-model="filter" class="sticky"/>      
+      <ProjectFilter v-model="filter" :projects_list="projectStore.projects_list" class="sticky"/>      
       
       <!-- we should simply filter the 'projects_list' from projectStore, but we
          wanted to explore the rendering mechanism; ok method for our dataset size -->
@@ -182,6 +181,11 @@ li.project_teaser {
    .loading {
       font-size:4rem;
    }
+}
+
+
+h1 {
+   letter-spacing:1rem;
 }
 
 </style>
