@@ -4,28 +4,11 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  /* 
-
-  to do : not showing (blank screen on ipad/ios/safari) 
-          disabling this bg color does change the screen to white background
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; 
-
-w/ this - i can get yellow background:
-  background:yellow;
-
-  - so, seems a white-background container (app?) is not getting width and height.
-
-
-  - also on an online emulator, it appeared on project page to show layout but no teaser cards.. ?
-  */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-
 
   --bg_primary:navy;
   --bg_secondary:#829650;
@@ -33,8 +16,6 @@ w/ this - i can get yellow background:
   --bg_light:hsl(264, 48%, 95%);
   --bg_lighter:hsl(264, 48%, 98%);
 
-
-  
   --bg_accent:#d8b997;
   --bg_semantic_positive:hsl(120, 93%, 85%);     /* green  - positive */
   --bg_semantic_positive_100:hsl(120, 93%, 90%);
@@ -151,16 +132,16 @@ body {
 }
 
 h1 {
-   font-size: 3.2em;
+   font-size: 3.5em;
+   font-weight:300;
    line-height: 1.1;
    width:100%;
    text-align:center;
    margin:2rem 0 0 0;
    padding-bottom:1rem;
-   font-weight:200;
 }
 h2 {
-   font-size:2.25rem;
+   font-size:3.25rem;
    font-weight:200;
 }
 button {
@@ -240,7 +221,9 @@ button:focus-visible {
 /* 
    grid utility classes
 */
-
+.grid {
+   display:grid;
+}
 
 
 
