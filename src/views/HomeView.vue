@@ -121,6 +121,7 @@ span.item {
    white-space: nowrap;
 }
 h1 {
+   margin-top:5rem;
    letter-spacing:3rem;
 }
 @media screen and (max-width: 768px) {
