@@ -18,51 +18,79 @@ onBeforeMount(async() => {
 
       <h1>Portfolio</h1>
 
-      <h2>{{ user.name }}</h2>
       
-      <p><span class="slot_label">location :</span>
-         Arbroath, Scotland
-      </p>
 
-      <p><span class="slot_label">current learning :</span>
-         <span class="item">Vue.js</span>
-      </p>
+      <section class="meta_grid grid">
 
-      <p><span class="slot_label">technologies :</span>
-         <span class="item">JavaScript</span>,
-         <span class="item">React.js</span>,
-         <span class="item">Vue.js</span>,
-         <span class="item">Electron</span>,
-         <span class="item">PHP</span>,
-         <span class="item">HTML</span>,
-         <span class="item">WordPress</span>,
-         <span class="item">MySQL</span>,
-         <span class="item">SQLite</span>,
-         <span class="item">CSS</span>,
-         <span class="item">Tailwind</span>
-      </p>
-      <p>
-         <span class="slot_label">prev technologies :</span>
-         <span class="item">Java</span>,
-         <span class="item">C++</span>
-      </p>
-      <p>
-         <span class="slot_label">experience :</span>
-         <span class="item">Software Developer</span>,
-         <span class="item">Technical Lead</span>,
-         <span class="item">Assistant Language Teacher</span>,
-         <span class="item">Project Management</span>
-      </p>
-      <p>
-         <span class="slot_label">education :</span>
-         <span class="item">BSc Zoology</span>,
-         <span class="item">PGDip Software Engineering</span>
-      </p>
+         <span class="slot_label"><img class="mugshot" src="../assets/imgs/mugshot_mirror.jpg" /></span>
+         <span class="slot_value">
+            <span class="item"><h2>{{ user.name }}</h2></span>
+         </span>
+
+         <span class="slot_label">location</span>
+         <span class="slot_value">
+            <span class="item">Arbroath, Scotland</span>
+         </span>
+
+         <span class="slot_label">current learning</span>
+         <span  class="slot_value">
+            <span class="item">Vue.js</span>
+         </span>
+
+         <span class="slot_label">technologies</span>
+         <span class="slot_value">
+            <span class="item">JavaScript</span>,
+            <span class="item">React.js</span>,
+            <span class="item">Vue.js</span>,
+            <span class="item">Electron</span>,
+            <span class="item">PHP</span>,
+            <span class="item">HTML</span>,
+            <span class="item">WordPress</span>,
+            <span class="item">MySQL</span>,
+            <span class="item">SQLite</span>,
+            <span class="item">CSS</span>,
+            <span class="item">Tailwind</span>
+         </span>
+    
+         <span class="slot_label">history</span>
+         <span class="slot_value">
+            <span class="item">Java</span>,
+            <span class="item">C++</span>,
+            <span class="item">ASP</span>
+         </span>
+            
+         <span class="slot_label">experience</span>
+         <span class="slot_value">
+            <span class="item">Software Developer</span>,
+            <span class="item">Technical Lead</span>,
+            <span class="item">Assistant Language Teacher</span>,
+            <span class="item">Project Management</span>
+         </span>
+         
+         <span class="slot_label">education</span>
+         <span class="slot_value">
+            <span class="item">BSc Zoology</span>,
+            <span class="item">PGDip Software Engineering</span>
+         </span>
+         
+      </section>
 
    </section>
 </template>
 
 <style scoped>
+
+.meta_grid {
+   max-width:600px;
+   margin:auto;
+   margin-top:5rem;
+   padding-bottom:10rem;
+   grid-template-columns:1fr 3fr;
+   gap:1rem;
+   align-items:center;
+   /* to do : webkit this page */
+}
+
 
 @media screen and (max-width: 768px) {
    section.view_section {
@@ -75,17 +103,35 @@ onBeforeMount(async() => {
    }
 }
 .slot_label {
-   font-style:italic;
    color:hsl(0, 0%, 55%);
+   padding-right:.5rem;
+   text-align:right;
+}
+.meta_grid img {
+   max-width:80%;
+   border-radius:50%;
 }
 
+.slot_value {
+   text-align:left;
+}
 span.item {
    display:inline;
-   background:hsl(60, 100%, 86%);
-   padding:.15rem;
-   padding-left:.35rem;
-   padding-right:.35rem;
-   border-radius:.5rem;
+   font-weight:400;
    white-space: nowrap;
 }
+h1 {
+   letter-spacing:3rem;
+}
+@media screen and (max-width: 768px) {
+   h1 {
+      letter-spacing:1rem;
+   }
+}
+h2 {
+   font-size:2.5rem;
+   margin:0;
+   margin-top:-1rem;
+}
+
 </style>
