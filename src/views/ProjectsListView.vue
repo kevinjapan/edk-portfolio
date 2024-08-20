@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onBeforeMount, onMounted, onUpdated, toRef, watch } from 'vue'
+import { ref, computed, onBeforeMount, onMounted, onUpdated, watch } from 'vue'
 import { useProjectStore } from '@/stores/projectStore.ts'
 import ProjectFilter from '../components/ProjectFilter/ProjectFilter.vue'
 import ProjectTeaser from '../components/ProjectTeaser/ProjectTeaser.vue'
@@ -15,6 +15,9 @@ const projectStore = useProjectStore()
 // we pass a type parameter to the ref function
 const projects_list = ref<Project[]>([])
 
+// filtered display list
+const filtered_projects_list = ref<Project[]>([])
+
 // the current tech filter
 const filter = ref(projectStore.current_filter)
 
@@ -27,10 +30,10 @@ const updating = ref(false)
 // we flag initial mount, so that we don't scroll if we've just loaded this component
 const mounting = ref(true)
 
-
 onBeforeMount(async() => {
    await projectStore.load_projects_list()
    projects_list.value = projectStore.projects_list
+   filtered_projects_list.value = projectStore.projects_list
 })
 
 onMounted(() => {
@@ -43,30 +46,30 @@ onUpdated(() => {
    }
 })
 
-
 // we introduce a delay to give perception of list changing;
 // otherwise appearance is unchanging (somes lists have same order)
 watch(filter,() => {
 
+   // 'all projects'
+   if(filter.value === '' || filter.value.toUpperCase() === 'ALL') {
+      filtered_projects_list.value = projects_list.value
+      return
+   }
+
    // set current filter
    projectStore.set_current_filter(filter.value)
+
+   // filter display list
+   filtered_projects_list.value = projects_list.value.filter((project) => {
+      return project.tech.some((tech) => {
+         return tech.name.toUpperCase() === filter.value.toUpperCase()
+      })
+   })
 
    // perceived 'loading'
    updating.value = true
    setTimeout(() => {updating.value = false},800)
 })
-
-
-const matches_filter = (project: Project) => {
-
-   // we don't filter a ProjectTeaser if filter is empty or 'all'
-   if(filter.value === '' || filter.value === 'all') return true
-
-   const tech_list = toRef(project).value.tech
-   return tech_list.some((tech) => {
-      return tech.name.toUpperCase() === filter.value.toUpperCase()
-   })
-}
 
 const current_filter_label = computed(() => {
    return filter.value === '' ? 'all projects' : filter.value
@@ -85,8 +88,8 @@ const current_filter_label = computed(() => {
       <!-- we should simply filter the 'projects_list' from projectStore, but we
          wanted to explore the rendering mechanism; ok method for our dataset size -->
       <ul v-if="updating === false" class="projects_list_grid ">
-         <div id='list' v-for="project in projects_list" key="project.slug" class="wrapper">
-            <li class="project_teaser" v-if="matches_filter(project)">
+         <div id='list' v-for="project in filtered_projects_list" key="project.slug" class="wrapper">
+            <li class="project_teaser">
                <ProjectTeaser  :project="project" :filter="filter"/>
             </li>
          </div>
@@ -99,6 +102,7 @@ const current_filter_label = computed(() => {
    </section>
       
 </template>
+
 
 <style scoped>
 
@@ -128,7 +132,6 @@ ul.projects_list_grid {
    padding:0;
    padding-top:2rem;
 }
-
 @media screen and (max-width: 1100px) {
    ul.projects_list_grid {
       -ms-grid-columns: 1fr 1fr;
@@ -181,27 +184,4 @@ li.project_teaser {
    }
 }
 
-/* 
-   we use v-if to conditionally show li - 
-   but we have to account for wrapping v-for always 
-   showing the wrapper div for each project - 
-   so we use css has() to exclude from UI display
-
-   future : we should simply filter the 'projects_list' from 
-   projectStore and display the local filtered_list - but we
-   wanted to explore the rendering mechanism; this method is 
-   good enough given our projects lists will never be large.
-*/
-.wrapper {
-   display:none;
-   width:0;
-   height:0;
-   margin:0;
-   padding:0;
-}
-.wrapper:has(li) {
-   display:block;
-   width:100%;
-   height:fit-content;
-}
 </style>
