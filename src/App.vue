@@ -65,7 +65,12 @@ main {
    border-radius:.5rem;
 }
 .selected_view {
-   background:var(--bg_light);
+   /* background:var(--bg_light); */
    border-radius:.5rem;
+   font-weight:600;
+}
+
+a:hover {
+   background:unset;
 }
 </style>
