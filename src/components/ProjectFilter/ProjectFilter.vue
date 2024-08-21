@@ -8,9 +8,6 @@ const props = defineProps<{
    projects_list: Project[]
 }>()
 
-// to do : get no. of each project w/ each filter from props.projects_list
-console.log('props',props.projects_list)
-
 const set_filter = (filter_value: string) => {
    filter.value = filter_value
 }
@@ -99,6 +96,7 @@ ul.skill_tag_list {
 }
 .selected_filter {
    background:var(--bg_light);
+   font-weight:500;
 }
 li, a {
    margin:0;
