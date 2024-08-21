@@ -30,10 +30,27 @@ const updating = ref(false)
 const mounting = ref(true)
 
 onBeforeMount(async() => {
+
+   // get projects_list
    await projectStore.load_projects_list()
    projects_list.value = projectStore.projects_list
-   filtered_projects_list.value = projectStore.projects_list
+
+   filter_project_list()
 })
+
+const filter_project_list = () => {
+
+   if(filter.value === '' || filter.value.toUpperCase() === 'ALL') {
+      filtered_projects_list.value = projects_list.value
+   }
+   else {
+      filtered_projects_list.value = projects_list.value.filter((project) => {
+         return project.tech.some((tech) => {
+            return tech.name.toUpperCase() === filter.value.toUpperCase()
+         })
+      })
+   } 
+}
 
 onMounted(() => {
    setTimeout(() => mounting.value = false,100)
@@ -49,21 +66,10 @@ onUpdated(() => {
 // otherwise appearance is unchanging (somes lists have same order)
 watch(filter,() => {
 
-   // 'all projects'
-   if(filter.value === '' || filter.value.toUpperCase() === 'ALL') {
-      filtered_projects_list.value = projects_list.value
-      return
-   }
+   filter_project_list()
 
    // set current filter
    projectStore.set_current_filter(filter.value)
-
-   // filter display list
-   filtered_projects_list.value = projects_list.value.filter((project) => {
-      return project.tech.some((tech) => {
-         return tech.name.toUpperCase() === filter.value.toUpperCase()
-      })
-   })
 
    // perceived 'loading'
    updating.value = true
@@ -82,7 +88,7 @@ const current_filter_label = computed(() => {
       
       <h1>Projects</h1>
 
-      <ProjectFilter v-model="filter" :projects_list="projectStore.projects_list" class="sticky"/>      
+      <ProjectFilter v-model="filter" :projects_list="projectStore.projects_list" class="sticky filter_nav"/>      
       
       <!-- we should simply filter the 'projects_list' from projectStore, but we
          wanted to explore the rendering mechanism; ok method for our dataset size -->
@@ -104,7 +110,10 @@ const current_filter_label = computed(() => {
 
 
 <style scoped>
-
+.filter_nav {
+   top:0;
+   left:0;
+}
 section.projects_list {
    position:relative;
    width:100%;
