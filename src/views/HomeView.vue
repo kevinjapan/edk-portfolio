@@ -22,7 +22,7 @@ onBeforeMount(async() => {
 
       <section class="meta_grid grid">
 
-         <span class="slot_label"><img class="mugshot" src="../assets/imgs/mugshot_mirror.jpg" /></span>
+         <span class="slot_label"><img class="mugshot" src="/imgs/mugshot_mirror.jpg" /></span>
          <span class="slot_value">
             <span class="item"><h2>{{ user.name }}</h2></span>
          </span>
@@ -81,14 +81,17 @@ onBeforeMount(async() => {
 <style scoped>
 
 .meta_grid {
+
+   grid-template-columns:1fr 3fr;
+   -webkit-box-align:center;
+   -ms-flex-align:center;
+   align-items:center;
+   gap:1rem;
+
    max-width:600px;
    margin:auto;
    margin-top:5rem;
    padding-bottom:10rem;
-   grid-template-columns:1fr 3fr;
-   gap:1rem;
-   align-items:center;
-   /* to do : webkit this page */
 }
 
 
