@@ -5,7 +5,6 @@ const props = defineProps<{
    label: string
 }>()
 
-
 </script>
 
 
@@ -14,11 +13,13 @@ const props = defineProps<{
    <div style="margin-top:5rem;" class="sticky">
       <RouterLink 
          :to="{name:props.route_name, params:{}}" 
-         class="view_link" activeClass="selected_view" exactActiveClass="selected_view">
-            <img src="../../../src/assets/imgs/arrow-return-left.svg" style="border:none;"/> 
+         class="view_link" 
+         activeClass="selected_view" 
+         exactActiveClass="selected_view">
+            <img src="../../../src/assets/imgs/arrow-return-left.svg" style="border:none;" alt="back to projects arrow"/> 
             <span>Back to {{ props.label }}</span>
       </RouterLink>
-      </div>
+   </div>
 
 </template>
 
@@ -26,17 +27,19 @@ const props = defineProps<{
 <style scoped>
 
 .view_link {
+
    display:-webkit-box;
    display:-ms-flexbox;
    display:flex;
 
-   width:fit-content;
-   
    -webkit-box-align:center;
    -ms-flex-align:center;
    align-items:center;
 
    gap:.5rem;
+
+   width:fit-content;
+
    font-weight:400;
    color:blue;
    margin-top:.25rem;

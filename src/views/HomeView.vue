@@ -18,11 +18,11 @@ onBeforeMount(async() => {
 
       <h1>Portfolio</h1>
 
-      
-
       <section class="meta_grid grid">
 
-         <span class="slot_label"><img class="mugshot" src="/imgs/mugshot_mirror.jpg" /></span>
+         <span class="slot_label">
+            <img class="mugshot" src="/imgs/mugshot_mirror.jpg" alt="profile photo"/>
+         </span>
          <span class="slot_value">
             <span class="item"><h2>{{ user.name }}</h2></span>
          </span>
@@ -83,9 +83,11 @@ onBeforeMount(async() => {
 .meta_grid {
 
    grid-template-columns:1fr 3fr;
+
    -webkit-box-align:center;
    -ms-flex-align:center;
    align-items:center;
+
    gap:1rem;
 
    max-width:600px;
@@ -114,7 +116,6 @@ onBeforeMount(async() => {
    max-width:80%;
    border-radius:50%;
 }
-
 .slot_value {
    text-align:left;
 }

@@ -17,62 +17,68 @@ const props = defineProps<{
 const strip_http_site = computed(() => {
    return props.project.site?.replace('https://','')
 })
+
 const strip_http_github = computed(() => {
    return props.project.github?.replace('https://github.com/','')
 })
+
 const teaser_img_path = computed(() => {
    return `/imgs/${props.project.img}`
 })
+
 
 </script>
 
 
 <template>
-   <Transition><section>      
-      <h2 class="teaser_slot">
-         <RouterLink v-if="project.file !== ''" :to="{name:'project', params:{project_slug:project.slug}}">{{ props.project.title }}</RouterLink>
-         <span class="no_link_title" v-else>{{ props.project.title }}</span>
-      </h2>
-      <p class="teaser_slot teaser_tagline">{{ props.project.tagline }}</p>
+   <Transition>
+      <section>      
+         <h2 class="teaser_slot">
+            <RouterLink v-if="project.file !== ''" :to="{name:'project', params:{project_slug:project.slug}}">{{ props.project.title }}</RouterLink>
+            <span class="no_link_title" v-else>{{ props.project.title }}</span>
+         </h2>
+         <p class="teaser_slot teaser_tagline">{{ props.project.tagline }}</p>
 
-      <img v-if="props.project.img" :src="teaser_img_path" width="90%">
+         <img v-if="props.project.img" 
+            :src="teaser_img_path" 
+            :alt="props.project.alt"
+            width="90%"
+         >
       
-      <!-- break out desc paras -->
-      <!-- we want to reduce footprint for UX - so remove desc in teaser -->
-      <!-- <p v-for="desc in props.project.desc" class="teaser_slot">{{ desc }}</p> -->
+         <!-- break out desc paras -->
+         <!-- we want to reduce footprint for UX - so remove desc in teaser -->
+         <!-- <p v-for="desc in props.project.desc" class="teaser_slot">{{ desc }}</p> -->
 
-      <!-- flex align techs -->
-      <div class="teaser_slot tech_list">
-         <span class="slot_label">tech&nbsp;:</span>
-         <div v-for="tech in props.project.tech" class="tech" >
-            {{ tech.name }}
+         <!-- flex align techs -->
+         <div class="teaser_slot tech_list">
+            <span class="slot_label">tech&nbsp;:</span>
+            <div v-for="tech in props.project.tech" class="tech" >
+               {{ tech.name }}
+            </div>
          </div>
-      </div>
 
-      <p v-if="props.project.site" class="teaser_slot">
-         <span class="slot_label">site&nbsp;:</span>
-         <a :href="props.project.site" target="_blank">{{ strip_http_site }}</a>
-      </p>
+         <p v-if="props.project.site" class="teaser_slot">
+            <span class="slot_label">site&nbsp;:</span>
+            <a :href="props.project.site" target="_blank">{{ strip_http_site }}</a>
+         </p>
 
-      <p v-if="props.project.github" class="teaser_slot">
-         <span class="slot_label">github&nbsp;:</span>
-         <a :href="props.project.github" target="_blank">{{ strip_http_github }}</a>
-      </p>
+         <p v-if="props.project.github" class="teaser_slot">
+            <span class="slot_label">github&nbsp;:</span>
+            <a :href="props.project.github" target="_blank">{{ strip_http_github }}</a>
+         </p>
 
-      <p v-if="project.file !== ''" class="teaser_slot details_link">
-         <RouterLink :to="{name:'project', params:{project_slug:project.slug}}">read more..</RouterLink>
-      </p>
-   </section></Transition>
+         <p v-if="project.file !== ''" class="teaser_slot details_link">
+            <RouterLink :to="{name:'project', params:{project_slug:project.slug}}">read more..</RouterLink>
+         </p>
+      </section>
+   </Transition>
    
 </template>
 
 
-
 <style scoped>
-* { margin:0;}
 
 section {
-
    display:-webkit-box;
    display:-ms-flexbox;
    display:flex;
