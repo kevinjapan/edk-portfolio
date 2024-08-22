@@ -49,6 +49,10 @@ const num_with_filter = (filter: string) : number => {
             React.js ({{ num_with_filter('react.js') }})</a>
       </li>
       <li class="skill_tag">
+         <a class="tech_tag" @click="set_filter('typescript')" :class="{selected_filter: filter === 'typescript'}">
+            TypeScript({{ num_with_filter('typescript') }})</a>
+      </li>
+      <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('php')" :class="{selected_filter: filter === 'php'}">
             PHP ({{ num_with_filter('php') }})</a>
       </li>
