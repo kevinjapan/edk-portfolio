@@ -29,6 +29,7 @@ interface Project {
    file:string
    status:string
    img:string
+   alt:string
    github?:string
    site?:string
    slug:string
