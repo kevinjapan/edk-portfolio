@@ -9,6 +9,7 @@
          ""
       ],
       "img":"edk-portfolio-homepage.jpg",
+      "alt":"image of portfolio static site homepage",
       "github":"https://github.com/kevinjapan/edk-portfolio",
       "site":"",
       "tech":[
@@ -27,6 +28,7 @@
          "Front-end application for cataloging a SongWriter's collection."
       ],
       "img":"weesongs-homepage.jpg",
+      "alt":"image of WeeSongs website homepage",
       "github":"https://github.com/kevinjapan/weesongs",
       "site":"",
       "tech":[
@@ -44,6 +46,7 @@
          "Desktop collections solution for managing files and folders on your local machine."
       ],
       "img":"stc-homepage.jpg",
+      "alt":"image of Signal Tower Capture application",
       "github":"https://github.com/kevinjapan/SignalTowerCapture",
       "site":"",
       "tech":[
@@ -63,6 +66,7 @@
          "Deploy component styling rapidly."
       ],
       "img":"outline-css-homepage.jpg",
+      "alt":"image of Outline CSS homepage",
       "github":"https://github.com/kevinjapan/OutlineCSS",
       "site":"https://outlinecss.netlify.app/",
       "tech":[
@@ -79,6 +83,7 @@
          "Single PHP Class performing simple routing."
       ],
       "img":"barebonesrouter.jpg",
+      "alt":"image of BareBonesRouter code",
       "github":"https://github.com/kevinjapan/Barebones-PHP-Router",
       "site":"",
       "tech":[
@@ -95,6 +100,7 @@
          "WordPress Theme and Plugins for Web Dev Agencies."
       ],
       "img":"wda-homepage.jpg",
+      "alt":"image of Web Dev Agent website homepage",
       "github":"https://github.com/kevinjapan/Web-Dev-Agent",
       "site":"https://web-dev-agent.netlify.app/",
       "tech":[
@@ -112,6 +118,7 @@
          "WordPress Theme and Plugins for colleges and online learning."
       ],
       "img":"te-homepage.jpg",
+      "alt":"image of The Educator website homepage",
       "github":"https://github.com/kevinjapan/The-Educator",
       "site":"https://the-educator.netlify.app/",
       "tech":[
@@ -129,13 +136,14 @@
          "Client React project management application."
       ],
       "img":"weeprojects-homepage.jpg",
+      "alt":"image of WeeProjects website homepage",
       "github":"https://github.com/kevinjapan/weeprojects",
       "site":"",
       "tech":[
          {"name":"React.js"},
          {"name":"JavaScript"},
          {"name":"MySQL"},
-         {"name":"Tailwind CSS"}
+         {"name":"Tailwind"}
       ]
    },
    {
@@ -148,6 +156,7 @@
          "Simple Model-View-Controller back-end with routing and authentication."
       ],
       "img":"",
+      "alt":"",
       "github":"https://github.com/kevinjapan/WeeProjects-Backend",
       "site":"",
       "tech":[
@@ -165,6 +174,7 @@
          "More than 2000 regular use Kanji listed."
       ],
       "img":"kss-homepage.jpg",
+      "alt":"image of Kanji Study Sets website homepage",
       "github":"",
       "site":"https://kanjistudysets.netlify.app/",
       "tech":[
@@ -183,6 +193,7 @@
          "Lesson sharing for teachers of English as a second language."
       ],
       "img":"tes-homepage.jpg",
+      "alt":"image of The English Shelf website homepage",
       "github":"https://github.com/kevinjapan/theenglishshelf",
       "site":"https://theenglishshelf.netlify.app/",
       "tech":[
@@ -201,6 +212,7 @@
          "Static site with Intersection Observers and custom text-file configuration."
       ],
       "img":"delicious-homepage.jpg",
+      "alt":"image of delicious demo website homepage",
       "github":"",
       "site":"https://delicious-demo.netlify.app/",
       "tech":[
