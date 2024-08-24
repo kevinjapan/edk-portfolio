@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Footer from './components/Footer/footer.vue'
+import AppFooter from './components/App/AppFooter/AppFooter.vue'
 
 </script>
 
@@ -16,7 +16,7 @@ import Footer from './components/Footer/footer.vue'
       <RouterView />
    </main>
 
-   <Footer/>
+   <AppFooter/>
 
 </template>
 
