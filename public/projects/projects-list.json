@@ -1,8 +1,27 @@
 [
    {
+      "title":"A Vue To A Build",
+      "slug":"a-vue-to-a-build",
+      "status":"early days",
+      "file":"",
+      "tagline":"Static Vue.js Learning Site",
+      "desc":[
+         ""
+      ],
+      "img":"",
+      "alt":"",
+      "github":"",
+      "site":"",
+      "tech":[
+         {"name":"Vue.js"},
+         {"name":"JavaScript"},
+         {"name":"Markdown"}
+      ]
+   },
+   {
       "title":"Portfolio",
       "slug":"portfolio",
-      "status":"",
+      "status":"on-going",
       "file":"",
       "tagline":"Static Portfolio Site",
       "desc":[
@@ -59,7 +78,7 @@
    {
       "title":"Outline CSS",
       "slug":"outlinecss",
-      "status":"",
+      "status":"on-going",
       "file":"",
       "tagline":"component framework",
       "desc":[
@@ -76,7 +95,7 @@
    {
       "title":"Barebones Router",
       "slug":"barebones-router",
-      "status":"",
+      "status":"completed",
       "file":"",
       "tagline":"PHP Router Class",
       "desc":[
@@ -93,7 +112,7 @@
    {
       "title":"Wed Dev Agent",
       "slug":"web-dev-agent",
-      "status":"",
+      "status":"on-going",
       "file":"",
       "tagline":"for Web Agencies",
       "desc":[
@@ -111,7 +130,7 @@
    {
       "title":"The Educator",
       "slug":"the-educator",
-      "status":"",
+      "status":"on-going",
       "file":"",
       "tagline":"for Education websites",
       "desc":[
@@ -167,7 +186,7 @@
    {
       "title":"Kanji Study Sets",
       "slug":"kanji-study-sets",
-      "status":"",
+      "status":"on-going",
       "file":"",
       "tagline":"Japanese Kanji study site",
       "desc":[
@@ -186,7 +205,7 @@
    {
       "title":"The English Shelf",
       "slug":"the-english-shelf",
-      "status":"",
+      "status":"on-going",
       "file":"",
       "tagline":"English Lesson Share",
       "desc":[
@@ -205,7 +224,7 @@
    {
       "title":"Delicous Demo",
       "slug":"delicious-demo",
-      "status":"",
+      "status":"completed",
       "file":"",
       "tagline":"Demo delicatessen site",
       "desc":[
