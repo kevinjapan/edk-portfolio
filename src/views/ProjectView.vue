@@ -62,12 +62,15 @@ watchEffect(async() => {
    if(rcvd_markdown === '') return
 
    // check for '!doctype html' in first line - if found, not md file, but some 'not found' or default response in html doc
-   const doctype_index = rcvd_markdown.indexOf('!doctype html')
+   const doctype_index = rcvd_markdown.toUpperCase().indexOf('!DOCTYPE HTML')  // to do : verify ok (added toUpperCase())
 
    if((doctype_index > -1 && doctype_index < 20)) {
       router.replace('/notfound')
    }
-   rawHtml.value = rcvd_markdown
+   else {
+      rawHtml.value = rcvd_markdown
+      window.scroll(0,0)
+   }
 })
 
 // const strip_http_site = computed(() => {
