@@ -6,7 +6,7 @@ import AppFooter from './components/App/AppFooter/AppFooter.vue'
 <template>
 
    <nav class="fixed flex gap_1 pr_3">
-      <div class="flex justify_around mr_2 bg_white">
+      <div class="flex justify_around mr_2">
          <RouterLink to="/" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Home</RouterLink>
          <RouterLink to="/projects" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Projects</RouterLink>
       </div>
@@ -40,7 +40,6 @@ nav {
    height:fit-content;
    padding-right:4rem;
    font-size:1.3rem;
-   background:white;
 }
 
 
@@ -48,12 +47,10 @@ nav {
 main {
    width:100%;
    min-height:100vh;
+   background:black;
+   /* to do: set bg_darker just off black */
 }
 
-
-.bg_white {
-   background:white;
-}
 .view_link {
    font-weight:300;
    margin-left:.5rem;

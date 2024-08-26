@@ -125,7 +125,7 @@ section.projects_list {
 
 }
 h1 {
-   background:white;
+   color:white;
 }
 .projects_list_header {
    width:100%;
@@ -199,5 +199,7 @@ li.project_teaser {
 h1 {
    letter-spacing:1rem;
 }
+
+
 
 </style>

@@ -69,7 +69,8 @@ const num_with_filter = (filter: string) : number => {
 
 
 <style scoped>
-.flex {
+/* to do : use flex from style.css  rollout */
+.flex2 {
    display:-webkit-box;
    display:-ms-flexbox;
    display:flex;
@@ -81,12 +82,19 @@ const num_with_filter = (filter: string) : number => {
    flex-wrap:wrap;
 
 }
+li {
+   width:fit-content;
+}
 ul.skill_tag_list {
+   width:100%;
    list-style:none;
    margin:0;
    margin-left:auto;
    margin-right:auto;
    gap:1rem;
+
+   color:white;
+   background:black;
 }
 @media screen and (max-width: 768px) {
    ul.skill_tag_list {
@@ -99,8 +107,8 @@ ul.skill_tag_list {
    }
 }
 .selected_filter {
-   background:var(--bg_light);
-   font-weight:500;
+   /* background:var(--bg_light); */
+   font-weight:700;
 }
 li, a {
    margin:0;
@@ -109,7 +117,10 @@ li, a {
    cursor:pointer;
    border-radius:.5rem;
 }
+a {
+   color:white;
+}
 a:hover {
-   background:var(--bg_lighter)
+   text-decoration:underline;
 }
 </style>

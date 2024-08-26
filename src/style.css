@@ -13,7 +13,7 @@
   --bg_primary:navy;
   --bg_secondary:#829650;
   --bg_dark:hsl(0, 0%, 50%);
-  --bg_light:hsl(264, 48%, 95%);
+  --bg_light:hsl(264, 48%, 92%);
   --bg_lighter:hsl(264, 48%, 98%);
 
   --bg_accent:#d8b997;
@@ -79,6 +79,7 @@ body {
    height:100%;
    padding:0;
    margin:0;
+   background:black;
 }
 section {
    height:100%;
@@ -110,7 +111,7 @@ p {
 }
 a {
    font-weight:300;
-   color:black;
+   color:white;
    cursor:pointer;
    padding:.25rem;
    padding-left:.5rem;
@@ -118,9 +119,7 @@ a {
    border-radius:.25rem;
    text-decoration:inherit;
 }
-a:hover {
-   background:hsl(0, 0%, 92%);
-}
+
 
 body {
   margin: 0;
@@ -196,6 +195,11 @@ button:focus-visible {
    display:-ms-flexbox;
    display:flex;
 }
+.justify_center {
+   -webkit-box-pack:center;
+   -ms-flex-pack:center;
+   justify-content:center;
+}
 .justify_end {
    -webkit-box-pack:flex-end;
    -ms-flex-pack:flex-end;
@@ -215,6 +219,9 @@ button:focus-visible {
 }
 .gap_1 {
    gap:1rem;
+}
+.flex_col {
+   flex-direction:column;
 }
 
 
@@ -236,9 +243,7 @@ button:focus-visible {
 .fixed {
    position:fixed;
 }
-.sticky {
-   display:block;
-   
+.sticky {   
    /* we need 'webkit' etc prefixes here for IOS safari - 'sticky' won't suffice */
    position:-webkit-sticky;
    position:-moz-sticky;
@@ -247,25 +252,9 @@ button:focus-visible {
    position:sticky;
    
    top:0;
-   background:white;
-   border-bottom:solid 1px lightgrey;
    z-index:999999;
 }
-
-/* 
-to do : capure/document
-
-ios safari does have some issues:
-- 'sticky' requires webkit
-- 'flex' and all flex rules (flex-direction etc) require webkit
-- margin and padding block don't work - use explicit margin-right  margin-top etc
-- need 'flex-end' on justify-content etc
-- transitions need webkit prefix alternatives
-- box shadow requires webkit
-- 
-
-*/
-
+.w_full {width:100%;}
 .w_100 {width:100%;}
 .m_0 {margin:0;}
 .m_1 {margin:1rem;}

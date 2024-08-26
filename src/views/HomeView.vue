@@ -117,6 +117,7 @@ onBeforeMount(async() => {
    border-radius:50%;
 }
 .slot_value {
+   color:white;
    text-align:left;
 }
 span.item {
