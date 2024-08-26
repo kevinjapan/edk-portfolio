@@ -3,7 +3,7 @@ import { ref, computed, onBeforeMount, onMounted, onUpdated, watch } from 'vue'
 import { useProjectStore } from '@/stores/projectStore.ts'
 import ProjectFilter from '../components/ProjectFilter/ProjectFilter.vue'
 import ProjectTeaser from '../components/ProjectTeaser/ProjectTeaser.vue'
-
+import init_unblurs from '../utilities/intersections/intersections'
 
 
 // ProjectsListView
@@ -60,6 +60,7 @@ onUpdated(() => {
    if(mounting.value === false) {
       window.scroll(0,filter_nav_top)
    }
+   init_unblurs()
 })
 
 // we introduce a delay to give perception of list changing;
@@ -119,7 +120,9 @@ section.projects_list {
    width:100%;
    min-height:120vh;
    padding-bottom:5rem;
-   background:var(--bg_light);
+   background:black;
+   /* to do: set bg_darker just off black */
+
 }
 h1 {
    background:white;
