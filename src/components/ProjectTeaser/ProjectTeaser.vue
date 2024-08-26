@@ -9,10 +9,6 @@ const props = defineProps<{
   filter: string
 }>()
 
-// future : disabled - see template
-// const desc = computed(() => {
-//    return props.project.desc
-// })
 
 const strip_http_site = computed(() => {
    return props.project.site?.replace('https://','')
@@ -31,23 +27,35 @@ const teaser_img_path = computed(() => {
 
 
 <template>
+
    <Transition>
-      <section>      
-         <h2 class="teaser_slot">
-            <RouterLink v-if="project.file !== ''" :to="{name:'project', params:{project_slug:project.slug}}">{{ props.project.title }}</RouterLink>
-            <span class="no_link_title" v-else>{{ props.project.title }}</span>
-         </h2>
-         <p class="teaser_slot teaser_tagline">{{ props.project.tagline }}</p>
+
+      <section>
 
          <img v-if="props.project.img" 
             :src="teaser_img_path" 
             :alt="props.project.alt"
             width="90%"
+            class="unblur"
          >
+         <div v-else class="teaser_slot">&nbsp;</div>
+         <h2 class="teaser_slot mb_0">
+            <RouterLink v-if="project.file !== ''" :to="{name:'project', params:{project_slug:project.slug}}">{{ props.project.title }}</RouterLink>
+            <span class="no_link_title" v-else>{{ props.project.title }}</span>
+         </h2>
+
+         <p class="teaser_slot teaser_tagline">{{ props.project.tagline }}</p>
+         
+         <div class="teaser_slot mt_1">            
+               <span class="slot_label">status&nbsp;:&nbsp;</span>
+               <span class="project_status">{{ props.project.status }}</span>
+         </div>
+         
       
          <!-- break out desc paras -->
-         <!-- we want to reduce footprint for UX - so remove desc in teaser -->
-         <!-- <p v-for="desc in props.project.desc" class="teaser_slot">{{ desc }}</p> -->
+         <div class="teaser_slot">
+            <p v-for="desc in props.project.desc" class="desc_paragraph">{{ desc }}</p>
+         </div>
 
          <!-- flex align techs -->
          <div class="teaser_slot tech_list">
@@ -57,19 +65,23 @@ const teaser_img_path = computed(() => {
             </div>
          </div>
 
-         <p v-if="props.project.site" class="teaser_slot">
-            <span class="slot_label">site&nbsp;:</span>
-            <a :href="props.project.site" target="_blank">{{ strip_http_site }}</a>
-         </p>
+         <!-- links -->
+         <ul>
+            <li v-if="props.project.site" class="teaser_slot">
+               <span class="slot_label">site&nbsp;:</span>
+               <a :href="props.project.site" target="_blank">{{ strip_http_site }}</a>
+            </li>
 
-         <p v-if="props.project.github" class="teaser_slot">
-            <span class="slot_label">github&nbsp;:</span>
-            <a :href="props.project.github" target="_blank">{{ strip_http_github }}</a>
-         </p>
+            <li v-if="props.project.github" class="teaser_slot">
+               <span class="slot_label">github&nbsp;:</span>
+               <a :href="props.project.github" target="_blank">{{ strip_http_github }}</a>
+            </li>
 
-         <p v-if="project.file !== ''" class="teaser_slot details_link">
-            <RouterLink :to="{name:'project', params:{project_slug:project.slug}}">read more..</RouterLink>
-         </p>
+            <li v-if="project.file !== ''" class="teaser_slot details_link">
+               <RouterLink :to="{name:'project', params:{project_slug:project.slug}}">read more..</RouterLink>
+            </li>
+         </ul>
+
       </section>
    </Transition>
    
@@ -91,14 +103,16 @@ section {
    gap:.15rem;
 
    margin:0;
-   padding:1rem;
-   padding-top:1rem;
+   /* padding:1rem;
+   padding-top:1rem; */
    border:solid 1px hsl(0, 0%, 90%);
    border-radius:1rem;
    -webkit-box-shadow: 1px 2px 3px 1px hsl(0, 0%, 80%);
    box-shadow: 1px 2px 3px 1px hsl(0, 0%, 80%);
 
    background:white;
+
+   overflow:hidden;
 }
 
 /* override (limit widths) on main styles */
@@ -116,7 +130,7 @@ p {
 }
 a {
    font-weight:400;
-   color:blue;
+   color:hsl(241, 91%, 65%);
    cursor:pointer;
    padding:.25rem;
    padding-left:.5rem;
@@ -135,14 +149,34 @@ p.teaser_tagline {
    font-weight:300;
    margin:0 auto 0 auto;
 }
+.project_status {
+   display:inline;
+   background:hsl(60, 100%, 80%);
+   padding-left:.25rem;
+   padding-right:.25rem;
+}
 img {
-   margin-top:1rem;
+   width:100%;
+   /* margin-top:1rem; */
    margin-bottom:.5rem;
    margin-left:auto;
    margin-right:auto;
-   border:solid 1px lightgrey;
-   border-radius:.25rem;
+
+   filter:blur(3px);
+   /* to do : webkit */
 }
+
+img.no_blur {
+   filter:blur(0);
+   -webkit-transition: .35s -webkit-filter ease-in-out;
+   -moz-transition: .35s -moz-filter ease-in-out;
+   -o-transition: .35s -o-filter ease-in-out;
+   transition: .35s filter ease-in-out;
+}
+
+/* div.teaser_slot {
+   margin-bottom:1rem;
+} */
 div.teaser_slot.tech_list {
 
    display:-webkit-box;
@@ -159,7 +193,7 @@ div.teaser_slot.tech_list {
    -ms-flex-align:center;
    align-items:center;
 
-   margin-top:.5rem;
+   margin-top:1.5rem;
    margin-bottom:.5rem;
    margin-left:auto;
    margin-right:auto;
@@ -172,9 +206,14 @@ div.teaser_slot.tech_list {
       flex-direction:column;
    }
 }
+.teaser_slot > p.desc_paragraph {
+   width:100%;
+   margin:0 auto 0 auto;
+   padding:0;
+}
 div.tech {
    display:inline;
-   background:hsl(60, 100%, 82%);
+   background:hsl(60, 100%, 70%);
    padding-left:.25rem;
    padding-right:.25rem;
 }
@@ -184,6 +223,21 @@ div.tech {
 }
 .details_link {
    margin-top:1.5rem;
+}
+
+ul {
+   list-style:none;
+   margin:0;
+   padding:0;
+}
+.mt_1 {
+   margin-top:1rem;
+}
+.mb_0 {
+   margin-bottom:0;
+}
+.mb_1 {
+   margin-bottom:1rem;
 }
 
 /* vue transition config */
