@@ -1,17 +1,25 @@
+interface EffectOptions {
+   threshold:number,
+   rootMargin:string
+}
 
-// to do : fix TS warnings herein
+
+
+// We start new filter ProjectLists w/ blurred images gradually coming into focus
+// - 'unblur' is the class assigned to target elements as starting blurred
+// - 'no_blur' is the class added to effect transition to clear img
 
 
 export default function init_unblurs() : boolean {
-   const faders = document.querySelectorAll('.unblur')
-   const appearOptions = {
+   const faders = document.querySelectorAll('.unblur') as NodeListOf<Element>
+   const effectOptions = {
       threshold: 0,
       rootMargin: "0px 0px -200px 0px"
    }
-   return create_observers(faders,'no_blur',appearOptions)
+   return create_observers(faders,'no_blur',effectOptions)
 }
 
-const create_observers = (elements,active_class,options) : boolean => {
+const create_observers = (elements: NodeListOf<Element>,active_class: string,options : EffectOptions) : boolean => {
    let observers_created = false
    const appearOnScroll = new IntersectionObserver(
       function(entries,appearOnScroll){
@@ -29,14 +37,4 @@ const create_observers = (elements,active_class,options) : boolean => {
    }
    return observers_created
 }
-
-
-
-//
-// if any issues arise with fade_in not taking effect..
-// we have fixed fade_in failing on 'back' button & '#' links in wda and te projects.
-//
-// setTimeout(() => {
-//    init_unblurs()
-// },200)
 
