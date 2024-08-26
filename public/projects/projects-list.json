@@ -6,7 +6,7 @@
       "file":"",
       "tagline":"Static Vue.js Learning Site",
       "desc":[
-         ""
+         "Evolving guide to Vue.js"
       ],
       "img":"",
       "alt":"",
@@ -25,7 +25,7 @@
       "file":"",
       "tagline":"Static Portfolio Site",
       "desc":[
-         ""
+         "Personal portfolio static site."
       ],
       "img":"edk-portfolio-homepage.jpg",
       "alt":"image of portfolio static site homepage",
@@ -99,7 +99,7 @@
       "file":"",
       "tagline":"PHP Router Class",
       "desc":[
-         "Single PHP Class performing simple routing."
+         "Single PHP Class for simple routing."
       ],
       "img":"barebonesrouter.jpg",
       "alt":"image of BareBonesRouter code",
@@ -116,7 +116,8 @@
       "file":"",
       "tagline":"for Web Agencies",
       "desc":[
-         "WordPress Theme and Plugins for Web Dev Agencies."
+         "WordPress Theme and Plugins",
+         "for Web Dev Agencies."
       ],
       "img":"wda-homepage.jpg",
       "alt":"image of Web Dev Agent website homepage",
@@ -134,7 +135,8 @@
       "file":"",
       "tagline":"for Education websites",
       "desc":[
-         "WordPress Theme and Plugins for colleges and online learning."
+         "WordPress Theme and Plugins",
+         "for colleges and online learning."
       ],
       "img":"te-homepage.jpg",
       "alt":"image of The Educator website homepage",
@@ -209,7 +211,8 @@
       "file":"",
       "tagline":"English Lesson Share",
       "desc":[
-         "Lesson sharing for teachers of English as a second language."
+         "Lesson sharing for teachers",
+         "of English as a second language."
       ],
       "img":"tes-homepage.jpg",
       "alt":"image of The English Shelf website homepage",
