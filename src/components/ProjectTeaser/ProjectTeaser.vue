@@ -38,7 +38,7 @@ const teaser_img_path = computed(() => {
             width="90%"
             class="unblur"
          >
-         <div v-else class="teaser_slot">&nbsp;</div>
+         <!--div v-else class="teaser_slot">&nbsp;</div-->
          <h2 class="teaser_slot mb_0">
             <RouterLink v-if="project.file !== ''" :to="{name:'project', params:{project_slug:project.slug}}">{{ props.project.title }}</RouterLink>
             <span class="no_link_title" v-else>{{ props.project.title }}</span>
@@ -103,6 +103,7 @@ section {
    gap:.15rem;
 
    margin:0;
+   padding-bottom:2rem;
    /* padding:1rem;
    padding-top:1rem; */
    border:solid 1px hsl(0, 0%, 90%);
@@ -157,26 +158,27 @@ p.teaser_tagline {
 }
 img {
    width:100%;
-   /* margin-top:1rem; */
+
    margin-bottom:.5rem;
    margin-left:auto;
    margin-right:auto;
 
+   -webkit-filter:blur(3px);
    filter:blur(3px);
-   /* to do : webkit */
 }
 
 img.no_blur {
+
+   -webkit-filter:blur(0);
    filter:blur(0);
-   -webkit-transition: .35s -webkit-filter ease-in-out;
-   -moz-transition: .35s -moz-filter ease-in-out;
-   -o-transition: .35s -o-filter ease-in-out;
-   transition: .35s filter ease-in-out;
+
+   -webkit-transition: .3s -webkit-filter ease-in-out;
+   -moz-transition: .3s -moz-filter ease-in-out;
+   -o-transition: .3s -o-filter ease-in-out;
+   transition: .3s filter ease-in-out;
 }
 
-/* div.teaser_slot {
-   margin-bottom:1rem;
-} */
+
 div.teaser_slot.tech_list {
 
    display:-webkit-box;
