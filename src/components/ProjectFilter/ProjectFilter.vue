@@ -31,7 +31,7 @@ const num_with_filter = (filter: string) : number => {
 
 
 <template>
-   <ul class="flex skill_tag_list w_full pt_0.5">
+   <ul class="flex flex_wrap skill_tag_list  pt_0.5">
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('')" :class="{selected_filter: filter === ''}">
             All ({{ num_with_filter('all') }})</a>
@@ -86,15 +86,13 @@ li {
    width:fit-content;
 }
 ul.skill_tag_list {
-   width:100%;
+   max-width:100%;
    list-style:none;
    margin:0;
-   margin-left:auto;
-   margin-right:auto;
    gap:1rem;
 
    color:white;
-   background:black;
+   background:var(--bg_dark);
 }
 @media screen and (max-width: 768px) {
    ul.skill_tag_list {
