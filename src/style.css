@@ -1,3 +1,10 @@
+/* 
+to do : issues w/ color picker not appearing
+Settings / Editor: Color Decorators
+in command prompt (?) type "color decorators" and enable Editor: Color Decorators setting
+*/
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,7 +19,7 @@
 
   --bg_primary:navy;
   --bg_secondary:#829650;
-  --bg_dark:hsl(0, 0%, 50%);
+  --bg_dark:hsl(0, 0%, 10%);
   --bg_light:hsl(264, 48%, 92%);
   --bg_lighter:hsl(264, 48%, 98%);
 
@@ -79,7 +86,7 @@ body {
    height:100%;
    padding:0;
    margin:0;
-   background:black;
+   background:var(--bg_dark);
 }
 section {
    height:100%;
@@ -216,6 +223,9 @@ button:focus-visible {
 }
 .align_self_end {
    align-self:flex-end;
+}
+.flex_wrap {
+   flex-wrap:wrap;
 }
 .gap_1 {
    gap:1rem;
