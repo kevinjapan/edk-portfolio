@@ -5,6 +5,7 @@
 .markdown_content > * {
    margin-left:auto;
    margin-right:auto;
+   color:white;
 }
 .markdown_content h1 {
    /* background:lightgreen; */
@@ -55,7 +56,7 @@
 
 .markdown_content a {
    font-weight:400;
-   color:blue;
+   color:hsl(240, 100%, 80%);
 }
 .markdown_content code {
    background:pink;
@@ -63,6 +64,8 @@
 
 .markdown_content img {
    width:400px;
+   border:solid 5px white;
+   border-radius:.25rem;
 }
 
 .markdown_content p {
@@ -74,7 +77,7 @@
 }
 .markdown_content ul li {
    display:inline;
-   background:hsl(60, 100%, 80%);
+   background:hsl(0, 0%, 30%);
    border-radius:.5rem;
    padding:.25rem;
    padding-left:.5rem;

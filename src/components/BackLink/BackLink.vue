@@ -10,7 +10,7 @@ const props = defineProps<{
 
 <template>
 
-   <div style="margin-top:5rem;" class="sticky">
+   <div style="margin-top:5rem;" class="sticky bg_dark">
       <RouterLink 
          :to="{name:props.route_name, params:{}}" 
          class="view_link" 
@@ -41,7 +41,7 @@ const props = defineProps<{
    width:fit-content;
 
    font-weight:400;
-   color:blue;
+   color:hsl(240, 100%, 80%);
    margin-top:.25rem;
    margin:.25rem auto .25rem auto;
    padding:.15rem;

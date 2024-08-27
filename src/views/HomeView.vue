@@ -128,6 +128,7 @@ span.item {
 h1 {
    margin-top:5rem;
    letter-spacing:3rem;
+   color:hsl(0, 0%, 50%);
 }
 @media screen and (max-width: 768px) {
    h1 {

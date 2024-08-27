@@ -109,7 +109,7 @@ section {
    border:solid 1px hsl(0, 0%, 90%);
    border-radius:1rem;
    -webkit-box-shadow: 1px 2px 3px 1px hsl(0, 0%, 80%);
-   box-shadow: 1px 2px 3px 1px hsl(0, 0%, 80%);
+   box-shadow: 1px 1px 4px 1px hsl(0, 0%, 80%);
 
    background:white;
 
@@ -139,7 +139,7 @@ a {
    border-radius:.25rem;
 }
 h2 a {
-   color:black;
+   color:var(--bg_dark);
    font-weight:300;
 }
 a:hover {

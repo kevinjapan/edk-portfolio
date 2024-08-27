@@ -120,9 +120,7 @@ section.projects_list {
    width:100%;
    min-height:120vh;
    padding-bottom:5rem;
-   background:black;
-   /* to do: set bg_darker just off black */
-
+   background:var(--bg_dark);
 }
 h1 {
    color:white;

@@ -20,7 +20,8 @@ const copyright_date = ref(today.getFullYear())
 section {
    padding:2rem;
    padding-top:4rem;
-   background:var(--bg_light);
+   background:var(--bg_dark);
+   color:hsl(0, 0%, 70%);
    font-size:.95rem;
 }
 
