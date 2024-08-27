@@ -5,7 +5,6 @@ import { onBeforeMount, onMounted, ref, watchEffect } from 'vue'
 import { useProjectStore } from '@/stores/projectStore.ts'
 import { useRoute, useRouter } from 'vue-router'
 import markdownit from 'markdown-it'
-import BackLink from '../components/BackLink/BackLink.vue'
 
 
 // ProjectView
@@ -86,8 +85,6 @@ watchEffect(async() => {
 <template>
 
    <section class="view_section relative">
-      
-      <BackLink route_name="projects_list" label="projects"/>
 
       <!-- <section class="meta_section">
          <p v-if="project?.title" class="teaser_slot">
