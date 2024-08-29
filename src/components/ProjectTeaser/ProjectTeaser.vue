@@ -163,14 +163,17 @@ img {
    margin-left:auto;
    margin-right:auto;
 
-   -webkit-filter:blur(3px);
-   filter:blur(3px);
+   -webkit-filter:blur(10px);
+   filter:blur(10px);
+
+   opacity:.5;
 }
 
 img.no_blur {
 
    -webkit-filter:blur(0);
    filter:blur(0);
+   opacity:1;
 
    -webkit-transition: .3s -webkit-filter ease-in-out;
    -moz-transition: .3s -moz-filter ease-in-out;
