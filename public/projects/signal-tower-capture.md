@@ -47,8 +47,8 @@ for relevant on-site material - a desktop application solution was chosen.
 
 ### Appetite
 Given the voluntary and limited one-day-a-week effort spent on the project,
-we limited the solution to a single, stand-alone, **desktop application** on the museum's
-reception computer. 
+we limited the solution to a single, stand-alone, **desktop application** on the museum
+reception's computer. 
 
 
 ### Solution
