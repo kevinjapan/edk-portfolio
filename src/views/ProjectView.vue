@@ -32,13 +32,15 @@ const md = markdownit()
 const rawHtml = ref('')
 
 onBeforeMount(async() => {
-   window.scroll(0,0)
    const single_project = await projectStore.get_single_project_meta(<string>route.params.project_slug)
    project.value = single_project
 })
 
 onMounted(async() => {
-   window.scroll(0,0)
+   
+   // Firefox needs a delay to render page and effect this scroll
+   setTimeout(() => window.scroll(0,0),100)
+
    setTimeout(() => enable_links(),200)
 })
 
@@ -68,7 +70,9 @@ watchEffect(async() => {
    }
    else {
       rawHtml.value = rcvd_markdown
-      window.scroll(0,0)
+      
+      // Firefox needs a delay to render page and effect this scroll
+      setTimeout(() => window.scroll(0,0),100)
    }
 })
 

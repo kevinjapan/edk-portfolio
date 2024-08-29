@@ -6,7 +6,8 @@ import { onBeforeMount } from 'vue'
 
 
 onBeforeMount(async() => {
-   window.scroll(0,0)
+   // Firefox needs a delay to render page and effect this scroll
+   setTimeout(() => window.scroll(0,0),100)
 })
 
 </script>

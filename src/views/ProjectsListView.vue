@@ -54,11 +54,15 @@ const filter_project_list = () => {
 
 onMounted(() => {
    setTimeout(() => mounting.value = false,100)
+   
+   // Firefox needs a delay to render page and effect this scroll
+   setTimeout(() => window.scroll(0,filter_nav_top),100)
 })
 
 onUpdated(() => {
    if(mounting.value === false) {
-      window.scroll(0,filter_nav_top)
+      // Firefox needs a delay to render page and effect this scroll
+      setTimeout(() => window.scroll(0,filter_nav_top),100)
    }
    init_unblurs()
 })
