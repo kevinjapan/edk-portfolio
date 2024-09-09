@@ -135,6 +135,9 @@ a {
 
 body {
   margin: 0;
+  /* to do : review - still want flex on body? */
+  display:-webkit-box;
+  display:-ms-flexbox;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -199,8 +202,17 @@ button:focus-visible {
    }
 }
 
+
 /* 
-   flex utility classes
+   grid utilities
+*/
+.grid {
+   /* to do : webkit */
+   display:grid;
+}
+
+/* 
+   flex utilities
 */
 .flex {
    display:-webkit-box;
@@ -227,6 +239,7 @@ button:focus-visible {
    align-items:center;
 }
 .align_self_end {
+   /* to do : webkit */
    align-self:flex-end;
 }
 .flex_wrap {
@@ -236,16 +249,13 @@ button:focus-visible {
    gap:1rem;
 }
 .flex_col {
+   -webkit-box-orient:vertical;
+   -webkit-box-direction:normal;
+   -ms-flex-direction:column;
    flex-direction:column;
 }
 
 
-/* 
-   grid utility classes
-*/
-.grid {
-   display:grid;
-}
 
 
 
