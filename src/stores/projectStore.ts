@@ -1,5 +1,5 @@
 import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { defineStore, acceptHMRUpdate } from 'pinia'
 import reqInitOptions from '../utilities/requestInit/RequestInit'
 
 
@@ -105,3 +105,8 @@ export const useProjectStore = defineStore('project_store', () => {
    }
  })
 
+
+// hot module replacement for pinia
+if (import.meta.hot) {
+   import.meta.hot.accept(acceptHMRUpdate(useProjectStore, import.meta.hot))
+}
