@@ -11,7 +11,7 @@
       "img":"",
       "alt":"",
       "github":"https://github.com/kevinjapan/a-vue-to-a-build",
-      "site":"",
+      "site":"https://a-vue-to-a-build.netlify.app/",
       "tech":[
          {"name":"Vue.js"},
          {"name":"JavaScript"},
