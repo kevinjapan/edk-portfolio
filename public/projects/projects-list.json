@@ -1,21 +1,20 @@
 [
    {
-      "title":"A Vue To A Build",
-      "slug":"a-vue-to-a-build",
-      "status":"early days",
+      "title":"WeeSongs",
+      "slug":"weesongs",
+      "status":"on-going",
       "file":"",
-      "tagline":"Static Vue.js Learning Site",
+      "tagline":"Song Catalog",
       "desc":[
-         "Evolving guide to Vue.js"
+         "Front-end application for cataloging a SongWriter's collection."
       ],
-      "img":"",
-      "alt":"",
-      "github":"https://github.com/kevinjapan/a-vue-to-a-build",
-      "site":"https://a-vue-to-a-build.netlify.app/",
+      "img":"weesongs-homepage.jpg",
+      "alt":"image of WeeSongs website homepage",
+      "github":"https://github.com/kevinjapan/weesongs",
+      "site":"https://weesongs.netlify.app",
       "tech":[
          {"name":"Vue.js"},
-         {"name":"JavaScript"},
-         {"name":"Markdown"}
+         {"name":"JavaScript"}
       ]
    },
    {
@@ -38,21 +37,22 @@
       ]
    },
    {
-      "title":"WeeSongs",
-      "slug":"weesongs",
-      "status":"on-going",
+      "title":"A Vue To A Build",
+      "slug":"a-vue-to-a-build",
+      "status":"early days",
       "file":"",
-      "tagline":"Song Catalog",
+      "tagline":"Static Vue.js Learning Site",
       "desc":[
-         "Front-end application for cataloging a SongWriter's collection."
+         "Evolving guide to Vue.js"
       ],
-      "img":"weesongs-homepage.jpg",
-      "alt":"image of WeeSongs website homepage",
-      "github":"https://github.com/kevinjapan/weesongs",
-      "site":"",
+      "img":"",
+      "alt":"",
+      "github":"https://github.com/kevinjapan/a-vue-to-a-build",
+      "site":"https://a-vue-to-a-build.netlify.app/",
       "tech":[
          {"name":"Vue.js"},
-         {"name":"JavaScript"}
+         {"name":"JavaScript"},
+         {"name":"Markdown"}
       ]
    },
    {
