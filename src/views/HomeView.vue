@@ -35,14 +35,13 @@ onBeforeMount(async() => {
 
          <span class="slot_label">current learning</span>
          <span  class="slot_value">
-            <span class="item">Vue.js</span>
+            <span class="item">Vue, TypeScript</span>
          </span>
 
          <span class="slot_label">technologies</span>
          <span class="slot_value">
             <span class="item">JavaScript</span>,
-            <span class="item">React.js</span>,
-            <span class="item">Vue.js</span>,
+            <span class="item">React</span>,
             <span class="item">Electron</span>,
             <span class="item">PHP</span>,
             <span class="item">HTML</span>,
