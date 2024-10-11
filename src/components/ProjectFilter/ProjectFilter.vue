@@ -69,19 +69,6 @@ const num_with_filter = (filter: string) : number => {
 
 
 <style scoped>
-/* to do : use flex from style.css  rollout */
-.flex2 {
-   display:-webkit-box;
-   display:-ms-flexbox;
-   display:flex;
-
-   -webkit-box-pack:center;
-   -ms-flex-pack:center;
-   justify-content:center;
-
-   flex-wrap:wrap;
-
-}
 li {
    width:fit-content;
 }
