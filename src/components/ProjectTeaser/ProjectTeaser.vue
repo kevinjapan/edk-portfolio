@@ -36,6 +36,10 @@ const teaser_img_path = computed(() => {
             :src="teaser_img_path" 
             :alt="props.project.alt"
             class="unblur">
+
+         <div v-if="project?.img_acknowledge" class="img_acknowledge">
+            image:<a :href="project.img_acknowledge_link" target="_blank">{{ project.img_acknowledge }}</a>
+         </div>
          
          <h2 class="teaser_slot teaser_title mb_0 mt_0">
             <RouterLink class="title_link" v-if="project.file !== ''" 
@@ -127,7 +131,8 @@ section.teaser_slots {
 h2.teaser_title {
    font-size:2.5rem;
    white-space:normal;
-   margin-bottom:.5rem;
+   margin-bottom:0;
+   padding-bottom:0;
 }
 p {
    /* override page p width limits */
@@ -136,7 +141,7 @@ p {
    padding:0;
 }
 .teaser_text {
-   margin:1rem 0;
+   margin:1rem 0 1.5rem 0;
 }
 
 a {
@@ -164,13 +169,17 @@ h2 > div.no_title_link {
    background:yellow;
 }
 
+.img_acknowledge {
+   font-size:.8rem;
+   font-style:italic;
+   text-align:right;
+}
 
-p.teaser_tagline {
-   font-size:1.75rem;
+
+div.teaser_tagline {
+   font-size:1.25rem;
    font-weight:400;
-   margin:0;
-   padding:0;
-   white-space:wrap;
+   margin-bottom:.5rem;
 }
 .project_status {
    display:inline;

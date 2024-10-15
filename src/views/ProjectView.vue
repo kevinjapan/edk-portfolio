@@ -90,40 +90,11 @@ watchEffect(async() => {
 
    <section class="view_section relative">
 
-      <!-- <section class="meta_section">
-         <p v-if="project?.title" class="teaser_slot">
-            <span class="slot_label">title : </span>
-            <span class="meta_section_title">{{ project.title }}</span>
-         </p>
-         <p v-if="project?.tech" class="teaser_slot">
-            <span class="slot_label">tech : </span>            
-            <span v-for="tech in project?.tech" class="tech" >
-               {{ tech.name }}
-            </span>
-         </p>
-         <p v-if="project?.status" class="teaser_slot">
-            <span class="slot_label">status : </span>
-            <span>{{ project.status }}</span>
-         </p>
-      </section> -->
-
-      <!-- <section class="meta_links_section">
-         <p v-if="project?.site" class="teaser_slot">
-            <span class="slot_label">site : </span>
-            <a :href="project.site" target="_blank">{{ strip_http_site }}</a>
-         </p>
-         <p v-if="project?.github" class="teaser_slot">
-            <span class="slot_label">github : </span>
-            <a :href="project.github" target="_blank">{{ strip_http_github }}</a>
-         </p>
-      </section> -->
       <!-- 
             the markdown content block - we style around this block and apply styles within this block
       -->
       <div class="markdown_content" v-html="rawHtml"></div>
 
-      
- 
    </section>
 
    <AppStatus v-model="notify_msg" />

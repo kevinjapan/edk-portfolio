@@ -29,6 +29,8 @@ interface Project {
    file:string
    status:string
    img:string
+   img_acknowledge:string
+   img_acknowledge_link:string
    alt:string
    github?:string
    site?:string

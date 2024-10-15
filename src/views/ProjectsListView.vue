@@ -38,23 +38,6 @@ onBeforeMount(async() => {
    filter_project_list()
 })
 
-// to do : acknowledge unsplash images:
-//
-// route-66.jpg
-// Photo by <a href="https://unsplash.com/@drivenbyart?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Vicky McLain</a> on <a href="https://unsplash.com/photos/route-66-on-wall-CSZo46-7Kuk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-//
-// wee-project.jpg
-// Photo by <a href="https://unsplash.com/@byfortytwo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">FORTYTWO</a> on <a href="https://unsplash.com/photos/person-holding-yellow-sticky-notes-MDu-53qRVr4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-//
-// wee-project-api.jpg
-// Photo by <a href="https://unsplash.com/@ante_kante?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ante Hamersmit</a> on <a href="https://unsplash.com/photos/brown-and-black-bee-on-brown-wooden-surface-DSUjNkiRFg0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-//
-// avtab.jpg
-// Photo by <a href="https://unsplash.com/@mathieustern?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mathieu Stern</a> on <a href="https://unsplash.com/photos/3-men-in-white-and-orange-shirts-and-green-pants-action-figures-tv7GF92ZWvs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-//
-// to do : imgs for all projects (some currently have no image)
-// to do : improve img heights on all images
-
 const filter_project_list = () => {
 
    if(filter.value === '' || filter.value.toUpperCase() === 'ALL') {

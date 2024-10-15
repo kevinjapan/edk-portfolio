@@ -64,6 +64,8 @@
          "Evolving guide to Vue.js"
       ],
       "img":"avtab.jpg",
+      "img_acknowledge":"Mathieu Stern",
+      "img_acknowledge_link":"https://unsplash.com/@mathieustern?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash",
       "alt":"",
       "github":"https://github.com/kevinjapan/a-vue-to-a-build",
       "site":"https://a-vue-to-a-build.netlify.app/",
@@ -98,7 +100,7 @@
       "slug":"outlinecss",
       "status":"on-going",
       "file":"",
-      "tagline":"component framework",
+      "tagline":"Component Framework",
       "desc":[
          "Deploy component styling rapidly."
       ],
@@ -156,6 +158,8 @@
          "Client React project management application."
       ],
       "img":"wee-project.jpg",
+      "img_acknowledge":"FORTYTWO",
+      "img_acknowledge_link":"https://unsplash.com/@byfortytwo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash",
       "alt":"image of WeeProjects website homepage",
       "github":"https://github.com/kevinjapan/weeprojects",
       "site":"",
@@ -176,6 +180,8 @@
          "Simple Model-View-Controller back-end with routing and authentication."
       ],
       "img":"web-project-api.jpg",
+      "img_acknowledge": "Ante Hamersmit",
+      "img_acknowledge_link":"https://unsplash.com/@ante_kante?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash",
       "alt":"",
       "github":"https://github.com/kevinjapan/WeeProjects-Backend",
       "site":"",
@@ -194,6 +200,8 @@
          "Single PHP Class for simple routing."
       ],
       "img":"route-66.jpg",
+      "img_acknowledge":"Vicky McLain",
+      "img_acknowledge_link":"https://unsplash.com/@drivenbyart?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash",
       "alt":"image of BareBonesRouter code",
       "github":"https://github.com/kevinjapan/Barebones-PHP-Router",
       "site":"",
