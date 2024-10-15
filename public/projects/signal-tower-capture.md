@@ -1,33 +1,26 @@
 # Signal Tower Capture
-![Signal Tower Capture Homepage](/imgs/stc-homepage.jpg)
-#### Desktop collections solution for managing files and folders on your local machine.
+![Delicious Demo Homepage](/imgs/stc-homepage.jpg)
 
-##### Tech Stack
+## Desktop collections solution.
 
-- Electron 
-- JavaScript 
-- Node.js 
-- SQLite
 
-##### Links
-
-[SignalTowerCapture on GitHub](https://github.com/kevinjapan/SignalTowerCapture)
-
-[The Signal Tower Museum on wikipedia](https://en.wikipedia.org/wiki/Signal_Tower_Museum)
-
-## overview
+### overview
 
 A volunteer project for a local museum. 
 
 The **Signal Tower Museum** in Arbroath is housed in the original shore station of the 
 **Bell Rock Lighthouse**, the world's oldest surviving sea-washed lighthouse.
 
-
+#### tech stack
+- Electron
+- SQLite
+- JavaScript
+- Node.js
 
 
 ## the pitch
 
-### Problem
+#### Problem
 Like many small museums, the **Signal Tower Museum** has limited resources 
 and hasn't been able to optimize access to her archive of local
 information, both in hard-copy and disk-file formats.
@@ -45,13 +38,13 @@ information regarding a local interest topic, and the staff search the collectio
 for relevant on-site material - a desktop application solution was chosen.
 
 
-### Appetite
+#### Appetite
 Given the voluntary and limited one-day-a-week effort spent on the project,
 we limited the solution to a single, stand-alone, **desktop application** on the museum
 reception's computer. 
 
 
-### Solution
+#### Solution
 The requirements for a zero-cost, performant, desktop application was met by 
 adopting proven **open-source** and **public domain** software.
 
@@ -75,3 +68,9 @@ file server for the web-based client app.
 
 For the **client** or **renderer** app, a **custom JavaScript** solution was chosen over
 deploying a larger framework to reduce the number of moving parts and learning curves during development.
+
+##### Links
+
+[SignalTowerCapture on GitHub](https://github.com/kevinjapan/SignalTowerCapture)
+
+[The Signal Tower Museum on wikipedia](https://en.wikipedia.org/wiki/Signal_Tower_Museum)

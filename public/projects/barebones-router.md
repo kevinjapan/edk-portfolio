@@ -1,5 +1,5 @@
 # Barebones Router
-![BareBones Router code](/imgs/BareBonesRouter.jpg)
+![BareBones Router code](/imgs/route-66.jpg)
 ### PHP Router Class
 
 Single PHP Class performing simple routing.

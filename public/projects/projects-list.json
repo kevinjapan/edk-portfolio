@@ -1,14 +1,32 @@
 [
    {
+      "title":"Ongaku",
+      "slug":"ongaku",
+      "status":"just started",
+      "file":"",
+      "tagline":"Music Web Site",
+      "desc":[
+         "Front-end static web site for musicians."
+      ],
+      "img":"edk-homepage.jpg",
+      "alt":"image of Ongaku website homepage",
+      "github":"https://github.com/kevinjapan/ongaku",
+      "site":"https://evolution-desu-ka.netlify.app",
+      "tech":[
+         {"name":"React.js"},
+         {"name":"TypeScript"}
+      ]
+   },
+   {
       "title":"WeeSongs",
       "slug":"weesongs",
       "status":"on-going",
       "file":"",
       "tagline":"Song Catalog",
       "desc":[
-         "Front-end application for cataloging a SongWriter's collection."
+         "Front-end application for SongWriter's catalog."
       ],
-      "img":"weesongs-homepage.jpg",
+      "img":"songwriter.jpg",
       "alt":"image of WeeSongs website homepage",
       "github":"https://github.com/kevinjapan/weesongs",
       "site":"https://weesongs.netlify.app",
@@ -45,7 +63,7 @@
       "desc":[
          "Evolving guide to Vue.js"
       ],
-      "img":"",
+      "img":"avtab.jpg",
       "alt":"",
       "github":"https://github.com/kevinjapan/a-vue-to-a-build",
       "site":"https://a-vue-to-a-build.netlify.app/",
@@ -56,7 +74,7 @@
       ]
    },
    {
-      "title":"Signal Tower Capture",
+      "title":"Signal Capture",
       "slug":"signal-tower-capture",
       "status":"on-going",
       "file":"signal-tower-capture.md",
@@ -93,31 +111,13 @@
       ]
    },
    {
-      "title":"Barebones Router",
-      "slug":"barebones-router",
-      "status":"completed",
-      "file":"",
-      "tagline":"PHP Router Class",
-      "desc":[
-         "Single PHP Class for simple routing."
-      ],
-      "img":"barebonesrouter.jpg",
-      "alt":"image of BareBonesRouter code",
-      "github":"https://github.com/kevinjapan/Barebones-PHP-Router",
-      "site":"",
-      "tech":[
-         {"name":"PHP"}
-      ]
-   },
-   {
       "title":"Wed Dev Agent",
       "slug":"web-dev-agent",
       "status":"on-going",
       "file":"",
       "tagline":"for Web Agencies",
       "desc":[
-         "WordPress Theme and Plugins",
-         "for Web Dev Agencies."
+         "WordPress Theme and Plugins for Web Dev Agencies."
       ],
       "img":"wda-homepage.jpg",
       "alt":"image of Web Dev Agent website homepage",
@@ -135,8 +135,7 @@
       "file":"",
       "tagline":"for Education websites",
       "desc":[
-         "WordPress Theme and Plugins",
-         "for colleges and online learning."
+         "WordPress Theme and Plugins for colleges and online learning."
       ],
       "img":"te-homepage.jpg",
       "alt":"image of The Educator website homepage",
@@ -156,7 +155,7 @@
       "desc":[
          "Client React project management application."
       ],
-      "img":"weeprojects-homepage.jpg",
+      "img":"wee-project.jpg",
       "alt":"image of WeeProjects website homepage",
       "github":"https://github.com/kevinjapan/weeprojects",
       "site":"",
@@ -176,13 +175,30 @@
       "desc":[
          "Simple Model-View-Controller back-end with routing and authentication."
       ],
-      "img":"",
+      "img":"web-project-api.jpg",
       "alt":"",
       "github":"https://github.com/kevinjapan/WeeProjects-Backend",
       "site":"",
       "tech":[
          {"name":"PHP"},
          {"name":"MySQL"}
+      ]
+   },
+   {
+      "title":"Barebones Router",
+      "slug":"barebones-router",
+      "status":"completed",
+      "file":"",
+      "tagline":"PHP Router Class",
+      "desc":[
+         "Single PHP Class for simple routing."
+      ],
+      "img":"route-66.jpg",
+      "alt":"image of BareBonesRouter code",
+      "github":"https://github.com/kevinjapan/Barebones-PHP-Router",
+      "site":"",
+      "tech":[
+         {"name":"PHP"}
       ]
    },
    {
@@ -211,8 +227,7 @@
       "file":"",
       "tagline":"English Lesson Share",
       "desc":[
-         "Lesson sharing for teachers",
-         "of English as a second language."
+         "Lesson sharing for teachers of English as a second language."
       ],
       "img":"tes-homepage.jpg",
       "alt":"image of The English Shelf website homepage",
