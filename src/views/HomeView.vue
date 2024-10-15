@@ -3,7 +3,7 @@ import { onBeforeMount } from 'vue'
 
 
 const user: User = {
-  name: "kev hastie",
+  name: "Kev Hastie",
   id: 1
 }
 
@@ -24,7 +24,7 @@ onBeforeMount(async() => {
          <span class="slot_label">
             <img class="mugshot" src="/imgs/mugshot_mirror.jpg" alt="profile photo"/>
          </span>
-         <span class="slot_value">
+         <span class="slot_value align_self_center">
             <span class="item"><h2>{{ user.name }}</h2></span>
          </span>
 
@@ -84,9 +84,9 @@ onBeforeMount(async() => {
 
    grid-template-columns:1fr 3fr;
 
-   -webkit-box-align:center;
-   -ms-flex-align:center;
-   align-items:center;
+   -webkit-box-align:flex-start;
+   -ms-flex-align:flex-start;
+   align-items:flex-start;
 
    gap:1rem;
 
@@ -107,14 +107,15 @@ onBeforeMount(async() => {
       margin-bottom:2rem;
    }
 }
+.meta_grid img {
+   max-width:80%;
+   border:solid 3px white;
+   border-radius:50%;
+}
 .slot_label {
    color:hsl(0, 0%, 55%);
    padding-right:.5rem;
    text-align:right;
-}
-.meta_grid img {
-   max-width:80%;
-   border-radius:50%;
 }
 .slot_value {
    color:white;
@@ -123,12 +124,12 @@ onBeforeMount(async() => {
 span.item {
    display:inline;
    font-weight:400;
-   white-space: nowrap;
+   white-space: normal;
 }
 h1 {
    margin-top:5rem;
    letter-spacing:3rem;
-   color:hsl(0, 0%, 50%);
+   color:white;
 }
 @media screen and (max-width: 768px) {
    h1 {

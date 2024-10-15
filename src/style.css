@@ -1,5 +1,5 @@
 /* 
-to do : issues w/ color picker not appearing
+dev issues w/ color picker not appearing
 Settings / Editor: Color Decorators
 in command prompt (?) type "color decorators" and enable Editor: Color Decorators setting
 */
@@ -106,7 +106,9 @@ section {
    height:100%;
    padding:0;
    margin:0;
+   max-width: 100%;
 }
+
 main {
    width:100%;
    height:100%;
@@ -135,7 +137,6 @@ a {
 
 body {
   margin: 0;
-  /* to do : review - still want flex on body? */
   display:-webkit-box;
   display:-ms-flexbox;
   display: flex;
@@ -184,10 +185,6 @@ button:focus-visible {
    padding: 2em;
 }
 
-#app {
-   max-width: 100%;
-   text-align: center;
-}
 
 @media (prefers-color-scheme: light) {
    :root {
@@ -207,7 +204,7 @@ button:focus-visible {
    grid utilities
 */
 .grid {
-   /* to do : webkit */
+   display:-ms-grid;
    display:grid;
 }
 
@@ -239,10 +236,11 @@ button:focus-visible {
    align-items:center;
 }
 .align_self_end {
-   /* to do : webkit */
+   -ms-flex-item-align:end;
    align-self:flex-end;
 }
 .flex_wrap {
+   -ms-flex-wrap:wrap;
    flex-wrap:wrap;
 }
 .gap_1 {
@@ -254,8 +252,11 @@ button:focus-visible {
    -ms-flex-direction:column;
    flex-direction:column;
 }
-
-
+.align_self_center {
+   -ms-flex-item-align:center;
+   -ms-grid-row-align:center;
+   align-self:center;
+}
 
 
 

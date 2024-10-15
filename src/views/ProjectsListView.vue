@@ -38,6 +38,23 @@ onBeforeMount(async() => {
    filter_project_list()
 })
 
+// to do : acknowledge unsplash images:
+//
+// route-66.jpg
+// Photo by <a href="https://unsplash.com/@drivenbyart?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Vicky McLain</a> on <a href="https://unsplash.com/photos/route-66-on-wall-CSZo46-7Kuk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+//
+// wee-project.jpg
+// Photo by <a href="https://unsplash.com/@byfortytwo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">FORTYTWO</a> on <a href="https://unsplash.com/photos/person-holding-yellow-sticky-notes-MDu-53qRVr4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+//
+// wee-project-api.jpg
+// Photo by <a href="https://unsplash.com/@ante_kante?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ante Hamersmit</a> on <a href="https://unsplash.com/photos/brown-and-black-bee-on-brown-wooden-surface-DSUjNkiRFg0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+//
+// avtab.jpg
+// Photo by <a href="https://unsplash.com/@mathieustern?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mathieu Stern</a> on <a href="https://unsplash.com/photos/3-men-in-white-and-orange-shirts-and-green-pants-action-figures-tv7GF92ZWvs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+//
+// to do : imgs for all projects (some currently have no image)
+// to do : improve img heights on all images
+
 const filter_project_list = () => {
 
    if(filter.value === '' || filter.value.toUpperCase() === 'ALL') {
@@ -98,11 +115,9 @@ const current_filter_label = computed(() => {
       <!-- we should simply filter the 'projects_list' from projectStore, but we
          wanted to explore the rendering mechanism; ok method for our dataset size -->
       <ul v-if="updating === false" class="projects_list_grid ">
-         <div id='list' v-for="project in filtered_projects_list" key="project.slug" class="wrapper">
-            <li class="project_teaser">
-               <ProjectTeaser  :project="project" :filter="filter"/>
-            </li>
-         </div>
+         <li class="project_teaser" v-for="project in filtered_projects_list" key="project.slug">
+            <ProjectTeaser  :project="project" :filter="filter"/>
+         </li>
       </ul>
 
       <p v-else class="loading">
@@ -139,17 +154,18 @@ ul.projects_list_grid {
    display:grid;
    -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-   gap:0rem;
+   gap:0;
    max-width:100%;
    margin:0;
    padding:0;
    padding-top:2rem;
 }
+
 @media screen and (max-width: 1100px) {
    ul.projects_list_grid {
       -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-      gap:1rem;
+      gap:0;
       margin-left:auto;
       margin-right:auto;
    }
@@ -158,7 +174,7 @@ ul.projects_list_grid {
    ul.projects_list_grid {
       -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-      width:90%;
+      gap:2rem;
    }
    ul.projects_list_grid li {
       width:90%;
@@ -180,7 +196,7 @@ li.project_teaser {
    margin-top:1rem;
 }
 .loading {
-   white-space: nowrap;
+   white-space: normal;
    font-size:9rem;
    font-weight:200;
    color:hsl(0, 0%, 75%);
