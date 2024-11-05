@@ -3,7 +3,8 @@ import { onBeforeMount } from 'vue'
 
 
 const user: User = {
-  name: "Kev Hastie",
+  first_name: "Kev",
+  second_name: "Hastie",
   id: 1
 }
 
@@ -25,7 +26,9 @@ onBeforeMount(async() => {
             <img class="mugshot" src="/imgs/mugshot_mirror.jpg" alt="profile photo"/>
          </span>
          <span class="slot_value align_self_center">
-            <span class="item"><h2>{{ user.name }}</h2></span>
+            <span class="item"><h2>
+               <span class="bold">{{ user.first_name }}</span> {{ user.second_name }}</h2>
+            </span>
          </span>
 
          <span class="slot_label">location</span>
@@ -33,23 +36,20 @@ onBeforeMount(async() => {
             <span class="item">Arbroath, Scotland</span>
          </span>
 
-         <span class="slot_label">current learning</span>
-         <span  class="slot_value">
-            <span class="item">Vue, TypeScript</span>
-         </span>
-
          <span class="slot_label">technologies</span>
          <span class="slot_value">
             <span class="item">JavaScript</span>,
             <span class="item">React</span>,
+            <span class="item">Vue</span>,
+            <span class="item">TypeScript</span>,
             <span class="item">Electron</span>,
             <span class="item">PHP</span>,
             <span class="item">HTML</span>,
-            <span class="item">WordPress</span>,
             <span class="item">MySQL</span>,
             <span class="item">SQLite</span>,
             <span class="item">CSS</span>,
-            <span class="item">Tailwind</span>
+            <span class="item">Tailwind</span>,
+            <span class="item">WordPress</span>
          </span>
     
          <span class="slot_label">history</span>
@@ -61,7 +61,8 @@ onBeforeMount(async() => {
             
          <span class="slot_label">experience</span>
          <span class="slot_value">
-            <span class="item">Software Developer</span>,
+            <span class="item">Web Developer</span>,
+            <span class="item">Software Engineer</span>,
             <span class="item">Technical Lead</span>,
             <span class="item">Assistant Language Teacher</span>,
             <span class="item">Project Management</span>
@@ -82,7 +83,7 @@ onBeforeMount(async() => {
 
 .meta_grid {
 
-   grid-template-columns:1fr 3fr;
+   grid-template-columns:2fr 3fr;
 
    -webkit-box-align:flex-start;
    -ms-flex-align:flex-start;
@@ -108,8 +109,8 @@ onBeforeMount(async() => {
    }
 }
 .meta_grid img {
-   max-width:80%;
-   border:solid 3px white;
+   max-width:100%;
+   border:solid 7px white;
    border-radius:50%;
 }
 .slot_label {
@@ -131,15 +132,25 @@ h1 {
    letter-spacing:3rem;
    color:white;
 }
+h2 {
+   font-size:3.75rem;
+   margin:0;
+   margin-top:-1rem;
+   letter-spacing:.5rem;
+   white-space:nowrap;
+}
 @media screen and (max-width: 768px) {
    h1 {
       letter-spacing:1rem;
    }
-}
-h2 {
-   font-size:2.5rem;
-   margin:0;
-   margin-top:-1rem;
+   h2 {
+      font-size:3rem;
+      letter-spacing:unset;
+   }
+   .meta_grid img {
+      max-width:80%;
+      border:solid 5px white;
+   }
 }
 
 </style>

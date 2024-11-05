@@ -14,8 +14,9 @@ declare module 'markdownit'
 // User Interfaces
 
 interface User {
-   name: string;
-   id: number;
+   first_name: string,
+   second_name: string,
+   id: number
 }
 
 
