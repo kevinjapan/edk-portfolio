@@ -7,8 +7,8 @@ import reqInitOptions from '../utilities/requestInit/RequestInit'
 
 export const useProjectStore = defineStore('project_store', () => {
 
-   // project markdown string from .md file - we will render using markdown-it
-   const project_md = ref('')
+   // current project json 
+   const current_project = ref<ProjectDetails>()
 
    // projects_list
    // we tell TypeScript we intend to store Projects in this array
@@ -19,25 +19,25 @@ export const useProjectStore = defineStore('project_store', () => {
    const current_filter = ref('')
 
    // getters
-   const get_project = computed(() => project_md.value)
+   const get_project = computed(() => current_project.value)
 
    // actions
-   function set_project(new_project: string) {
-      project_md.value = new_project
-   }
-   function set_current_filter(filter: string) {
-      current_filter.value = filter
-   }
+   // function set_project(new_project: string) {
+   //    current_project.value = new_project
+   // }
+   // function set_current_filter(filter: string) {
+   //    current_filter.value = filter
+   // }
 
    async function load_project(project_slug: string) {
       try {
-         await fetch(`/projects/${project_slug}.md`,reqInitOptions())
+         await fetch(`/projects/${project_slug}.json`,reqInitOptions())
             .then(response => {
                return response.text()
                })
             .then(text => {
                // we are accessing json static files, so no server-side wrapping around content
-               project_md.value = text
+               current_project.value = JSON.parse(text)
             })
             .catch((error) => {
                throw error
@@ -98,8 +98,8 @@ export const useProjectStore = defineStore('project_store', () => {
    // Store Interface
    return { 
       projects_list,
-      current_filter,set_current_filter,
-      project_md, get_project, set_project,
+      current_filter,
+      current_project, get_project,
       load_project, load_projects_list,
       get_single_project_meta
    }
