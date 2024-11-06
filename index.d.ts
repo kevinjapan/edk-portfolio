@@ -11,6 +11,7 @@ declare module 'markdownit'
 // globally accessible and don't require import in indvdl client component files
 
 
+// -----------------------------------------------------------
 // User Interfaces
 
 interface User {
@@ -20,6 +21,7 @@ interface User {
 }
 
 
+// -----------------------------------------------------------
 // Project Interfaces
 
 interface TechItem {
@@ -39,4 +41,69 @@ interface Project {
    tagline:string
    tech:Array<TechItem>
    title:string
+}
+
+
+
+
+// -----------------------------------------------------------
+// ProjectSection
+// we extend ProjectSection for each Block Type
+
+interface ProjectSection {
+   blockType:string
+   styles:string[]
+}
+
+// CoverBlock
+interface Overlay {
+   heading:string
+   tagline:string
+}
+interface CoverBlock extends ProjectSection {
+   coverImg:Image
+   bgImgAlt:string
+   overlay?:Overlay
+}
+
+// FeatureBlock
+interface FeatureBlockListItem {
+   name:string
+   text:string
+   link:string
+}
+interface FeatureBlock extends ProjectSection {
+   title:string
+   featureImg:Image
+   text:string
+   list:FeatureBlockListItem[]
+}
+
+// TitleBlock
+interface TitleBlock extends ProjectSection {
+   level:number
+   text:string
+   tagline:string
+}
+
+// TextBlock
+interface TextBlock extends ProjectSection {
+   text:string
+}
+
+
+
+// -----------------------------------------------------------
+
+interface ProjectDetails {
+   sections:ProjectSection[]
+}
+
+
+// -----------------------------------------------------------
+// Utility Interfaces
+
+interface Image {
+   src:string
+   alt:string
 }

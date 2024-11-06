@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import type { Ref } from 'vue'
-// import { computed } from 'vue'
-import { onBeforeMount, onMounted, ref, watchEffect } from 'vue'
+import { onBeforeMount, onMounted, ref } from 'vue'
 import { useProjectStore } from '@/stores/projectStore.ts'
-import { useRoute, useRouter } from 'vue-router'
-import markdownit from 'markdown-it'
+import { useRoute } from 'vue-router'
+import ProjectSection from '@/components/ProjectSection/ProjectSection.vue'
+
+
+// to do : we are replacing markdown w/ a JSON layout -
+//         markdown is fine for text articles but styling any web layout is impractical
+//         we wan to model on styling/layout for https://web-dev-agent.netlify.app/
+
+// import markdownit from 'markdown-it'
 
 
 // ProjectView
@@ -19,21 +24,19 @@ import markdownit from 'markdown-it'
 
 
 const route = useRoute()
-const router = useRouter()
 const projectStore = useProjectStore()
 
 
-const project: Ref<Project | null> = ref(null)
 
 const notify_msg = ref('')
 
-// handle markdown data
-const md = markdownit()
-const rawHtml = ref('')
 
 onBeforeMount(async() => {
-   const single_project = await projectStore.get_single_project_meta(<string>route.params.project_slug)
-   project.value = single_project
+   await projectStore.load_project(<string>route.params.project_slug)
+
+      // console.log('single_project',single_project)
+   // project.value = single_project
+   console.log('current_project',projectStore?.current_project?.sections)
 })
 
 onMounted(async() => {
@@ -54,47 +57,17 @@ const enable_links = () =>{
    }
 }
 
-watchEffect(async() => {
 
-   const result = await projectStore.load_project(<string>route.params.project_slug)
-   if(result && result.message) notify_msg.value = <string>result.message 
 
-   const rcvd_markdown = md.render(projectStore.project_md)
-   if(rcvd_markdown === '') return
-
-   // check for '!doctype html' in first line - if found, not md file, but some 'not found' or default response in html doc
-   const doctype_index = rcvd_markdown.toUpperCase().indexOf('!DOCTYPE HTML')
-
-   if((doctype_index > -1 && doctype_index < 20)) {
-      router.replace('/notfound')
-   }
-   else {
-      rawHtml.value = rcvd_markdown
-      
-      // Firefox needs a delay to render page and effect this scroll
-      setTimeout(() => window.scroll(0,0),100)
-   }
-})
-
-// const strip_http_site = computed(() => {
-//    return project.value?.site?.replace('https://','')
-// })
-// const strip_http_github = computed(() => {
-//    return project.value?.github?.replace('https://github.com/','')
-// })
+let count = 0
 
 
 </script>
 
 <template>
 
-   <section class="view_section relative">
-
-      <!-- 
-            the markdown content block - we style around this block and apply styles within this block
-      -->
-      <div class="markdown_content" v-html="rawHtml"></div>
-
+   <section class="project_sections" v-for="section in projectStore?.current_project?.sections" :key="count++">
+      <ProjectSection :section="section"/>
    </section>
 
    <AppStatus v-model="notify_msg" />
@@ -111,6 +84,9 @@ so we need to pre-set these styles earlier -
 see markdown.css
 
 */
+.project_sections {
+   width:100%;
+}
 .meta_section {
    display:-ms-grid;
    display:grid;
