@@ -183,6 +183,7 @@ div.teaser_tagline {
 }
 .project_status {
    display:inline;
+   color:black;
    background:hsl(60, 100%, 80%);
    padding-left:.25rem;
    padding-right:.25rem;
@@ -244,6 +245,7 @@ div.teaser_slot.tech_list {
 }
 
 .teaser_slot > p.desc_paragraph {
+   color:black;
    width:100%;
    margin:0;
    padding:0;
@@ -251,6 +253,7 @@ div.teaser_slot.tech_list {
 div.tech {
    display:inline;
    width:fit-content;
+   color:black;
    background:hsl(60, 100%, 80%);
    padding-left:.25rem;
    padding-right:.25rem;

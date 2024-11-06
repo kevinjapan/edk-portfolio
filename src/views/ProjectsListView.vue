@@ -74,7 +74,7 @@ watch(filter,() => {
    filter_project_list()
 
    // set current filter
-   projectStore.set_current_filter(filter.value)
+   // projectStore.set_current_filter(filter.value)
 
    // perceived 'loading'
    updating.value = true

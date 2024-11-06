@@ -5,7 +5,7 @@
 .markdown_content > * {
    margin-left:auto;
    margin-right:auto;
-   color:white;
+   color:var(--bg_light_text);
 }
 .markdown_content h1,
 .markdown_content h2,

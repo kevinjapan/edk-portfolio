@@ -110,7 +110,7 @@ onBeforeMount(async() => {
 }
 .meta_grid img {
    max-width:100%;
-   border:solid 7px white;
+   border:solid 3px white;
    border-radius:50%;
 }
 .slot_label {
@@ -149,7 +149,6 @@ h2 {
    }
    .meta_grid img {
       max-width:80%;
-      border:solid 5px white;
    }
 }
 
