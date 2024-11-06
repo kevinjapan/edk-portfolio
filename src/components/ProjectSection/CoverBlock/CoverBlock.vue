@@ -16,7 +16,7 @@ const props = defineProps<{
 // deconstruct coverImg
 const { src, alt } = props.section.coverImg
 
-// future : whitelist 'styles' are valid css classnames this Block
+// future : whitelist and check 'styles' are valid css classnames for this Block
 const class_list = props?.section?.styles?.join(' ')
 
 // to do : re-enable 'fade_in' on bg_img below?

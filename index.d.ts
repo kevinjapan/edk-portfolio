@@ -67,16 +67,17 @@ interface CoverBlock extends ProjectSection {
 }
 
 // FeatureBlock
-interface FeatureBlockListItem {
+interface ListItem {
    name:string
-   text:string
-   link:string
+   text?:string
+   link?:string
 }
 interface FeatureBlock extends ProjectSection {
    title:string
-   featureImg:Image
+   tagline:string
    text:string
-   list:FeatureBlockListItem[]
+   featureImg:Image
+   list:ListItem[]
 }
 
 // TitleBlock

@@ -33,10 +33,6 @@ const notify_msg = ref('')
 
 onBeforeMount(async() => {
    await projectStore.load_project(<string>route.params.project_slug)
-
-      // console.log('single_project',single_project)
-   // project.value = single_project
-   console.log('current_project',projectStore?.current_project?.sections)
 })
 
 onMounted(async() => {

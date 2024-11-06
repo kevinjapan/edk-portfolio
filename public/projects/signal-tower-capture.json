@@ -37,6 +37,7 @@
                 "alt":"Photo of the Signal Tower Museum, Arbroath."
             },
             "title":"Tech Stack",
+            "tagline":"to do : tagline here",
             "text":"some leading text here",
             "list":[
                 {"name":"Electron"},
@@ -109,6 +110,7 @@
                 "alt":"Photo of the Signal Tower Museum, Arbroath."
             },
             "title":"Tech Stack",
+            "tagline":"to do : tagline here",
             "text":"some leading text here",
             "list":[
                 {"name":"Github","link":"https://github.com/kevinjapan/SignalTowerCapture"},
