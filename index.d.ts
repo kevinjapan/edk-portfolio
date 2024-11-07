@@ -59,6 +59,7 @@ interface ProjectSection {
 interface Overlay {
    heading:string
    tagline:string
+   text:string
 }
 interface CoverBlock extends ProjectSection {
    coverImg:Image
