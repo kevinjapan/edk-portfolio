@@ -7,16 +7,14 @@ const props = defineProps<{
 </script>
 
 
-
 <template>
-
     <ul>
         <li v-for="item in props.list">
-            {{ item }}
+            {{ item.name }}
         </li>
     </ul>
-
 </template>
+
 
 <style scoped>
 ul {

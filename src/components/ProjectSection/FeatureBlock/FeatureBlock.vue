@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ListBlock from '../ListBlock/ListBlock.vue'
+import Paragraph from '../Paragraph/Paragraph.vue'
 
 
 const props = defineProps<{
@@ -7,19 +8,11 @@ const props = defineProps<{
 }>()
 
 
-
-// "blockType":"FeatureBlock",
-// "title":"Tech Stack",
-// "text":"some leading text here",
-// "list":[
-//     {"name":"Electron"},
-//     {"name":"SQLite"},
-//     {"name":"JavaScript"},
-//     {"name":"Node.js"}
-// ]
-
 // deconstruct featureImg
 const { src, alt } = props.section.featureImg
+
+// client can provide single string or array of strings (separate paragraphs)
+const text = Array.isArray(props.section.text) ? [...props.section.text] : [props.section.text]
 
 // future : whitelist and check 'styles' are valid css classnames for this Block
 const class_list = props?.section?.styles?.join(' ')
@@ -27,10 +20,6 @@ const class_list = props?.section?.styles?.join(' ')
 </script>
 
 <template>
-<!-- 
-:class="{selected_filter: filter === ''}" 
- :class="{reverse_order: props?.section?.styles}"
- -->
 
     <section class="feature_block fade_in non_mobile" :class="class_list !== '' ? class_list : ''">
         <figure>
@@ -40,8 +29,8 @@ const class_list = props?.section?.styles?.join(' ')
         </figure>
         <div>
             <h1>{{ props?.section?.title }}</h1>
-            <h5>{{ props?.section?.tagline }}</h5>
-            <p>{{ props?.section?.text }}</p>
+            <h3>{{ props?.section?.tagline }}</h3>
+            <Paragraph v-for="paragraph in text" :text="paragraph"/>
             
             <ListBlock :list="props?.section?.list"/>
 

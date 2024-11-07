@@ -79,7 +79,7 @@ const teaser_img_path = computed(() => {
                <span class="slot_label">github&nbsp;:</span>
                <a :href="props.project.github" target="_blank">{{ strip_http_github }}</a>
             </li>
-            <li v-if="project.file !== ''" class="teaser_slot details_link">
+            <li v-if="project.file !== ''" class="teaser_slot details_link text_right">
                <RouterLink :to="{name:'project', params:{project_slug:project.slug}}">read more..</RouterLink>
             </li>
          </ul>

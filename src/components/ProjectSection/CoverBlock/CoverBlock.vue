@@ -24,7 +24,7 @@ const class_list = props?.section?.styles?.join(' ')
 
 <template>
 
-    <section class="cover_block bg_navy mobile_only" :class="class_list !== '' ? class_list : ''">
+    <section class="cover_block bg_dark_aqua mobile_only" :class="class_list !== '' ? class_list : ''">
       <img 
          class="bg_img" 
          :src="src" 
@@ -32,7 +32,8 @@ const class_list = props?.section?.styles?.join(' ')
       />
       <div class="overlay">
          <h1>{{ props?.section?.overlay?.heading }}</h1>
-         <p>{{ props?.section?.overlay?.tagline }}</p> 
+         <h2>{{ props?.section?.overlay?.tagline }}</h2> 
+         <p>{{ props?.section?.overlay?.text }}</p>
       </div>
    </section>
 
