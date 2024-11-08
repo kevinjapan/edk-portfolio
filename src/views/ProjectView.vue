@@ -1,35 +1,21 @@
 <script setup lang="ts">
-import { onBeforeMount, onMounted, ref } from 'vue'
+import { onBeforeMount, onMounted, ref, watchEffect } from 'vue'
 import { useProjectStore } from '@/stores/projectStore.ts'
 import { useRoute } from 'vue-router'
 import ProjectSection from '@/components/ProjectSection/ProjectSection.vue'
+import { init_fade_ins } from '@/utilities/intersections/intersections'
 
-
-// to do : we are replacing markdown w/ a JSON layout -
-//         markdown is fine for text articles but styling any web layout is impractical
-//         we wan to model on styling/layout for https://web-dev-agent.netlify.app/
-
-// import markdownit from 'markdown-it'
 
 
 // ProjectView
 
-// Main content is from markdown file
-// We inject some meta data from the Project retrieved from projects_list.json
-// We don't include title/desc etc in the template since we rely on the markdown 
-// file being a stand-alone document in itself, thus containing those properties.
-
-// issue : if 'not finding module' - try this:
-// restart the TS server: type: ctrl + Shift + P 
+// we replaced markdown w/ json dataset files. Markdown can't provide the layout styling we want
+// we use markdown inside text content of certain Block Types to access some features (eg bold styling)
 
 
 const route = useRoute()
 const projectStore = useProjectStore()
-
-
-
 const notify_msg = ref('')
-
 
 onBeforeMount(async() => {
    await projectStore.load_project(<string>route.params.project_slug)
@@ -52,6 +38,10 @@ const enable_links = () =>{
       })
    }
 }
+
+watchEffect(() => {
+   setTimeout(() => init_fade_ins(),500)
+})
 
 
 
