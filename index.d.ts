@@ -73,12 +73,17 @@ interface ListItem {
    text?:string
    link?:string
 }
+interface Button {
+   label:string
+   action:string
+}
 interface FeatureBlock extends ProjectSection {
    title:string
    tagline:string
    text:string
    featureImg:Image
    list:ListItem[]
+   button:Button
 }
 
 // TitleBlock
