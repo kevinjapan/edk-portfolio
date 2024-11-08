@@ -19,6 +19,20 @@ export default function init_unblurs() : boolean {
    return create_observers(faders,'no_blur',effectOptions)
 }
 
+
+
+export const init_fade_ins = () => {
+
+   const faders = document.querySelectorAll('.fade_in')
+   const appearOptions = {
+      threshold: 0,
+      rootMargin: "0px 0px -200px 0px"
+   }
+   return create_observers(faders,'appear',appearOptions)
+}
+
+
+
 const create_observers = (elements: NodeListOf<Element>,active_class: string,options : EffectOptions) : boolean => {
    let observers_created = false
    const appearOnScroll = new IntersectionObserver(
