@@ -13,12 +13,14 @@ onBeforeMount(async() => {
    setTimeout(() => window.scroll(0,0),100)
 })
 
+
+
 </script>
 
 <template>
    <section class="view_section mt_0">
 
-      <h1>Portfolio</h1>
+      <h1 class="text_center">Portfolio</h1>
 
       <section class="meta_grid grid">
 
@@ -73,7 +75,12 @@ onBeforeMount(async() => {
             <span class="item">BSc Zoology</span>,
             <span class="item">PGDip Software Engineering</span>
          </span>
-         
+
+      </section>
+
+      <section class="home_links">
+         <img class="github_icon" src="../assets/imgs/github-mark-white.png"/>
+         <a href="https://github.com/kevinjapan" target="_blank">Github</a>
       </section>
 
    </section>
@@ -94,7 +101,7 @@ onBeforeMount(async() => {
    max-width:600px;
    margin:auto;
    margin-top:5rem;
-   padding-bottom:10rem;
+   padding-bottom:5rem;
 }
 
 
@@ -150,6 +157,15 @@ h2 {
    .meta_grid img {
       max-width:80%;
    }
+}
+
+.home_links {
+   display:flex;
+   justify-content:center;
+}
+.github_icon {
+   width:36px;
+   height:36px;
 }
 
 </style>
