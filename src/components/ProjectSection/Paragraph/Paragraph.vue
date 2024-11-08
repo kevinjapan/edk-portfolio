@@ -2,6 +2,8 @@
 import { ref, watchEffect } from 'vue'
 import markdownit from 'markdown-it'
 
+
+
 const props = defineProps<{
     text: string
 }>()
@@ -10,11 +12,10 @@ const props = defineProps<{
 const md = markdownit()
 const rawHtml = ref('')
 
-
-watchEffect(() => {    
-    rawHtml.value = md.render(props.text)
+watchEffect(() => {
+    // renderInline will not enclose w/in <p> tags
+    rawHtml.value = md.renderInline(props.text)
 })
-
 
 </script>
 

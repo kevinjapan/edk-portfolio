@@ -5,26 +5,17 @@ const props = defineProps<{
 }>()
 
 
-// "blockType":"CoverBlock",
-// "bgImgSrc":"/imgs/stc-homepage.jpg",
-// "bgImgAlt":"Photo of the Signal Tower Museum, Arbroath.",
-// "overlay":{
-//     "heading":"Signal Tower Capture",
-//     "tagline":"Desktop collections application for archiving files on your local machine."
-// }
-
 // deconstruct coverImg
 const { src, alt } = props.section.coverImg
 
 // future : whitelist and check 'styles' are valid css classnames for this Block
 const class_list = props?.section?.styles?.join(' ')
 
-// to do : re-enable 'fade_in' on bg_img below?
 </script>
 
 <template>
 
-    <section class="cover_block bg_dark_aqua mobile_only" :class="class_list !== '' ? class_list : ''">
+    <section class="cover_block fade_in bg_dark_aqua mobile_only"  :class="class_list !== '' ? class_list : ''">
       <img 
          class="bg_img" 
          :src="src" 
@@ -39,3 +30,25 @@ const class_list = props?.section?.styles?.join(' ')
 
 </template>
 
+<style scoped>
+
+h1 {
+   font-size:4.5rem;
+   font-weight:300 !important;
+   margin:0;
+}
+h2 {
+   font-size:2.8rem;
+   font-weight:300 !important;
+   margin:0;
+}
+@media screen and (min-width: 768px) {
+   h1 {
+      font-size:6rem;
+   }
+   h2 {
+      font-size:3.2rem;
+      padding-left:3rem;
+   }
+}
+</style>

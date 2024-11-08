@@ -29,12 +29,12 @@ const class_list = props?.section?.styles?.join(' ')
         </figure>
         <div>
             <h1>{{ props?.section?.title }}</h1>
-            <h3>{{ props?.section?.tagline }}</h3>
-            <Paragraph v-for="paragraph in text" :text="paragraph"/>
+            <h3 v-if="props.section.tagline">{{ props?.section?.tagline }}</h3>
+            <Paragraph v-if="text" v-for="paragraph in text" :text="paragraph"/>
             
-            <ListBlock :list="props?.section?.list"/>
+            <ListBlock v-if="props?.section?.list && props?.section?.list?.length > 0" :list="props?.section?.list"/>
 
-            <button>
+            <button v-if="props.section.button">
                 <a target="_blank" href="https://github.com/kevinjapan/Web-Dev-Agent">Download from GitHub</a>
             </button>
 
@@ -43,3 +43,21 @@ const class_list = props?.section?.styles?.join(' ')
 
 </template>
 
+
+
+<style scoped>
+p {
+    text-align:center;
+}
+@media screen and (min-width: 768px) {
+    p {
+        text-align:left;
+    }
+}
+/* div.feature_block_text {
+    border:solid 4px orange;
+    padding:0;
+    text-align:center;
+    justify-content:flex-start;
+} */
+</style>

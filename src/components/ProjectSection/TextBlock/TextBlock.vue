@@ -24,3 +24,14 @@ watchEffect(() => {
     <p class="markdown_content"  :class="class_list !== '' ? class_list : ''" v-html="rawHtml"></p>
 </template>
 
+
+<style scoped>
+p {
+    text-align:center;
+}
+@media screen and (min-width: 768px) {
+    p {
+        text-align:left;
+    }
+}
+</style>
