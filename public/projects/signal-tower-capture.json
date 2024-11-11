@@ -1,8 +1,5 @@
 {
-
-
     "sections":[
-        
         {
             "blockType":"CoverBlock",
             "coverImg":{
@@ -32,7 +29,7 @@
         {            
             "blockType":"FeatureBlock",
             "featureImg":{
-                "src":"/imgs/stc-homepage.jpg",
+                "src":"/imgs/tall-94.jpg",
                 "alt":"Photo of the Signal Tower Museum, Arbroath."
             },
             "title":"The Pitch",
@@ -49,17 +46,17 @@
         {
             "blockType":"FeatureBlock",
             "featureImg":{
-                "src":"/imgs/stc-homepage.jpg",
+                "src":"/imgs/st-spiral.jpg",
                 "alt":"Photo of the Signal Tower Museum, Arbroath."
             },
             "title":"Tech Stack",
             "tagline":"",
-            "text":"**Electron JS** leverages web technologies in a desktop application",
+            "text":"**Electron** leverages web technologies in a desktop application",
             "list":[
-                {"name":"Electron"},
-                {"name":"SQLite"},
-                {"name":"JavaScript"},
-                {"name":"Node.js"}
+                {"name":"Electron","link":"https://www.electronjs.org/"},
+                {"name":"SQLite","link":"https://www.sqlite.org/"},
+                {"name":"JavaScript","link":"https://developer.mozilla.org/en-US/docs/Web/JavaScript"},
+                {"name":"Node.js","link":"https://nodejs.org/en"}
             ],
             "styles":[]
         },
@@ -79,7 +76,7 @@
         {            
             "blockType":"FeatureBlock",
             "featureImg":{
-                "src":"/imgs/stc-homepage.jpg",
+                "src":"/imgs/st-tower-buildings.jpg",
                 "alt":"Photo of the Signal Tower Museum, Arbroath."
             },
             "title":"Solution",
@@ -98,7 +95,7 @@
         {
             "blockType":"FeatureBlock",
             "featureImg":{
-                "src":"/imgs/avtab.jpg",
+                "src":"/imgs/st-low-tide.jpg",
                 "alt":"Photo of the Signal Tower Museum, Arbroath."
             },
             "title":"Links",
@@ -106,7 +103,7 @@
             "text":"",
             "list":[
                 {"name":"Github","link":"https://github.com/kevinjapan/SignalTowerCapture"},
-                {"name":"Wikipedia","link":"https://en.wikipedia.org/wiki/Signal_Tower_Museum"}
+                {"name":"Signal Tower Museum","link":"https://en.wikipedia.org/wiki/Signal_Tower_Museum"}
             ]
         }
     ]
