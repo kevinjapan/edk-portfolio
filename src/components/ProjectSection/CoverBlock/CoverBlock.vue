@@ -36,19 +36,23 @@ h1 {
    font-size:4.5rem;
    font-weight:300 !important;
    margin:0;
+   max-width:80%;
 }
 h2 {
    font-size:2.8rem;
    font-weight:300 !important;
    margin:0;
+   max-width:80%;
 }
 @media screen and (min-width: 768px) {
    h1 {
       font-size:6rem;
+      max-width:fit-content;
    }
    h2 {
       font-size:3.2rem;
       padding-left:3rem;
+      max-width:fit-content;
    }
 }
 </style>

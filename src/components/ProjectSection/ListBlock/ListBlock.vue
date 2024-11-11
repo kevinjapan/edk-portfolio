@@ -19,7 +19,15 @@ const props = defineProps<{
 <style scoped>
 
 ul {
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+
+   -ms-flex-wrap:wrap;
+   flex-wrap:wrap;
+   
+   gap:.5rem;
+
    list-style:none;
    margin:1rem auto 1rem auto;
    max-width:36rem;
@@ -33,9 +41,10 @@ ul {
 li {
    background:hsl(0, 0%, 30%);
    border-radius:.5rem;
-   margin:0 .25rem;
+   margin:.5rem;
    padding:.25rem;
    padding-left:.5rem;
    padding-right:.5rem;
 }
+
 </style>

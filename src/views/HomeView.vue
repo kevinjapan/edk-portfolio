@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { onBeforeMount } from 'vue'
+import { onBeforeMount, watchEffect } from 'vue'
+import { init_fade_ins } from '@/utilities/intersections/intersections'
 
 
 const user: User = {
@@ -13,6 +14,9 @@ onBeforeMount(async() => {
    setTimeout(() => window.scroll(0,0),100)
 })
 
+watchEffect(() => {
+   setTimeout(() => init_fade_ins(),500)
+})
 
 
 </script>
@@ -25,7 +29,7 @@ onBeforeMount(async() => {
       <section class="meta_grid grid">
 
          <span class="slot_label">
-            <img class="mugshot" src="/imgs/mugshot_mirror.jpg" alt="profile photo"/>
+            <img class="mugshot fade_in" src="/imgs/mugshot_mirror.jpg" alt="profile photo"/>
          </span>
          <span class="slot_value align_self_center">
             <span class="item"><h2>
@@ -160,7 +164,11 @@ h2 {
 }
 
 .home_links {
-   display:flex;
+   display:-webkit-box;
+   display:-ms-flexbox;
+   display:flex;   
+   -webkit-box-pack:center;
+   -ms-flex-pack:center;
    justify-content:center;
 }
 .github_icon {

@@ -91,7 +91,7 @@ const current_filter_label = computed(() => {
 
    <section class="view_section projects_list relative mt_0">
       
-      <h1>Projects</h1>
+      <h1 class="text_center">Projects</h1>
 
       <ProjectFilter v-model="filter" :projects_list="projectStore.projects_list" class="sticky filter_nav"/>      
       

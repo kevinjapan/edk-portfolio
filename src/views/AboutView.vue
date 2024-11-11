@@ -16,7 +16,7 @@ onBeforeMount(async() => {
 <template>
 
    <section class="view_section mt_0">
-      <h1>About</h1>
+      <h1 class="text_center">About</h1>
    </section>
 
 </template>

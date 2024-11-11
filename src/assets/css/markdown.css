@@ -1,6 +1,8 @@
 /*
    We group rules for our markdown -> html here since we can't use 'scoped' style,
    they are not picked up by the raw html generated from markdown (timing/order issue)
+
+   // future : review - now we have minimized usage of markdown, do we need full css file
 */
 .markdown_content > * {
    margin-left:auto;
@@ -105,7 +107,11 @@
    text-align:center;
 }
 .markdown_content ul {
+
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+
    list-style:none;
    margin:1rem auto 1rem auto;
    max-width:36rem;

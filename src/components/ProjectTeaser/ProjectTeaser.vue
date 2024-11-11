@@ -111,8 +111,8 @@ section.project_teaser {
    padding-bottom:1rem;
    border:solid 1px hsl(0, 0%, 90%);
    border-radius:1rem;
-   -webkit-box-shadow: 1px 2px 3px 1px hsl(0, 0%, 80%);
-   box-shadow: 1px 1px 4px 1px hsl(0, 0%, 80%);
+   -webkit-box-shadow: 1px 2px 3px 1px hsl(0, 0%, 60%);
+   box-shadow: 1px 1px 4px 1px hsl(0, 0%, 60%);
 
    background:white;
 
