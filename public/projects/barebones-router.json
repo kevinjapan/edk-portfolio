@@ -1,0 +1,18 @@
+{
+    "sections":[
+        {
+            "blockType":"CoverBlock",
+            "coverImg":{
+                "src":"",
+                "alt":""
+            },
+            "overlay":{
+                "heading":"Barebones Router",
+                "tagline":"Single PHP Class performing simple routing."
+               },
+            "styles":[
+                "dim_10"
+            ]
+        }
+    ]
+}

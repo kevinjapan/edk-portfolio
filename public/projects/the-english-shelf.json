@@ -1,0 +1,26 @@
+{
+    "sections":[
+        {
+            "blockType":"CoverBlock",
+            "coverImg":{
+                "src":"",
+                "alt":""
+            },
+            "overlay":{
+                "heading":"The English Shelf",
+                "tagline":"Lesson sharing for teachers of English as a second language."
+               },
+            "styles":[
+                "dim_10"
+            ]
+        },
+        {
+            "blockType":"TextBlock",
+            "text":"React functional components static website with JSON dataset back-end.",
+            "styles":[]
+        },
+        {
+            
+        }
+    ]
+}

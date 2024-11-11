@@ -1,0 +1,26 @@
+{
+    "sections":[
+        {
+            "blockType":"CoverBlock",
+            "coverImg":{
+                "src":"",
+                "alt":""
+            },
+            "overlay":{
+                "heading":"Web Dev Agent",
+                "tagline":"WordPress Theme and Plugins for Web Dev Agencies."
+               },
+            "styles":[
+                "dim_10"
+            ]
+        },
+        {
+            "blockType":"TextBlock",
+            "text":"Flexible block patterns for rapid and consistent deployment of styled content.",
+            "styles":[]
+        },
+        {
+            
+        }
+    ]
+}

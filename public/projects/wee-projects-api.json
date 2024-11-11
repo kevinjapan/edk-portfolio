@@ -1,0 +1,26 @@
+{
+    "sections":[
+        {
+            "blockType":"CoverBlock",
+            "coverImg":{
+                "src":"",
+                "alt":""
+            },
+            "overlay":{
+                "heading":" WeeProjects API",
+                "tagline":"PHP MVC Application Backend for WeeProjects"
+               },
+            "styles":[
+                "dim_10"
+            ]
+        },
+        {
+            "blockType":"TextBlock",
+            "text":"Simple Model-View-Controller application back-end with routing and authentication.",
+            "styles":[]
+        },
+        {
+            
+        }
+    ]
+}

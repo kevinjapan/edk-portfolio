@@ -1,0 +1,26 @@
+{
+    "sections":[
+        {
+            "blockType":"CoverBlock",
+            "coverImg":{
+                "src":"",
+                "alt":""
+            },
+            "overlay":{
+                "heading":"Delicious Demo",
+                "tagline":"Static site with Intersection Observers and custom text-file configuration."
+               },
+            "styles":[
+                "dim_10"
+            ]
+        },
+        {
+            "blockType":"TextBlock",
+            "text":"A project investigating the Intersection Observers Web API, with a bespoke configurable text-file backend for static site deployment.",
+            "styles":[]
+        },
+        {
+            
+        }
+    ]
+}

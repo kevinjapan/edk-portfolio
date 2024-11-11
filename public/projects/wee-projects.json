@@ -1,0 +1,18 @@
+{
+    "sections":[
+        {
+            "blockType":"CoverBlock",
+            "coverImg":{
+                "src":"",
+                "alt":""
+            },
+            "overlay":{
+                "heading":"WeeProjects",
+                "tagline":"Client React project management application."
+               },
+            "styles":[
+                "dim_10"
+            ]
+        }
+    ]
+}
