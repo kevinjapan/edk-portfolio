@@ -65,7 +65,7 @@ const teaser_img_path = computed(() => {
          <div class="teaser_slot tech_list">
             <span class="slot_label">tech&nbsp;:</span>
             <div v-for="tech in props.project.tech" class="tech" >
-               {{ tech.name }}
+               {{ tech.name.toUpperCase() !== 'LATEST' ? tech.name : ''}}
             </div>
          </div>
 
@@ -180,6 +180,7 @@ div.teaser_tagline {
    font-size:1.25rem;
    font-weight:400;
    margin-bottom:.5rem;
+   color:black;
 }
 .project_status {
    display:inline;
