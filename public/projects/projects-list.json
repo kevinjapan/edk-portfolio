@@ -13,6 +13,7 @@
       "github":"https://github.com/kevinjapan/ongaku",
       "site":"https://evolution-desu-ka.netlify.app",
       "tech":[
+         {"name":"Latest"},
          {"name":"React.js"},
          {"name":"TypeScript"}
       ]
@@ -82,13 +83,14 @@
       "file":"signal-tower-capture.md",
       "tagline":"Local Collections",
       "desc":[
-         "Desktop collections solution for managing files and folders on your local machine."
+         "A volunteer project for a local museum. Desktop collections solution for managing files and folders on your local machine."
       ],
       "img":"stc-homepage.jpg",
       "alt":"image of Signal Tower Capture application",
       "github":"https://github.com/kevinjapan/SignalTowerCapture",
       "site":"",
       "tech":[
+         {"name":"Latest"},
          {"name":"Electron"},
          {"name":"JavaScript"},
          {"name":"Node.js"},
