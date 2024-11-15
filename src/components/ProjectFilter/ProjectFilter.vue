@@ -38,7 +38,7 @@ const num_with_filter = (filter: string) : number => {
       </li>
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('latest')" :class="{selected_filter: filter === 'latest'}">
-            Lastest ({{ num_with_filter('latest') }})</a>
+            Latest ({{ num_with_filter('latest') }})</a>
       </li>
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('javascript')" :class="{selected_filter: filter === 'javascript'}">
