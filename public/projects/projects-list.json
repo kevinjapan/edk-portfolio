@@ -1,5 +1,25 @@
 [
    {
+      "title":"Signal Capture Online Demo",
+      "slug":"signal-capture-online-demo",
+      "status":"just started",
+      "file":"",
+      "tagline":"Local Collections",
+      "desc":[
+         "Online demo for Signal Tower Capture Collections Solution (see project below).",
+         "Exploring Vue Composables and Stores."
+      ],
+      "img":"st-tower-buildings.jpg",
+      "alt":"image of signal capture online demo website homepage",
+      "github":"https://github.com/kevinjapan/signalcapture",
+      "site":"",
+      "tech":[
+         {"name":"Latest"},
+         {"name":"Vue.js"},
+         {"name":"TypeScript"}
+      ]
+   },
+   {
       "title":"Ongaku",
       "slug":"ongaku",
       "status":"just started",
