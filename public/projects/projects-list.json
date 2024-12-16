@@ -6,13 +6,13 @@
       "file":"",
       "tagline":"Local Collections",
       "desc":[
-         "Online demo for Signal Tower Capture Collections Solution (see project below).",
-         "Exploring Vue Composables and Stores."
+         "Exploring Vue Composables and Stores.",
+         "Currently, this doesn't work on Safari - everything else, just not on Safari.. go figure!"
       ],
       "img":"st-tower-buildings.jpg",
       "alt":"image of signal capture online demo website homepage",
       "github":"https://github.com/kevinjapan/signalcapture",
-      "site":"",
+      "site":"https://signal-capture.netlify.app/",
       "tech":[
          {"name":"Latest"},
          {"name":"Vue.js"},
