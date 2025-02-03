@@ -57,6 +57,10 @@ const num_with_filter = (filter: string) : number => {
             TypeScript({{ num_with_filter('typescript') }})</a>
       </li>
       <li class="skill_tag">
+         <a class="tech_tag" @click="set_filter('ruby on rails')" :class="{selected_filter: filter === 'ruby on rails'}">
+            Ruby on Rails ({{ num_with_filter('ruby on rails') }})</a>
+      </li>
+      <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('php')" :class="{selected_filter: filter === 'php'}">
             PHP ({{ num_with_filter('php') }})</a>
       </li>
