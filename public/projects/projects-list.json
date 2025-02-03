@@ -1,5 +1,23 @@
 [
    {
+      "title":"WayStation",
+      "slug":"waystation",
+      "status":"just started",
+      "file":"",
+      "tagline":"Todos/PM Rails app",
+      "desc":[
+         "",
+         "Early ventures into Rails."
+      ],
+      "img":"",
+      "alt":"",
+      "github":"https://github.com/kevinjapan/WayStation",
+      "tech":[
+         {"name":"Ruby on Rails"},
+         {"name":"Latest"}
+      ]
+   },
+   {
       "title":"Signal Capture Online Demo",
       "slug":"signal-capture-online-demo",
       "status":"just started",

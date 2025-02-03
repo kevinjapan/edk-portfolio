@@ -49,6 +49,7 @@ watchEffect(() => {
             <span class="item">Vue</span>,
             <span class="item">TypeScript</span>,
             <span class="item">Electron</span>,
+            <span class="item">Ruby on Rails</span>,
             <span class="item">PHP</span>,
             <span class="item">HTML</span>,
             <span class="item">MySQL</span>,
