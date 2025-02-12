@@ -49,7 +49,6 @@ watchEffect(() => {
             <span class="item">Vue</span>,
             <span class="item">TypeScript</span>,
             <span class="item">Electron</span>,
-            <span class="item">Ruby on Rails</span>,
             <span class="item">PHP</span>,
             <span class="item">HTML</span>,
             <span class="item">MySQL</span>,
@@ -59,6 +58,13 @@ watchEffect(() => {
             <span class="item">WordPress</span>
          </span>
     
+         
+         <span class="slot_label">currently learning</span>
+         <span class="slot_value">
+            <span class="item">Ruby on Rails</span>
+         </span>
+
+
          <span class="slot_label">history</span>
          <span class="slot_value">
             <span class="item">Java</span>,
