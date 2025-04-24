@@ -5,6 +5,8 @@ import { useRoute } from 'vue-router'
 import ProjectSection from '@/components/ProjectSection/ProjectSection.vue'
 import { init_fade_ins } from '@/utilities/intersections/intersections'
 
+// for non-existant projects, we inject NotFound component
+import NotFound from '@/components/NotFound/NotFound.vue'
 
 
 // ProjectView
@@ -52,8 +54,13 @@ let count = 0
 
 <template>
 
-   <section class="project_sections" v-for="section in projectStore?.current_project?.sections" :key="count++">
-      <ProjectSection :section="section"/>
+   <section v-if="projectStore?.current_project?.sections">
+      <section class="project_sections" v-for="section in projectStore?.current_project?.sections" :key="count++">
+         <ProjectSection :section="section"/>
+      </section>
+   </section>
+   <section v-else style="margin-top:12rem;">
+      <NotFound/>
    </section>
 
    <AppStatus v-model="notify_msg" />

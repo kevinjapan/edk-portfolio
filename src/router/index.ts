@@ -26,10 +26,10 @@ const router = createRouter({
          // generates a separate chunk (About.[hash].js) for this route
          component: () => import('../views/AboutView.vue')
       },
-      {
+      { 
          name: 'notfound',
-         path: '/notfound',
-         component: () => import('../components/NotFound/NotFound.vue')
+         path: '/:pathMatch(.*)*',
+         component: () => import('../components/NotFound/NotFound.vue') 
       }
    ]
 })
