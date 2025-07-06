@@ -1,20 +1,18 @@
 [
    {
-      "title":"WayStation",
-      "slug":"waystation",
+      "title":"Academia Website Design",
+      "slug":"academia-website-design",
       "status":"just started",
       "file":"",
-      "tagline":"Todos/PM Rails app",
+      "tagline":"Website design for the Education sector",
       "desc":[
-         "",
-         "Early ventures into Rails."
+         "An example website design project in Figma."
       ],
-      "img":"",
-      "alt":"",
-      "github":"https://github.com/kevinjapan/WayStation",
+      "img":"Academia-Hero-Section.png",
+      "alt":"image of Academia website design hero section",
+      "site":"https://www.figma.com/community/file/1522944403194786719",
       "tech":[
-         {"name":"Ruby on Rails"},
-         {"name":"Latest"}
+         {"name":"Figma"}
       ]
    },
    {
@@ -24,15 +22,13 @@
       "file":"",
       "tagline":"Local Collections",
       "desc":[
-         "Exploring Vue Composables and Stores.",
-         "Currently, this doesn't work on Safari - everything else, just not on Safari.. go figure!"
+         "Exploring Vue Composables and Stores."
       ],
       "img":"st-tower-buildings.jpg",
       "alt":"image of signal capture online demo website homepage",
       "github":"https://github.com/kevinjapan/signalcapture",
       "site":"https://signal-capture.netlify.app/",
       "tech":[
-         {"name":"Latest"},
          {"name":"Vue.js"},
          {"name":"TypeScript"}
       ]
@@ -51,7 +47,6 @@
       "github":"https://github.com/kevinjapan/ongaku",
       "site":"https://evolution-desu-ka.netlify.app",
       "tech":[
-         {"name":"Latest"},
          {"name":"React.js"},
          {"name":"TypeScript"}
       ]
@@ -128,7 +123,6 @@
       "github":"https://github.com/kevinjapan/SignalTowerCapture",
       "site":"",
       "tech":[
-         {"name":"Latest"},
          {"name":"Electron"},
          {"name":"JavaScript"},
          {"name":"Node.js"},

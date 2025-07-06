@@ -18,10 +18,10 @@ const copyright_date = ref(today.getFullYear())
 <style scoped>
 
 section {
-   padding:2rem;
-   padding-top:4rem;
-   background:var(--bg_dark);
-   color:hsl(0, 0%, 70%);
+   margin-top:4rem;
+   padding:4rem 2rem 4rem 2rem;
+   background:biege;
+   color:black;
    font-size:.95rem;
    width:100%;
    text-align:center;

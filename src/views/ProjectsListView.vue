@@ -124,9 +124,7 @@ section.projects_list {
    padding-bottom:5rem;
    background:var(--bg_dark);
 }
-h1 {
-   color:white;
-}
+
 .projects_list_header {
    width:100%;
    background:var(--bg_dark);
@@ -137,11 +135,10 @@ ul.projects_list_grid {
    display:grid;
    -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-   gap:0;
+   gap:2rem;
    max-width:100%;
    margin:0;
-   padding:0;
-   padding-top:2rem;
+   padding:2rem 3rem;
 }
 
 @media screen and (max-width: 1100px) {

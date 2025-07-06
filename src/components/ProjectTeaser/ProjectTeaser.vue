@@ -10,9 +10,9 @@ const props = defineProps<{
 }>()
 
 
-const strip_http_site = computed(() => {
-   return props.project.site?.replace('https://','')
-})
+// const strip_http_site = computed(() => {
+//    return props.project.site?.replace('https://','')
+// })
 
 const strip_http_github = computed(() => {
    return props.project.github?.replace('https://github.com/','')
@@ -32,57 +32,68 @@ const teaser_img_path = computed(() => {
 
       <section class="project_teaser">
 
-         <img v-if="props.project.img" 
-            :src="teaser_img_path" 
-            :alt="props.project.alt"
-            class="unblur">
+         <figure>
+            <img v-if="props.project.img" 
+               :src="teaser_img_path" 
+               :alt="props.project.alt"
+               class="unblur">
 
-         <div v-if="project?.img_acknowledge" class="img_acknowledge">
-            image:<a :href="project.img_acknowledge_link" target="_blank">{{ project.img_acknowledge }}</a>
-         </div>
-         
-         <h2 class="teaser_slot teaser_title mb_0 mt_0">
-            <RouterLink class="title_link" v-if="project.file !== ''" 
-               :to="{name:'project', params:{project_slug:project.slug}}">
-                  {{ props.project.title }}
-            </RouterLink>
-            <div v-else class="no_link_title">{{ props.project.title }}</div>
-         </h2>
-
-         <div class="teaser_slot teaser_tagline">{{ props.project.tagline }}</div>
-         
-         <div class="teaser_slot mt_1">            
-               <span class="slot_label">status&nbsp;:&nbsp;</span>
-               <span class="project_status">{{ props.project.status }}</span>
-         </div>
-
-         <!-- break out desc paras -->
-         <div class="teaser_text teaser_slot">
-            <p v-for="desc in props.project.desc" class="desc_paragraph">{{ desc }}</p>
-         </div>
-
-         <!-- flex align techs -->
-         <div class="teaser_slot tech_list">
-            <span class="slot_label">tech&nbsp;:</span>
-            <div v-for="tech in props.project.tech" class="tech" >
-               {{ tech.name.toUpperCase() !== 'LATEST' ? tech.name : ''}}
+            <div v-if="project?.img_acknowledge" class="img_acknowledge">
+               <a :href="project.img_acknowledge_link" target="_blank">image: {{ project.img_acknowledge }}</a>
             </div>
-         </div>
+         </figure>
+         
+         <section class="project_teaser_texts">
 
-         <!-- links -->
-         <ul>
-            <li v-if="props.project.site" class="teaser_slot">
-               <span class="slot_label">site&nbsp;:</span>
-               <a :href="props.project.site" target="_blank">{{ strip_http_site }}</a>
-            </li>
-            <li v-if="props.project.github" class="teaser_slot">
-               <span class="slot_label">github&nbsp;:</span>
-               <a :href="props.project.github" target="_blank">{{ strip_http_github }}</a>
-            </li>
-            <li v-if="project.file !== ''" class="teaser_slot details_link text_right">
-               <RouterLink :to="{name:'project', params:{project_slug:project.slug}}">read more..</RouterLink>
-            </li>
-         </ul>
+            <section class="teaser_title_tagline">
+               <h2 class="teaser_slot teaser_title mb_0 mt_0">
+                  <RouterLink class="title_link" v-if="project.file !== ''" 
+                     :to="{name:'project', params:{project_slug:project.slug}}">
+                        {{ props.project.title }}
+                  </RouterLink>
+                  <div v-else class="no_link_title">{{ props.project.title }}</div>
+               </h2>
+
+               <div class="teaser_slot teaser_tagline">{{ props.project.tagline }}</div>
+            </section>
+
+
+            <!-- break out desc paras -->
+            <div class="teaser_text teaser_slot">
+               <p v-for="desc in props.project.desc" class="desc_paragraph">{{ desc }}</p>
+            </div>
+            <!-- flex align techs -->
+            <div class="teaser_slot tech_list">
+               <!-- <div class="slot_label">tech&nbsp;:</div> -->
+               <div v-for="tech in props.project.tech" class="tech" >
+                  {{ tech.name.toUpperCase() !== 'LATEST' ? tech.name : ''}}
+               </div>
+            </div>
+
+            <section class="status_and_tech">
+               <div class="teaser_slot mt_1">            
+                     <span class="slot_label">status&nbsp;:&nbsp;</span>
+                     <span class="project_status">{{ props.project.status }}</span>
+               </div>
+            </section>
+
+
+            <!-- links -->
+            <ul>
+               <li v-if="props.project.github" class="teaser_slot">
+                  <span class="slot_label">github&nbsp;:</span>
+                  <a :href="props.project.github" target="_blank">{{ strip_http_github }}</a>
+               </li>
+               <!-- <li v-if="project.file !== ''" class="teaser_slot details_link text_right">
+                  <RouterLink :to="{name:'project', params:{project_slug:project.slug}}">read more..</RouterLink>
+               </li> -->
+            </ul>
+
+            <div v-if="props.project.site" class="teaser_slot visit_site_cta">
+               <a :href="props.project.site" target="_blank">visit site</a>
+            </div>
+
+         </section>
 
       </section>
    </Transition>
@@ -102,7 +113,7 @@ section.project_teaser {
    -ms-flex-direction:column;
    flex-direction:column;
 
-   gap:.15rem;
+   gap:1rem;
 
    width:100%;
    height:fit-content;
@@ -110,14 +121,12 @@ section.project_teaser {
    padding:.5rem;
    padding-bottom:1rem;
    border:solid 1px hsl(0, 0%, 90%);
-   border-radius:1rem;
-   -webkit-box-shadow: 1px 2px 3px 1px hsl(0, 0%, 60%);
-   box-shadow: 1px 1px 4px 1px hsl(0, 0%, 60%);
+   border-radius:.5rem;
 
    background:white;
 
    overflow:hidden;
-   text-align:left;
+   text-align:center;
 }
 section.teaser_slots {
    border:unset;
@@ -127,6 +136,21 @@ section.teaser_slots {
    padding-right:.5rem;
 }
 
+section.project_teaser_texts {
+   display:flex;
+   flex-direction:column;
+   gap:.5rem;
+   padding:0 .25rem;
+}
+
+section.teaser_title_tagline {
+   display:flex;
+   flex-direction:column;
+   gap:.5rem;
+}
+section.teaser_title_tagline h2 {
+   line-height:2.75rem;
+}
 /* override (limit widths) on main styles */
 h2.teaser_title {
    font-size:2.5rem;
@@ -139,6 +163,7 @@ p {
    max-width:100%;
    margin:0;
    padding:0;
+   line-height:1.5rem;
 }
 .teaser_text {
    margin:1rem 0 1.5rem 0;
@@ -189,6 +214,18 @@ div.teaser_tagline {
    padding-left:.25rem;
    padding-right:.25rem;
 }
+div.visit_site_cta {
+   width:fit-content;
+   margin:1rem auto;
+
+}
+a {
+   text-decoration:underline;
+}
+figure {
+   width:100%;
+   margin:0 auto;
+}
 img {
    width:100%;
 
@@ -228,22 +265,21 @@ div.teaser_slot.tech_list {
    -ms-flex-direction:column;
    flex-direction:column;
 
-   -webkit-box-pack:flex-start;
-   -ms-flex-pack:flex-start;
-   justify-content:flex-start;
+   -webkit-box-pack:center;
+   -ms-flex-pack:center;
+   justify-content:center;
+
+   align-items:center;
 
    gap:.25rem;
 
-   width:100%;
+   max-width:80%;
+   margin:0 auto;
+   margin-bottom:1rem;
 
-   margin-top:.5rem auto;
 }
 
-@media screen and (min-width: 768px) {
-   div.teaser_slot.tech_list {
-      flex-direction:row;
-   }
-}
+
 
 .teaser_slot > p.desc_paragraph {
    color:black;
@@ -252,7 +288,7 @@ div.teaser_slot.tech_list {
    padding:0;
 }
 div.tech {
-   display:inline;
+   align-items:center;
    width:fit-content;
    color:black;
    background:hsl(60, 100%, 80%);
@@ -291,5 +327,14 @@ li {
    -webkit-transition: opacity 0s ease;
    -o-transition: opacity 0s ease;
    transition: opacity 0s ease;
+}
+
+@media screen and (min-width: 768px) {
+
+   div.teaser_slot.tech_list {
+      flex-direction:row;
+      flex-wrap:wrap;
+   }
+   
 }
 </style>

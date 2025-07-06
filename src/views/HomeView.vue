@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { onBeforeMount, watchEffect } from 'vue'
 import { init_fade_ins } from '@/utilities/intersections/intersections'
+import TitlesSection from '@/components/TitlesSection/TitlesSection.vue'
+import DomainSection from '@/components/DomainSection/DomainSection.vue'
+import SubDomainSection from '@/components/SubDomainSection/SubDomainSection.vue'
+import SkillSlot from '@/components/SkillSlot/SkillSlot.vue'
 
-
-const user: User = {
-  first_name: "Kev",
-  second_name: "Hastie",
-  id: 1
-}
 
 onBeforeMount(async() => {
    // Firefox needs a delay to render page and effect this scroll
@@ -22,92 +20,85 @@ watchEffect(() => {
 </script>
 
 <template>
-   <section class="view_section mt_0">
 
-      <h1 class="text_center">Portfolio</h1>
+<section class="portfolio_home">
 
-      <section class="meta_grid grid">
+   <section class="view_section no_user_select mt_0">
 
-         <span class="slot_label">
-            <img class="mugshot fade_in" src="/imgs/mugshot_mirror.jpg" alt="profile photo"/>
-         </span>
-         <span class="slot_value align_self_center">
-            <span class="item"><h2>
-               <span class="bold">{{ user.first_name }}</span> {{ user.second_name }}</h2>
-            </span>
-         </span>
+      <TitlesSection title="Kev Hastie" img_src="/imgs/mugshot_mirror.jpg" location="Arbroath, Scotland" />
 
-         <span class="slot_label">location</span>
-         <span class="slot_value">
-            <span class="item">Arbroath, Scotland</span>
-         </span>
+      <section class="slots_section ">
 
-         <span class="slot_label">technologies</span>
-         <span class="slot_value">
-            <span class="item">JavaScript</span>,
-            <span class="item">React</span>,
-            <span class="item">Vue</span>,
-            <span class="item">TypeScript</span>,
-            <span class="item">Electron</span>,
-            <span class="item">PHP</span>,
-            <span class="item">HTML</span>,
-            <span class="item">MySQL</span>,
-            <span class="item">SQLite</span>,
-            <span class="item">CSS</span>,
-            <span class="item">Tailwind</span>,
-            <span class="item">WordPress</span>
-         </span>
-    
-         
-         <span class="slot_label">currently learning</span>
-         <span class="slot_value">
-            <span class="item">Ruby on Rails</span>
-         </span>
+         <DomainSection title="Technology">
 
+            <SubDomainSection title="Languages">
+               <SkillSlot title="JavaScript"/>
+               <SkillSlot title="TypeScript"/>
+               <SkillSlot title="PHP"/>
+               <SkillSlot title="HTML"/>
+               <SkillSlot title="CSS"/>
+            </SubDomainSection>
 
-         <span class="slot_label">history</span>
-         <span class="slot_value">
-            <span class="item">Java</span>,
-            <span class="item">C++</span>,
-            <span class="item">ASP</span>
-         </span>
-            
-         <span class="slot_label">experience</span>
-         <span class="slot_value">
-            <span class="item">Web Developer</span>,
-            <span class="item">Software Engineer</span>,
-            <span class="item">Technical Lead</span>,
-            <span class="item">Assistant Language Teacher</span>,
-            <span class="item">Project Management</span>
-         </span>
-         
-         <span class="slot_label">education</span>
-         <span class="slot_value">
-            <span class="item">BSc Zoology</span>,
-            <span class="item">PGDip Software Engineering</span>
-         </span>
+            <SubDomainSection title="Frameworks">
+               <SkillSlot title="Vue"/>
+               <SkillSlot title="React"/>
+               <SkillSlot title="Electron"/>
+               <SkillSlot title="Tailwind"/>
+            </SubDomainSection>
+               
+            <SubDomainSection title="Web Design">
+               <SkillSlot title="WordPress"/>
+               <SkillSlot title="SquareSpace"/>
+               <SkillSlot title="Figma"/>
+            </SubDomainSection>
 
-      </section>
+            <SubDomainSection title="Database">
+               <SkillSlot title="MySQL"/>
+               <SkillSlot title="SQLite"/>
+            </SubDomainSection>
+         </DomainSection>
 
-      <section class="home_links">
+         <DomainSection title="Experience">
+            <SkillSlot title="Web Developer"/>
+            <SkillSlot title="Software Engineer"/>
+            <SkillSlot title="Technical Lead"/>
+            <SkillSlot title="Assistant Lanuage Teacher"/>
+            <SkillSlot title="Project Manage"/>
+         </DomainSection>            
+
+         <DomainSection title="Education">
+            <SkillSlot title="BSc Zoology"/>
+            <SkillSlot title="PG Dip Software Engineering"/>
+         </DomainSection>         
+
+</section>
+
+      <!-- to do : re-enable <section class="home_links">
          <img class="github_icon" src="../assets/imgs/github-mark-white.png"/>
          <a href="https://github.com/kevinjapan" target="_blank">Github</a>
-      </section>
+      </section> -->
 
+</section>
    </section>
 </template>
 
 <style scoped>
-
+section.portfolio_home {
+   margin:5rem auto;
+   padding:0;
+   background:beige;
+   max-width:600px;
+   /* text-align:center; */
+}
 .meta_grid {
 
-   grid-template-columns:2fr 3fr;
+   grid-template-columns:1fr;
 
    -webkit-box-align:flex-start;
    -ms-flex-align:flex-start;
    align-items:flex-start;
 
-   gap:1rem;
+   gap:2rem;
 
    max-width:600px;
    margin:auto;
@@ -116,9 +107,18 @@ watchEffect(() => {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
+   /* section.titles_section {
+      display:flex;
+      flex-direction: column;
+      gap:0;
+      padding:2rem;
+   } */
    section.view_section {
-      margin-top:3rem;
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+      padding:2rem;
    }
    /* improve UI readability on sm */
    p {
@@ -126,36 +126,20 @@ watchEffect(() => {
       margin-bottom:2rem;
    }
 }
-.meta_grid img {
-   max-width:100%;
-   border:solid 3px white;
-   border-radius:50%;
+
+
+
+
+h3 {
+   letter-spacing:12px;
+   font-size:2rem;
+   font-weight:700;
 }
-.slot_label {
-   color:hsl(0, 0%, 55%);
-   padding-right:.5rem;
-   text-align:right;
-}
-.slot_value {
-   color:white;
-   text-align:left;
-}
-span.item {
-   display:inline;
-   font-weight:400;
-   white-space: normal;
-}
-h1 {
-   margin-top:5rem;
-   letter-spacing:3rem;
-   color:white;
-}
-h2 {
-   font-size:3.75rem;
-   margin:0;
-   margin-top:-1rem;
-   letter-spacing:.5rem;
-   white-space:nowrap;
+h4 {
+   font-size:1.3rem;
+   margin:1.5rem 0 .5rem 1.25rem;
+   line-height:1rem;
+   font-weight:600;
 }
 @media screen and (max-width: 768px) {
    h1 {
@@ -169,6 +153,9 @@ h2 {
       max-width:80%;
    }
 }
+ul {
+   margin:0;
+}
 
 .home_links {
    display:-webkit-box;
@@ -181,6 +168,9 @@ h2 {
 .github_icon {
    width:36px;
    height:36px;
+}
+.no_user_select {
+   user-select:none;
 }
 
 </style>

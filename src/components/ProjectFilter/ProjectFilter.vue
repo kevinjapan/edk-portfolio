@@ -31,14 +31,14 @@ const num_with_filter = (filter: string) : number => {
 
 
 <template>
-   <ul class="flex flex_wrap skill_tag_list  pt_0.5">
+   <ul class="flex flex_wrap skill_tag_list  pt_0.5 no_user_select">
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('')" :class="{selected_filter: filter === ''}">
             All ({{ num_with_filter('all') }})</a>
       </li>
       <li class="skill_tag">
-         <a class="tech_tag" @click="set_filter('latest')" :class="{selected_filter: filter === 'latest'}">
-            Latest ({{ num_with_filter('latest') }})</a>
+         <a class="tech_tag" @click="set_filter('figma')" :class="{selected_filter: filter === 'figma'}">
+            Figma ({{ num_with_filter('figma') }})</a>
       </li>
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('javascript')" :class="{selected_filter: filter === 'javascript'}">
@@ -55,10 +55,6 @@ const num_with_filter = (filter: string) : number => {
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('typescript')" :class="{selected_filter: filter === 'typescript'}">
             TypeScript({{ num_with_filter('typescript') }})</a>
-      </li>
-      <li class="skill_tag">
-         <a class="tech_tag" @click="set_filter('ruby on rails')" :class="{selected_filter: filter === 'ruby on rails'}">
-            Ruby on Rails ({{ num_with_filter('ruby on rails') }})</a>
       </li>
       <li class="skill_tag">
          <a class="tech_tag" @click="set_filter('php')" :class="{selected_filter: filter === 'php'}">

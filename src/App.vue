@@ -5,7 +5,7 @@ import AppFooter from './components/App/AppFooter/AppFooter.vue'
 
 <template>
 
-   <nav class="fixed flex gap_1 pr_3 bg_dark">
+   <nav class="fixed flex gap_1 pr_3 ">
       <div class="flex justify_around mr_2">
          <RouterLink to="/" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Home</RouterLink>
          <RouterLink to="/projects" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Projects</RouterLink>
@@ -47,7 +47,7 @@ nav {
 main {
    width:100%;
    min-height:100vh;
-   background:var(--bg_dark);
+   background:biege;
 }
 
 .view_link {
