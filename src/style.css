@@ -152,7 +152,7 @@ body {
 
    /* color:var(--bg_light_text); */
    
-   background:biege;
+   background:#36454f;
 
    letter-spacing:.06rem;
    min-width: 320px;
@@ -193,7 +193,7 @@ p {
 }
 a {
    font-weight:300;
-   color:blue;
+   color:white;
    cursor:pointer;
    padding:.25rem;
    padding-left:.5rem;

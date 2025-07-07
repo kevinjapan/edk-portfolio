@@ -5,8 +5,8 @@ import AppFooter from './components/App/AppFooter/AppFooter.vue'
 
 <template>
 
-   <nav class="fixed flex gap_1 pr_3 ">
-      <div class="flex justify_around mr_2">
+   <nav class="fixed flex gap_1 " >
+      <div class="flex ">
          <RouterLink to="/" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Home</RouterLink>
          <RouterLink to="/projects" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Projects</RouterLink>
       </div>
@@ -21,33 +21,41 @@ import AppFooter from './components/App/AppFooter/AppFooter.vue'
 </template>
 
 <style scoped>
+
 nav {
    z-index:9999;
 
    display:-webkit-box;
    display:-ms-flexbox;
    display:flex;
-   
 
    /* we need 'flex-end' here for IOS safari - 'end' won't suffice */
    -webkit-box-pack:flex-end;
    -ms-flex-pack:flex-end;
    justify-content:flex-end;
-
+   
    gap:1.5;
 
    width:100%;
    height:fit-content;
-   padding-right:4rem;
+   padding-right:1rem;
    font-size:1.3rem;
+   background:#36454f;
+   user-select:none;
 }
-
+@media screen and (max-width: 768px) {
+   nav {
+      -webkit-box-pack:center;
+      -ms-flex-pack:center;
+      justify-content:center;
+   }
+}
 
 
 main {
    width:100%;
    min-height:100vh;
-   background:biege;
+   background:#36454f;
 }
 
 .view_link {
@@ -59,6 +67,9 @@ main {
    padding-left:1rem;
    padding-right:1rem;
    border-radius:.5rem;
+}
+a {
+   text-decoration:none;
 }
 .selected_view {
    /* background:var(--bg_light); */

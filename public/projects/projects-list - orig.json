@@ -90,6 +90,27 @@
       ]
    },
    {
+      "title":"A Vue To A Build",
+      "slug":"a-vue-to-a-build",
+      "status":"early days",
+      "file":"",
+      "tagline":"Static Vue.js Learning Site",
+      "desc":[
+         "Evolving guide to Vue.js"
+      ],
+      "img":"avtab.jpg",
+      "img_acknowledge":"Mathieu Stern",
+      "img_acknowledge_link":"https://unsplash.com/@mathieustern?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash",
+      "alt":"",
+      "github":"https://github.com/kevinjapan/a-vue-to-a-build",
+      "site":"https://a-vue-to-a-build.netlify.app/",
+      "tech":[
+         {"name":"Vue.js"},
+         {"name":"JavaScript"},
+         {"name":"Markdown"}
+      ]
+   },
+   {
       "title":"Signal Capture",
       "slug":"signal-tower-capture",
       "status":"on-going",

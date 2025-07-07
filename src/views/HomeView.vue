@@ -21,13 +21,18 @@ watchEffect(() => {
 
 <template>
 
-<section class="portfolio_home">
+   <section class="home_view">
 
-   <section class="view_section no_user_select mt_0">
+   <h1>Portfolio</h1>
 
-      <TitlesSection title="Kev Hastie" img_src="/imgs/mugshot_mirror.jpg" location="Arbroath, Scotland" />
+   <section class="portfolio_home">
 
-      <section class="slots_section ">
+      <section class="view_section no_user_select mt_0">
+
+         <TitlesSection 
+            title="Kev Hastie" 
+            img_src="/imgs/mugshot_mirror.jpg" 
+            location="Arbroath, Scotland" />
 
          <DomainSection title="Technology">
 
@@ -56,38 +61,43 @@ watchEffect(() => {
                <SkillSlot title="MySQL"/>
                <SkillSlot title="SQLite"/>
             </SubDomainSection>
+
          </DomainSection>
 
          <DomainSection title="Experience">
+
             <SkillSlot title="Web Developer"/>
             <SkillSlot title="Software Engineer"/>
             <SkillSlot title="Technical Lead"/>
-            <SkillSlot title="Assistant Lanuage Teacher"/>
-            <SkillSlot title="Project Manage"/>
+            <SkillSlot title="Assistant Language Teacher"/>
+            <SkillSlot title="Project Manager"/>
+
          </DomainSection>            
 
          <DomainSection title="Education">
+
             <SkillSlot title="BSc Zoology"/>
             <SkillSlot title="PG Dip Software Engineering"/>
-         </DomainSection>         
 
-</section>
+         </DomainSection>
 
-      <!-- to do : re-enable <section class="home_links">
-         <img class="github_icon" src="../assets/imgs/github-mark-white.png"/>
-         <a href="https://github.com/kevinjapan" target="_blank">Github</a>
-      </section> -->
-
-</section>
+      </section>
+   </section>
    </section>
 </template>
 
 <style scoped>
+section.home_view {
+   user-select:none;
+}
 section.portfolio_home {
    margin:5rem auto;
-   padding:0;
-   background:beige;
-   max-width:600px;
+   padding:2rem 0;
+   background:#fafadc;
+   width:720px;
+   max-width:90%;
+   padding:1rem;
+   border-radius:.5rem;
    /* text-align:center; */
 }
 .meta_grid {
@@ -118,7 +128,7 @@ section.portfolio_home {
       display:flex;
       flex-direction:column;
       gap:2rem;
-      padding:2rem;
+      padding:1rem 2rem;
    }
    /* improve UI readability on sm */
    p {
@@ -130,6 +140,16 @@ section.portfolio_home {
 
 
 
+h1 {
+   color:white;
+   padding-left:1rem;
+}
+@media screen and (max-width: 768px) {
+   h1 {
+      text-align:center;
+      padding-top:2rem !important;
+   }
+}
 h3 {
    letter-spacing:12px;
    font-size:2rem;

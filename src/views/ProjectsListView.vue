@@ -21,7 +21,7 @@ const filtered_projects_list = ref<Project[]>([])
 const filter = ref(projectStore.current_filter)
 
 // we scroll to this height on changing filter to set filter_nav at top
-const filter_nav_top = 125
+// const filter_nav_top = 125
 
 // our 'loading' flag
 const updating = ref(false)
@@ -55,14 +55,14 @@ const filter_project_list = () => {
 onMounted(() => {
    setTimeout(() => mounting.value = false,100)
    
-   // Firefox needs a delay to render page and effect this scroll
-   setTimeout(() => window.scroll(0,filter_nav_top),100)
+   // // Firefox needs a delay to render page and effect this scroll
+   setTimeout(() => window.scroll(0,0),200)
 })
 
 onUpdated(() => {
    if(mounting.value === false) {
       // Firefox needs a delay to render page and effect this scroll
-      setTimeout(() => window.scroll(0,filter_nav_top),100)
+      setTimeout(() => window.scroll(0,0),200)
    }
    init_unblurs()
 })
@@ -78,7 +78,7 @@ watch(filter,() => {
 
    // perceived 'loading'
    updating.value = true
-   setTimeout(() => {updating.value = false},800)
+   setTimeout(() => {updating.value = false},1000)
 })
 
 const current_filter_label = computed(() => {
@@ -91,7 +91,7 @@ const current_filter_label = computed(() => {
 
    <section class="view_section projects_list relative mt_0">
       
-      <h1 class="text_center">Projects</h1>
+      <h1>Projects</h1>
 
       <ProjectFilter v-model="filter" :projects_list="projectStore.projects_list" class="sticky filter_nav"/>      
       
@@ -114,7 +114,7 @@ const current_filter_label = computed(() => {
 
 <style scoped>
 .filter_nav {
-   top:0;
+   top:40px;
    left:0;
 }
 section.projects_list {
@@ -122,52 +122,61 @@ section.projects_list {
    width:100%;
    min-height:120vh;
    padding-bottom:5rem;
-   background:var(--bg_dark);
+   background:var(--bg_dark);background:#36454f ;
+   user-select:none;
 }
 
 .projects_list_header {
    width:100%;
-   background:var(--bg_dark);
+   background:var(--bg_dark);background:#36454f ;
 }
 ul.projects_list_grid {
    list-style:none;
    display:-ms-grid;
    display:grid;
-   -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-   gap:2rem;
+   -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+   gap:1rem;
    max-width:100%;
    margin:0;
-   padding:2rem 3rem;
+   padding:2rem 1rem;
 }
 
 @media screen and (max-width: 1100px) {
    ul.projects_list_grid {
-      -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-      gap:0;
+      -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) ;
+      gap:1rem;
       margin-left:auto;
       margin-right:auto;
    }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 910px) {
    ul.projects_list_grid {
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-      gap:2rem;
+   -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) ;
+   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap:1rem;
    }
    ul.projects_list_grid li {
       width:90%;
       margin:0;
       margin-left:auto;
       margin-right:auto;
+      margin-bottom:1rem;
    }
    section.view_section {
       margin-top:3rem;
    }
 }
+@media screen and (max-width: 620px) {
+   ul.projects_list_grid {
+   -ms-grid-columns: minmax(0, 1fr)  ;
+   grid-template-columns: minmax(0, 1fr) ;
+      gap:1rem;
+   }
+}
 li.project_teaser {
-   margin:1rem;
+   margin:0; 
 }
 .teaser_tagline {
    font-size:1.2rem;
@@ -195,9 +204,16 @@ li.project_teaser {
 
 
 h1 {
-   letter-spacing:1rem;
+   color:white;
+   padding-left:1rem;
 }
-
+@media screen and (max-width: 768px) {
+   h1 {
+      text-align:center;
+      padding-top:2rem !important;
+      padding-bottom:2rem !important;
+   }
+}
 
 
 </style>
