@@ -27,8 +27,7 @@ section.no_subsections_wrap {
 h3 {
    font-size:1.5rem;
    font-weight:700;
-   /* to do : rollout nr dark color for headers */
-   color:hsl(180, 25%, 10%); 
+   color:var(--dark_text);
    margin:0;
    padding:0;
 }

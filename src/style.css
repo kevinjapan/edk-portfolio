@@ -24,6 +24,8 @@ in command prompt (?) type "color decorators" and enable Editor: Color Decorator
   --bg_light:hsl(264, 48%, 92%);
   --bg_lighter:hsl(264, 48%, 98%);
 
+  --dark_text:hsl(180, 25%, 10%); 
+
   --bg_accent:#d8b997;
   --bg_semantic_positive:hsl(120, 93%, 85%);     /* green  - positive */
   --bg_semantic_positive_100:hsl(120, 93%, 90%);
