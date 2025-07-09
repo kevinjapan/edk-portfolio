@@ -116,6 +116,7 @@ section.project_teaser {
 }
 img.teaser_card_img {
    object-fit:cover;
+   object-position:top left;
 }
 section.teaser_slots {
    border:unset;
