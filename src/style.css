@@ -50,7 +50,7 @@ in command prompt (?) type "color decorators" and enable Editor: Color Decorator
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 300;
-  src: url('../assets/fonts/montserrat/montserrat-v30-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/assets/fonts/montserrat/montserrat-v30-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-regular - latin */
 @font-face {
@@ -58,7 +58,7 @@ in command prompt (?) type "color decorators" and enable Editor: Color Decorator
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/montserrat/montserrat-v30-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/assets/fonts/montserrat/montserrat-v30-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-italic - latin */
 @font-face {
@@ -66,7 +66,7 @@ in command prompt (?) type "color decorators" and enable Editor: Color Decorator
   font-family: 'Montserrat';
   font-style: italic;
   font-weight: 400;
-  src: url('../assets/fonts/montserrat/montserrat-v30-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/assets/fonts/montserrat/montserrat-v30-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-600 - latin */
 @font-face {
@@ -74,7 +74,7 @@ in command prompt (?) type "color decorators" and enable Editor: Color Decorator
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  src: url('../assets/fonts/montserrat/montserrat-v30-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/assets/fonts/montserrat/montserrat-v30-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-700 - latin */
 @font-face {
@@ -82,7 +82,7 @@ in command prompt (?) type "color decorators" and enable Editor: Color Decorator
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  src: url('../assets/fonts/montserrat/montserrat-v30-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/assets/fonts/montserrat/montserrat-v30-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-900 - latin */
 @font-face {
@@ -90,7 +90,7 @@ in command prompt (?) type "color decorators" and enable Editor: Color Decorator
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
-  src: url('../assets/fonts/montserrat/montserrat-v30-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/assets/fonts/montserrat/montserrat-v30-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /*
@@ -348,6 +348,7 @@ section.cover_block .bg_img {
    left:0;
    min-height:100%;
    object-fit: cover; 
+   object-position:top left;
 }
 section.cover_block .overlay {
    height:fit-content;
@@ -573,6 +574,7 @@ section.feature_block > div > *:not(button) {
       height:100%;
       overflow:hidden;
       object-fit: cover;
+      object-position:top left;
    }
 }
 
