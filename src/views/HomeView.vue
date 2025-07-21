@@ -93,7 +93,7 @@ section.home_view {
 section.portfolio_home {
    margin:5rem auto;
    padding:2rem 0;
-   background:#fafadc;
+   background:#fcfcfe;
    width:720px;
    max-width:90%;
    padding:1rem;
