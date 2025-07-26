@@ -238,7 +238,7 @@
       "github":"https://github.com/kevinjapan/theenglishshelf",
       "site":"https://theenglishshelf.netlify.app/",
       "tech":[
-         {"name":"React.js"},
+         {"name":"Vue.js"},
          {"name":"JavaScript"},
          {"name":"JSON"}
       ]
