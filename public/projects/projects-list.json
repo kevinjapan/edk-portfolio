@@ -1,7 +1,7 @@
 [
    {
-      "title":"Academia Website Design",
-      "slug":"academia-website-design",
+      "title":"Academia",
+      "slug":"academia",
       "status":"just started",
       "file":"",
       "tagline":"Website design for the Education sector",
@@ -17,11 +17,28 @@
       ]
    },
    {
+      "title":"khw",
+      "slug":"khw",
+      "status":"just started",
+      "file":"",
+      "tagline":"for web designer",
+      "desc":[
+         "Website for kev hastie websites"
+      ],
+      "img":"khw-homepage-hero-ad.jpg",
+      "alt":"image of khw homepage hero section",
+      "github":"",
+      "site":"https://kevhastiewebsites.netlify.app/",
+      "tech":[
+         {"name":"Vue.js"}
+      ]
+   },
+   {
       "title":"Ongaku",
       "slug":"ongaku",
       "status":"just started",
       "file":"",
-      "tagline":"Music Web Site",
+      "tagline":"Music Website",
       "desc":[
          "Front-end static web site for musicians."
       ],
