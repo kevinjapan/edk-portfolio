@@ -85,6 +85,10 @@ const current_filter_label = computed(() => {
    return filter.value === '' ? 'all projects' : filter.value
 })
 
+// to do : update Academia hero img
+
+// to do : update khwdesigns imgs - other imgs?
+
 </script>
 
 <template>
