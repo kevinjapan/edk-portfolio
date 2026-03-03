@@ -8,6 +8,7 @@ import AppFooter from './components/App/AppFooter/AppFooter.vue'
    <nav class="fixed flex gap_1 " >
       <div class="flex ">
          <RouterLink to="/" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Home</RouterLink>
+         <RouterLink to="/resume" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Resume</RouterLink>
          <RouterLink to="/projects" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Projects</RouterLink>
       </div>
    </nav>

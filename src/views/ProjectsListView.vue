@@ -89,24 +89,29 @@ const current_filter_label = computed(() => {
 
 // to do : update khwdesigns imgs - other imgs?
 
+//  to do : take color scheme from edk site
+
+// to do : make cards slide_up (distracts from imgs filling in slower than page layout..)
+
 </script>
 
 <template>
 
-   <section class="view_section projects_list relative mt_0">
+   <section class="view_section projects_list relative pt_3 px_5_lg">
       
-      <h1>Projects</h1>
+      <h1 >Projects</h1>
 
       <ProjectFilter v-model="filter" :projects_list="projectStore.projects_list" class="sticky filter_nav"/>      
       
       <!-- we should simply filter the 'projects_list' from projectStore, but we
          wanted to explore the rendering mechanism; ok method for our dataset size -->
-      <ul v-if="updating === false" class="projects_list_grid ">
-         <li class="project_teaser" v-for="project in filtered_projects_list" key="project.slug">
+      <ul v-if="updating === false" class="projects_list_grid gap_1">
+         <li class="li_project_teaser" v-for="project in filtered_projects_list" key="project.slug">
             <ProjectTeaser  :project="project" :filter="filter"/>
          </li>
       </ul>
 
+      <!-- to do : do same in ResumeView? -->
       <p v-else class="loading">
          <span>{{ current_filter_label }}</span>
       </p>
@@ -126,7 +131,7 @@ section.projects_list {
    width:100%;
    min-height:120vh;
    padding-bottom:5rem;
-   background:var(--bg_dark);background:#36454f ;
+   background:var(--bg_dark);
    user-select:none;
 }
 
@@ -140,17 +145,20 @@ ul.projects_list_grid {
    display:grid;
    -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-   gap:1rem;
+   gap:0;
+   /* row-gap: 5rem; */
    max-width:100%;
    margin:0;
    padding:2rem 1rem;
 }
 
+
+
 @media screen and (max-width: 1100px) {
    ul.projects_list_grid {
       -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) ;
-      gap:1rem;
+      gap:0;
       margin-left:auto;
       margin-right:auto;
    }
@@ -159,10 +167,10 @@ ul.projects_list_grid {
    ul.projects_list_grid {
    -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) ;
    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap:1rem;
+      gap:0;
    }
    ul.projects_list_grid li {
-      width:90%;
+      width:100%;
       margin:0;
       margin-left:auto;
       margin-right:auto;
@@ -176,11 +184,13 @@ ul.projects_list_grid {
    ul.projects_list_grid {
    -ms-grid-columns: minmax(0, 1fr)  ;
    grid-template-columns: minmax(0, 1fr) ;
-      gap:1rem;
+   gap:0;
    }
 }
-li.project_teaser {
+li.li_project_teaser {
    margin:0; 
+   padding:0;
+   max-height:100%;
 }
 .teaser_tagline {
    font-size:1.2rem;

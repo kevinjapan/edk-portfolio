@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { onBeforeMount, watchEffect } from 'vue'
 import { init_fade_ins } from '@/utilities/intersections/intersections'
-import TitlesSection from '@/components/TitlesSection/TitlesSection.vue'
-import DomainSection from '@/components/DomainSection/DomainSection.vue'
-import SubDomainSection from '@/components/SubDomainSection/SubDomainSection.vue'
-import SkillSlot from '@/components/SkillSlot/SkillSlot.vue'
+
 
 
 onBeforeMount(async() => {
@@ -17,72 +14,39 @@ watchEffect(() => {
 })
 
 
+//  to do : pick a good image i can also use in projectslist thumbnail for this project!
+
 </script>
 
 <template>
 
    <section class="home_view">
 
-   <h1>Portfolio</h1>
+      <!-- to do : we have two h1 elements on this view : fix & rollout -->
+   <h1>Kev Hastie</h1>
 
-   <section class="portfolio_home">
 
-      <section class="view_section no_user_select mt_0">
-
-         <TitlesSection 
-            title="Kev Hastie" 
-            img_src="/imgs/mugshot_mirror.jpg" 
-            location="Arbroath, Scotland" />
-
-         <DomainSection title="Technology">
-
-            <SubDomainSection title="Languages">
-               <SkillSlot title="JavaScript"/>
-               <SkillSlot title="TypeScript"/>
-               <SkillSlot title="PHP"/>
-               <SkillSlot title="HTML"/>
-               <SkillSlot title="CSS"/>
-            </SubDomainSection>
-
-            <SubDomainSection title="Frameworks">
-               <SkillSlot title="Vue"/>
-               <SkillSlot title="React"/>
-               <SkillSlot title="Electron"/>
-               <SkillSlot title="Tailwind"/>
-            </SubDomainSection>
-               
-            <SubDomainSection title="Web Design">
-               <SkillSlot title="WordPress"/>
-               <SkillSlot title="SquareSpace"/>
-               <SkillSlot title="Figma"/>
-            </SubDomainSection>
-
-            <SubDomainSection title="Database">
-               <SkillSlot title="MySQL"/>
-               <SkillSlot title="SQLite"/>
-            </SubDomainSection>
-
-         </DomainSection>
-
-         <DomainSection title="Experience">
-
-            <SkillSlot title="Web Developer"/>
-            <SkillSlot title="Software Engineer"/>
-            <SkillSlot title="Technical Lead"/>
-            <SkillSlot title="Assistant Language Teacher"/>
-            <SkillSlot title="Project Manager"/>
-
-         </DomainSection>            
-
-         <DomainSection title="Education">
-
-            <SkillSlot title="BSc Zoology"/>
-            <SkillSlot title="PG Dip Software Engineering"/>
-
-         </DomainSection>
-
-      </section>
-   </section>
+   
+   <!--
+      HERO
+   -->
+   <section class="cover_block hero_block fade_in subtle_zoom_in can_darken darken_img_3 " style="height:780px;" >
+      <img class="bg_img" style="object-fit:cover;object-position:right center;max-width:100%;"
+         src="/imgs/all-sorts-of-questions.jpg" 
+         alt="to do : alt text" /> 
+      <div class="text_overlay "> 
+         <!-- to do : flex_cols on mobile -->
+         <section class="flex  gap_0">
+            <h4 class="text_white hero_sub_tagline flex flex_cols align_items_end justify_center"  7
+               style="width:260px;text-align:left;padding-top:1.85rem;">
+               <!-- <div class="no_wrap">Web Designer</div> -->
+               <div class="no_wrap">Web Development</div>
+               <div class="no_wrap">North East Scotland</div>
+            </h4>
+            <div class="display_1 text_white">Portfolio</div>   
+         </section>
+      </div>
+   </section>  
    </section>
 </template>
 
@@ -100,6 +64,15 @@ section.portfolio_home {
    border-radius:.5rem;
    /* text-align:center; */
 }
+div.no_wrap {
+   margin:0;padding:0;
+   white-space:preserve nowrap;
+}
+
+/* div.text_overlay {
+   border:solid 2px white;
+} */
+
 .meta_grid {
 
    grid-template-columns:1fr;
@@ -156,10 +129,14 @@ h3 {
    font-weight:700;
 }
 h4 {
-   font-size:1.3rem;
-   margin:1.5rem 0 .5rem 1.25rem;
-   line-height:1rem;
-   font-weight:600;
+   font-size:1.13rem;
+   margin:.6rem .25rem .5rem 1.25rem;
+   line-height:1.5rem;
+   font-weight:400;
+   text-align: right;
+}
+.text_white {
+   color:white;
 }
 @media screen and (max-width: 768px) {
    h1 {

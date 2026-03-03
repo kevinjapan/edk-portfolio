@@ -4,11 +4,11 @@
       "slug":"academia",
       "status":"just started",
       "file":"",
-      "tagline":"Website design for the Education sector",
+      "tagline":"Design for education",
       "desc":[
-         "An example website design project in Figma."
+         "A design project in Figma."
       ],
-      "img":"Academia-Hero-Section.png",
+      "img":"Academia-Hero-Section.jpg",
       "alt":"image of Academia website design hero section",
       "github":"",
       "site":"https://www.figma.com/community/file/1522944403194786719",
@@ -17,13 +17,13 @@
       ]
    },
    {
-      "title":"khw",
+      "title":"Khw",
       "slug":"khw",
       "status":"just started",
       "file":"",
-      "tagline":"for web designer",
+      "tagline":"Web dev agency",
       "desc":[
-         "Website for kev hastie websites"
+         "Website for web dev agency."
       ],
       "img":"khw-homepage-hero-ad.jpg",
       "alt":"image of khw homepage hero section",
@@ -126,11 +126,11 @@
       ]
    },
    {
-      "title":"Wed Dev Agent",
+      "title":"Web Dev",
       "slug":"web-dev-agent",
       "status":"on-going",
       "file":"",
-      "tagline":"for Web Agencies",
+      "tagline":"Theme & Plugins",
       "desc":[
          "WordPress Theme and Plugins for Web Dev Agencies."
       ],
@@ -148,9 +148,9 @@
       "slug":"the-educator",
       "status":"on-going",
       "file":"",
-      "tagline":"for Education websites",
+      "tagline":"Theme & Plugins",
       "desc":[
-         "WordPress Theme and Plugins for colleges and online learning."
+         "WordPress Theme and Plugins."
       ],
       "img":"te-homepage.jpg",
       "alt":"image of The Educator website homepage",
@@ -184,7 +184,7 @@
       ]
    },
    {
-      "title":"WeeProjects API",
+      "title":"WeeProjects",
       "slug":"weeprojects-api",
       "status":"parked",
       "file":"",
@@ -204,7 +204,7 @@
       ]
    },
    {
-      "title":"Barebones Router",
+      "title":"Barebones",
       "slug":"barebones-router",
       "status":"completed",
       "file":"",
@@ -223,11 +223,11 @@
       ]
    },
    {
-      "title":"Kanji Study Sets",
+      "title":"KSS",
       "slug":"kanji-study-sets",
       "status":"on-going",
       "file":"",
-      "tagline":"Japanese Kanji study site",
+      "tagline":"Kanji Study Sets",
       "desc":[
          "More than 2000 regular use Kanji listed."
       ],
@@ -242,11 +242,11 @@
       ]
    },
    {
-      "title":"The English Shelf",
+      "title":"TES",
       "slug":"the-english-shelf",
       "status":"on-going",
       "file":"",
-      "tagline":"English Lesson Share",
+      "tagline":"The English Shelf",
       "desc":[
          "Lesson sharing for teachers of English as a second language."
       ],
@@ -261,7 +261,7 @@
       ]
    },
    {
-      "title":"Delicous Demo",
+      "title":"Delicious",
       "slug":"delicious-demo",
       "status":"completed",
       "file":"",

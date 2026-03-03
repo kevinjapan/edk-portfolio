@@ -1,0 +1,122 @@
+[
+   {
+      "title":"JavaScript",
+      "aspect":[
+         {"name":"Languages"}
+      ]
+   },
+   {
+      "title":"PHP",
+      "aspect":[
+         {"name":"Languages"}
+      ]
+   },
+   {
+      "title":"TypeScript",
+      "aspect":[
+         {"name":"Languages"}
+      ]
+   },
+   {
+      "title":"HTML",
+      "aspect":[
+         {"name":"Languages"}
+      ]
+   },
+   {
+      "title":"CSS",
+      "aspect":[
+         {"name":"Languages"}
+      ]
+   },
+   {
+      "title":"Vue",
+      "aspect":[
+         {"name":"Frameworks"}
+      ]
+   },
+   {
+      "title":"React",
+      "aspect":[
+         {"name":"Frameworks"}
+      ]
+   },
+   {
+      "title":"Electron",
+      "aspect":[
+         {"name":"Frameworks"}
+      ]
+   },
+   {
+      "title":"Tailwind",
+      "aspect":[
+         {"name":"Frameworks"}
+      ]
+   },
+   {
+      "title":"Figma",
+      "aspect":[
+         {"name":"Web Design"}
+      ]
+   },
+   {
+      "title":"WordPress",
+      "aspect":[
+         {"name":"Web Design"}
+      ]
+   },
+   {
+      "title":"SquareSpace",
+      "aspect":[
+         {"name":"Web Design"}
+      ]
+   },
+   {
+      "title":"MySql",
+      "aspect":[
+         {"name":"Database"}
+      ]
+   },
+   {
+      "title":"SQLite",
+      "aspect":[
+         {"name":"Database"}
+      ]
+   },
+   {
+      "title":"Web Developer",
+      "aspect":[
+         {"name":"Experience"}
+      ]
+   },
+   {
+      "title":"Senior Software Engineer",
+      "aspect":[
+         {"name":"Experience"}
+      ]
+   },
+   {
+      "title":"Tech Lead",
+      "aspect":[
+         {"name":"Experience"}
+      ]
+   },
+   {
+      "title":"Assistant Language Teacher",
+      "aspect":[
+         {"name":"Experience"}
+      ]
+   },
+   {
+      "title":"BSc Zoology",
+      "aspect":[
+         {"name":"Education"}
+      ]
+   },
+   {
+      "title":"PGDip Software Engineering",
+      "aspect":[
+         {"name":"Education"}
+      ]
+   }
+]

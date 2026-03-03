@@ -43,7 +43,9 @@ interface Project {
    title:string
 }
 
-
+interface ResumeAspect {
+   name: string
+}
 
 
 // -----------------------------------------------------------
@@ -53,6 +55,11 @@ interface Project {
 interface ProjectSection {
    blockType:string
    styles:string[]
+}
+
+interface ResumeItem {
+   title:string
+   aspect:Array<ResumeAspect>
 }
 
 // CoverBlock
@@ -104,6 +111,10 @@ interface TextBlock extends ProjectSection {
 
 interface ProjectDetails {
    sections:ProjectSection[]
+}
+
+interface ResumeItemDetails {
+   items:ResumeItem[]
 }
 
 

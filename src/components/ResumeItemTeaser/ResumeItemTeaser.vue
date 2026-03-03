@@ -1,41 +1,17 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+// import { computed } from 'vue'
 
 // type-based declaration
 // it is usually more straightforward to define props with pure types via a generic type argument
 // The compiler will try to do its best to infer the equivalent runtime options based on the type argument.
 const props = defineProps<{
-  project: Project
+  resume_item: ResumeItem
   filter: string
 }>()
 
 
-// const strip_http_site = computed(() => {
-//    return props.project.site?.replace('https://','')
-// })
 
-// const strip_http_github = computed(() => {
-//    return props.project.github?.replace('https://github.com/','')
-// })
 
-const teaser_img_path = computed(() => {
-   return `/imgs/${props.project.img}`
-})
-
-const click_on_card = () => {
-   if(props.project.site) {
-      window.open(props.project.site,'_blank');
-   }
-   else if(props.project.github) {
-      window.open(props.project.github,'_blank');
-   }
-}
-
-const open_new_tab = (url: string) => {
-   window.open(url,'_blank');
-}
-
-// to do : update project 'portfolio' img
 
 </script>
 
@@ -44,11 +20,12 @@ const open_new_tab = (url: string) => {
 
    <Transition>
 
-      <section class="project_teaser" @click="click_on_card">
+      <!-- <section class="resume_item_teaser"> -->
 
 
+         <!-- to do : tidy this file - remove depr copied from ProjectTeaser : -->
          <!-- CARD IMAGE -->
-         <figure class="project_teaser_img">
+         <!-- <figure class="project_teaser_img">
             <img v-if="props.project.img" 
                :src="teaser_img_path" 
                :alt="props.project.alt"
@@ -57,45 +34,41 @@ const open_new_tab = (url: string) => {
             <div v-if="project?.img_acknowledge" class="img_acknowledge">
                <div @click="open_new_tab(project.img_acknowledge_link)" >image: {{ project.img_acknowledge }}</div>
             </div>
-         </figure>
+         </figure> -->
 
 
          <!-- CARD TEXTS -->
-         <section class="project_teaser_texts">
+         <!-- <!-- <section class="project_teaser_texts"> -->
 
-            <section class="teaser_title_tagline">
-               <h2 class="teaser_slot teaser_title">
-                  <RouterLink class="title_link" v-if="project.file !== ''" :to="{name:'project', params:{project_slug:project.slug}}">
-                        {{ props.project.title }}
-                  </RouterLink>
-                  <div v-else class="no_link_title">{{ props.project.title }}</div>
-               </h2>
-               <h3 class="teaser_slot teaser_tagline">{{ props.project.tagline }}</h3>
-            </section>
+               <!-- <h2 class="teaser_slot teaser_title"> -->
+                  <!-- <RouterLink class="title_link" v-if="project.file !== ''" :to="{name:'project', params:{project_slug:project.slug}}"> -->
+                        {{ props.resume_item.title }}
+                  <!-- </RouterLink> -->
+               <!-- </h2> -->
+           
 
             <!-- <div class="teaser_text teaser_slot">
                <p v-for="desc in props.project.desc" class="desc_paragraph">{{ desc }}</p>
             </div> -->
             
-            <div class="teaser_slot tech_list">
-               <!-- <div class="slot_label">tech&nbsp;:</div> -->
-               <div v-for="tech in props.project.tech" class="tech" >
-                  {{ tech.name.toUpperCase() !== 'LATEST' ? tech.name : ''}}
+            <!-- <div class="teaser_slot tech_list">
+               <div v-for="aspect in props.resume_item.aspect" class="aspect" >
+                  {{ aspect.name.toUpperCase() !== 'LATEST' ? aspect.name : ''}}
                </div>
-            </div>
+            </div> -->
 
             <!-- Links -->
              <!-- to do : rename! -->
-            <ul class="github_outer_wrap" style="align-items:flex-end;">
+            <!-- <ul class="github_outer_wrap" style="align-items:flex-end;">
                <li class="github_wrap">
                   <a v-if="props.project.github" class="block" :href="props.project.github" target="_blank">GitHub</a>
                   <a v-if="props.project.site" :href="props.project.site" target="_blank" class="block">Visit Site</a>
                </li>
-            </ul>
+            </ul> -->
 
-         </section>
+         <!-- </section> -->
 
-      </section>
+      <!-- </section> -->
    </Transition>
    
 </template>
@@ -103,21 +76,11 @@ const open_new_tab = (url: string) => {
 
 <style scoped>
 
-/* to do : improve on mobile display */
+section.resume_item_teaser {
 
-section.project_teaser {
-   display:-webkit-box;
-   display:-ms-flexbox;
-   display:flex;
 
-   -webkit-box-orient:vertical;
-   -webkit-box-direction:normal;
-   -ms-flex-direction:column;
-   flex-direction:column;
 
-   gap:.25rem;
-
-   width:100%;
+   width:fit-content;
    height:100%;
    height:fit-content;
    margin:0;
@@ -170,13 +133,9 @@ section.project_teaser_texts {
 }
 
 section.teaser_title_tagline {
-   display:flex;
-   flex-direction:column;
-   gap:0;
-   width:100%;
-   margin:0;
-   padding-top:.15rem;
-   padding-bottom:.75rem;
+   color:white;
+   width:fit-content !important;
+   margin:0;padding:0;
 }
 section.teaser_title_tagline h2 {
    font-size:2.14rem;
@@ -184,8 +143,14 @@ section.teaser_title_tagline h2 {
    line-height:2.3rem;
    text-align:center;
    margin-bottom:.275rem;
-   
+   color:white;
 }
+/* section.teaser_title_tagline {
+   flex-grow:1;
+   color:white;
+   padding:.25rem 1rem;
+   border:solid 1px hsl(0, 0%, 85%);
+} */
 section.teaser_title_tagline h3 {
    font-size:1.3rem;
    font-weight:300;
@@ -285,6 +250,7 @@ figure.project_teaser_img {
    margin:0 auto;
    overflow:hidden;
 }
+/* to do : remove all depr : rollout */
 img {
    display:block;
    width:100%;
