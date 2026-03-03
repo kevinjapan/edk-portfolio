@@ -51,13 +51,14 @@ li {
    width:fit-content;
 }
 ul.skill_tag_list {
+   -webkit-box-pack:start;
+   -ms-flex-pack:start;
+   justify-content:flex-start;
+   gap:0rem;
    max-width:100%;
    list-style:none;
    margin:0;
    padding:0 .5rem;
-   /* to do : webkit : rollout - see also ProjectFilter */
-   justify-content:flex-start;
-   gap:0rem;
 
    color:white;
    background:var(--bg_dark);background:#36454f;

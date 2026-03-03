@@ -85,11 +85,6 @@ const current_filter_label = computed(() => {
    return filter.value === '' ? 'all projects' : filter.value
 })
 
-// to do : update Academia hero img
-
-// to do : update khwdesigns imgs - other imgs?
-
-//  to do : take color scheme from edk site
 
 // to do : make cards slide_up (distracts from imgs filling in slower than page layout..)
 
@@ -111,7 +106,6 @@ const current_filter_label = computed(() => {
          </li>
       </ul>
 
-      <!-- to do : do same in ResumeView? -->
       <p v-else class="loading">
          <span>{{ current_filter_label }}</span>
       </p>
@@ -146,13 +140,10 @@ ul.projects_list_grid {
    -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
    gap:0;
-   /* row-gap: 5rem; */
    max-width:100%;
    margin:0;
    padding:2rem 1rem;
 }
-
-
 
 @media screen and (max-width: 1100px) {
    ul.projects_list_grid {
@@ -165,8 +156,8 @@ ul.projects_list_grid {
 }
 @media screen and (max-width: 910px) {
    ul.projects_list_grid {
-   -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) ;
-   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) ;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap:0;
    }
    ul.projects_list_grid li {
@@ -182,9 +173,9 @@ ul.projects_list_grid {
 }
 @media screen and (max-width: 620px) {
    ul.projects_list_grid {
-   -ms-grid-columns: minmax(0, 1fr)  ;
-   grid-template-columns: minmax(0, 1fr) ;
-   gap:0;
+      -ms-grid-columns: minmax(0, 1fr)  ;
+      grid-template-columns: minmax(0, 1fr) ;
+      gap:0;
    }
 }
 li.li_project_teaser {

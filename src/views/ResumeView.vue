@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeMount, watch, watchEffect, ref } from 'vue'
+import { onBeforeMount, onUpdated, onMounted, watch, watchEffect, ref } from 'vue'
 import { init_fade_ins } from '@/utilities/intersections/intersections'
 import { useResumeStore } from '@/stores/resumeStore.ts'
 import ResumeAspectFilter from '../components/ResumeAspectFilter/ResumeAspectFilter.vue'
@@ -21,6 +21,10 @@ const filter = ref(resumeStore.current_filter)
 
 // our 'loading' flag
 const updating = ref(false)
+
+
+// we flag initial mount, so that we don't scroll if we've just loaded this component
+const mounting = ref(true)
 
 onBeforeMount(async() => {
    
@@ -66,7 +70,20 @@ watch(filter,() => {
    setTimeout(() => {updating.value = false},100)
 })
 
-//  to do : pick a good image i can also use in projectslist thumbnail for this project!
+
+onMounted(() => {
+   setTimeout(() => mounting.value = false,100)
+   
+   // // Firefox needs a delay to render page and effect this scroll
+   setTimeout(() => window.scroll(0,0),200)
+})
+
+onUpdated(() => {
+   if(mounting.value === false) {
+      // Firefox needs a delay to render page and effect this scroll
+      setTimeout(() => window.scroll(0,0),200)
+   }
+})
 
 // to do : check responsiveness this page : rollout
 
@@ -74,106 +91,118 @@ watch(filter,() => {
 
 <template>
 
-<!-- to do : style same as 'Projects' page -->
-   <section class="view_section resume_items_list relative pt_3 px_5_lg">
+   <section class="view_section resume_items_list_view relative pt_3 px_5_lg">
 
-   <h1>Resume</h1>
+      <h1>Resume</h1>
 
-      <!-- to do : style and position filter bar to match 'Projects' page -->
       <ResumeAspectFilter v-model="filter" :resume_items_list="resumeStore.resume_items_list" class="sticky filter_nav"/>   
 
       <section  v-if="updating === false">
             
-         <!-- <h3>{{  filter }}</h3> -->
-
          <!-- to do : flex_cols on mobile ..  -->
-         <ul v-if="filter !== ''" class="resume_items_list gap_1">
-            <li class="resume_item" v-for="resume_item in filtered_resume_items_list" key="resume_item">
-               <ResumeItemTeaser  :resume_item="resume_item" :filter="filter"/>
-            </li>
-         </ul>
+         <section v-if="filter !== ''" class="px_3_lg">
+            <h3>{{  filter }}</h3>
+            <ul class="resume_items_list gap_1">
+               <li class="resume_item" v-for="resume_item in filtered_resume_items_list" key="resume_item">
+                  <ResumeItemTeaser  :resume_item="resume_item" :filter="filter"/>
+               </li>
+            </ul>
+         </section>
+
          <section v-else>
 
             <!-- workaround : static display for 'All' -->
-      <section class="px_3_lg">
-         <section>
-            <h3>Languages</h3>
-            <ul class="wee_feature_blocks_list flex">
-               <li class="wee_feature_block">JavaScript</li>
-               <li class="wee_feature_block">TypeScript</li>
-               <li class="wee_feature_block">PHP</li>
-               <li class="wee_feature_block">HTML</li>
-               <li class="wee_feature_block">CSS</li>
-            </ul>
-         </section>
+            <section class="px_3_lg">
+               <section>
+                  <h3>Languages</h3>
+                  <ul class="wee_feature_blocks_list flex">
+                     <li class="wee_feature_block">JavaScript</li>
+                     <li class="wee_feature_block">TypeScript</li>
+                     <li class="wee_feature_block">PHP</li>
+                     <li class="wee_feature_block">HTML</li>
+                     <li class="wee_feature_block">CSS</li>
+                  </ul>
+               </section>
 
-         <section>
-            <h3>Frameworks</h3>
-            <ul class="wee_feature_blocks_list flex">
-               <li class="wee_feature_block">Vue</li>
-               <li class="wee_feature_block">React</li>
-               <li class="wee_feature_block">Electron</li>
-               <li class="wee_feature_block">Tailwind</li>
-            </ul>
-         </section>
+               <section>
+                  <h3>Frameworks</h3>
+                  <ul class="wee_feature_blocks_list flex">
+                     <li class="wee_feature_block">Vue</li>
+                     <li class="wee_feature_block">React</li>
+                     <li class="wee_feature_block">Electron</li>
+                     <li class="wee_feature_block">Tailwind</li>
+                  </ul>
+               </section>
 
-         <section>
-            <h3>Web Design</h3>
-            <ul class="wee_feature_blocks_list flex">
-               <li class="wee_feature_block">Figma</li>
-               <li class="wee_feature_block">WordPress</li>
-               <li class="wee_feature_block">SquareSpace</li>
-            </ul>
-         </section>
+               <section>
+                  <h3>Web Design</h3>
+                  <ul class="wee_feature_blocks_list flex">
+                     <li class="wee_feature_block">Figma</li>
+                     <li class="wee_feature_block">WordPress</li>
+                     <li class="wee_feature_block">SquareSpace</li>
+                  </ul>
+               </section>
 
-         <section>
-            <h3>Database</h3>
-            <ul class="wee_feature_blocks_list flex">
-               <li class="wee_feature_block">MySQL</li>
-               <li class="wee_feature_block">SQLite</li>
-            </ul>
-         </section>
+               <section>
+                  <h3>Database</h3>
+                  <ul class="wee_feature_blocks_list flex">
+                     <li class="wee_feature_block">MySQL</li>
+                     <li class="wee_feature_block">SQLite</li>
+                  </ul>
+               </section>
 
-         <section>
-            <h3>Experience</h3>
-            <ul class="wee_feature_blocks_list flex">
-               <li class="wee_feature_block">Web Developer</li>
-               <li class="wee_feature_block">Senior Software Engineer</li>
-               <li class="wee_feature_block">Technical Lead</li>
-               <li class="wee_feature_block">Assistant Language Teacher</li>
-            </ul>
-         </section>
-   
-         <section>
-            <h3>Education</h3>
-            <ul class="wee_feature_blocks_list flex">
-               <li class="wee_feature_block">BSc Zoology</li>
-               <li class="wee_feature_block">PGDip Software Engineering</li>
-            </ul>
-         </section>
+               <section>
+                  <h3>Experience</h3>
+                  <ul class="wee_feature_blocks_list flex">
+                     <li class="wee_feature_block">Web Developer</li>
+                     <li class="wee_feature_block">Senior Software Engineer</li>
+                     <li class="wee_feature_block">Technical Lead</li>
+                     <li class="wee_feature_block">Assistant Language Teacher</li>
+                  </ul>
+               </section>
+         
+               <section>
+                  <h3>Education</h3>
+                  <ul class="wee_feature_blocks_list flex">
+                     <li class="wee_feature_block">BSc Zoology</li>
+                     <li class="wee_feature_block">PGDip Software Engineering</li>
+                  </ul>
+               </section>
 
+            </section>
          </section>
       </section>
-      </section>
-
    </section>
-
 </template>
 
 <style scoped>
-
+.filter_nav {
+   top:40px;
+   left:0;
+}
+section.resume_items_list_view {
+   position:relative;
+   width:100%;
+   min-height:120vh;
+   padding-bottom:5rem;
+   background:var(--bg_dark);
+   user-select:none;
+}
 ul.resume_items_list {
-   /* to do : webkit : rollout */
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
-   /* flex-direction:column; */
    gap:0 !important;
+
    width:100%;
    list-style:none;
    margin:0;margin-left:1.5rem;
    padding:0;
+   background:var(--bg_dark);
 }
 ul.wee_feature_blocks_list {
-   /* to do : webkit : rollout */
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
    width:fit-content;
    list-style:none;
@@ -182,6 +211,8 @@ ul.wee_feature_blocks_list {
 }
 li.resume_item,
 li.wee_feature_block {
+   -webkit-box-flex:1;
+   -ms-flex-positive:1;
    flex-grow:1;
    color:white;
    padding:.25rem 1rem;
@@ -199,16 +230,13 @@ section.portfolio_home {
    max-width:90%;
    padding:1rem;
    border-radius:.5rem;
-   /* text-align:center; */
 }
 .meta_grid {
-
+   -ms-grid-columns:1fr;
    grid-template-columns:1fr;
-
    -webkit-box-align:flex-start;
    -ms-flex-align:flex-start;
    align-items:flex-start;
-
    gap:2rem;
 
    max-width:600px;
@@ -216,17 +244,19 @@ section.portfolio_home {
    margin-top:5rem;
    padding-bottom:5rem;
 }
+   section.view_section {
+      gap:0 !important;
+   }
 
 
 @media screen and (min-width: 768px) {
-   /* section.titles_section {
-      display:flex;
-      flex-direction: column;
-      gap:0;
-      padding:2rem;
-   } */
+
    section.view_section {
+      display:-webkit-box;
+      display:-ms-flexbox;
       display:flex;
+      -webkit-box-orient:vertical;
+      -webkit-box-direction:normal;
       flex-direction:column;
       gap:2rem;
       padding:1rem 2rem;

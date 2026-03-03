@@ -14,8 +14,6 @@ watchEffect(() => {
 })
 
 
-//  to do : pick a good image i can also use in projectslist thumbnail for this project!
-
 </script>
 
 <template>
@@ -37,12 +35,6 @@ watchEffect(() => {
       <div class="text_overlay "> 
          <!-- to do : flex_cols on mobile -->
          <section class="flex  gap_0">
-            <h4 class="text_white hero_sub_tagline flex flex_cols align_items_end justify_center"  7
-               style="width:260px;text-align:left;padding-top:1.85rem;">
-               <!-- <div class="no_wrap">Web Designer</div> -->
-               <div class="no_wrap">Web Development</div>
-               <div class="no_wrap">North East Scotland</div>
-            </h4>
             <div class="display_1 text_white">Portfolio</div>   
          </section>
       </div>
@@ -69,18 +61,13 @@ div.no_wrap {
    white-space:preserve nowrap;
 }
 
-/* div.text_overlay {
-   border:solid 2px white;
-} */
-
 .meta_grid {
 
+   -ms-grid-columns:1fr;
    grid-template-columns:1fr;
-
    -webkit-box-align:flex-start;
    -ms-flex-align:flex-start;
    align-items:flex-start;
-
    gap:2rem;
 
    max-width:600px;
@@ -91,14 +78,12 @@ div.no_wrap {
 
 
 @media screen and (min-width: 768px) {
-   /* section.titles_section {
-      display:flex;
-      flex-direction: column;
-      gap:0;
-      padding:2rem;
-   } */
    section.view_section {
+      display:-webkit-box;
+      display:-ms-flexbox;
       display:flex;
+      -webkit-box-orient:vertical;
+      -webkit-box-direction:normal;
       flex-direction:column;
       gap:2rem;
       padding:1rem 2rem;

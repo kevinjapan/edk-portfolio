@@ -35,7 +35,9 @@ const open_new_tab = (url: string) => {
    window.open(url,'_blank');
 }
 
-// to do : update project 'portfolio' img
+// 
+// we disabled 'blur' on images since transition wasn't working - it came on too abrupt
+//
 
 </script>
 
@@ -52,7 +54,7 @@ const open_new_tab = (url: string) => {
             <img v-if="props.project.img" 
                :src="teaser_img_path" 
                :alt="props.project.alt"
-               class="teaser_card_img unblur">
+               class="teaser_card_img no_blur">
 
             <div v-if="project?.img_acknowledge" class="img_acknowledge">
                <div @click="open_new_tab(project.img_acknowledge_link)" >image: {{ project.img_acknowledge }}</div>
@@ -85,9 +87,8 @@ const open_new_tab = (url: string) => {
             </div>
 
             <!-- Links -->
-             <!-- to do : rename! -->
-            <ul class="github_outer_wrap" style="align-items:flex-end;">
-               <li class="github_wrap">
+            <ul class="links_outer_wrap" style="align-items:flex-end;">
+               <li class="links_wrap">
                   <a v-if="props.project.github" class="block" :href="props.project.github" target="_blank">GitHub</a>
                   <a v-if="props.project.site" :href="props.project.site" target="_blank" class="block">Visit Site</a>
                </li>
@@ -106,33 +107,26 @@ const open_new_tab = (url: string) => {
 /* to do : improve on mobile display */
 
 section.project_teaser {
+
    display:-webkit-box;
    display:-ms-flexbox;
    display:flex;
-
    -webkit-box-orient:vertical;
    -webkit-box-direction:normal;
    -ms-flex-direction:column;
    flex-direction:column;
-
    gap:.25rem;
 
    width:100%;
    height:100%;
    height:fit-content;
    margin:0;
-   /* padding:.5rem; */
-   padding-bottom:.8rem;
-   /* border:solid 1px hsl(0, 0%, 90%); */
-   /* border-radius:.5rem; */
-
+   padding-bottom:.9rem;
    background:white;
-
    cursor:pointer;
    overflow:hidden;
    text-align:left;
    user-select:none;
-   
 }
 
 section.project_teaser img {
@@ -148,7 +142,9 @@ section.project_teaser:hover img {
    transition: scale 0.5s;
 }
 img.teaser_card_img {
+   -o-object-fit:cover;
    object-fit:cover;
+   -o-object-position:top left;
    object-position:top left;
 }
 section.teaser_slots {
@@ -160,9 +156,14 @@ section.teaser_slots {
 }
 
 section.project_teaser_texts {
-   /* to do : webkit : rollout */
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+   -webkit-box-orient:vertical;
+   -webkit-box-direction:normal;
    flex-direction:column;
+   -webkit-box-pack:center;
+   -ms-flex-pack:center;
    justify-content:center;
    gap:0;
    margin:0;
@@ -170,7 +171,11 @@ section.project_teaser_texts {
 }
 
 section.teaser_title_tagline {
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+   -webkit-box-orient:vertical;
+   -webkit-box-direction:normal;
    flex-direction:column;
    gap:0;
    width:100%;
@@ -247,7 +252,6 @@ h2 > div.no_title_link {
    position:absolute;
    padding:.15rem .25rem;
    bottom:15px;right:5px;
-   /* background:white; */
    font-size:.8rem;
    font-style:italic;
    text-align:right;
@@ -295,24 +299,17 @@ img {
    margin-left:auto;
    margin-right:auto;
 
+   opacity:.5;
+
    -webkit-filter:blur(5px);
    filter:blur(5px);
-
-   opacity:.5;
-   
-
+    transition: filter 0.5s ease;
 }
 
 img.no_blur {
-
    -webkit-filter:blur(0);
    filter:blur(0);
    opacity:1;
-
-   -webkit-transition: .3s -webkit-filter ease-in-out;
-   -moz-transition: .3s -moz-filter ease-in-out;
-   -o-transition: .3s -o-filter ease-in-out;
-   transition: .3s filter ease-in-out;
 }
 
 div.teaser_slot.tech_list {
@@ -330,6 +327,8 @@ div.teaser_slot.tech_list {
    -ms-flex-pack:flex-start;
    justify-content:center;
 
+   -webkit-box-align:left;
+   -ms-flex-align:left;
    align-items:left;
 
    gap:.15rem;
@@ -340,6 +339,8 @@ div.teaser_slot.tech_list {
 }
 div.tech {
    position:relative;
+   -webkit-box-align:left;
+   -ms-flex-align:left;
    align-items:left;
    width:fit-content;
    color:black;
@@ -398,23 +399,35 @@ li {
 
    /* to do : list items are not centered in mobile */
    div.teaser_slot.tech_list {
+      -webkit-box-orient:horizontal;
+      -webkit-box-direction:normal;
+      -ms-flex-direction:row;
       flex-direction:row;
+      -ms-flex-wrap:wrap;
       flex-wrap:wrap;
    }
    
 }
 
-.github_outer_wrap {
-   /* to do : webkit : rollout */
+.links_outer_wrap {
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+   -webkit-box-pack:center;
+   -ms-flex-pack:center;
    justify-content:center;
    width:100%;
    margin-top:.25rem;
 }
-.github_wrap {
-   /* to do : webkit : rollout */
+.links_wrap {
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+   -webkit-box-pack:end;
+   -ms-flex-pack:end;
    justify-content:flex-end;
+   -webkit-box-align:center;
+   -ms-flex-align:center;
    align-items:center;
    gap:.05rem;
    background:#777;
@@ -422,16 +435,16 @@ li {
    margin-top:.5rem;
    padding:.05rem;
 }
-.github_wrap img {
+.links_wrap img {
    margin:0;
    border:none;
 }
 
-.github_icon {
+.links_icon {
    width:24px;
    height:24px;
 }
-.github_wrap a {
+.links_wrap a {
    border-radius:0;
    text-decoration:none;
    font-size:.9rem;
@@ -440,7 +453,7 @@ li {
    color:blue;
    padding:.15rem .45rem;
 }
-.github_wrap a:hover {
+.links_wrap a:hover {
    background: #323232;
    color:white;
 }
