@@ -657,6 +657,25 @@ section.feature_block > div > *:not(button) {
    transform:translateX(0%);
    transition:transform .5s ease-in-out;
 }
+
+
+/* 
+   TRANSITION UTILITIES
+   -----------------------------
+*/
+/* we can stagger side-by-side tiles for cascade effect */
+.delay_1 {-webkit-transition-delay:.1s;-o-transition-delay:.1s;transition-delay:.1s;}
+.delay_2 {-webkit-transition-delay:.2s;-o-transition-delay:.2s;transition-delay:.2s;}
+.delay_3 {-webkit-transition-delay:.3s;-o-transition-delay:.3s;transition-delay:.3s;}
+.delay_4 {-webkit-transition-delay:.4s;-o-transition-delay:.4s;transition-delay:.4s;}
+.delay_5 {-webkit-transition-delay:.5s;-o-transition-delay:.5s;transition-delay:.5s;}
+.delay_6 {-webkit-transition-delay:.6s;-o-transition-delay:.6s;transition-delay:.6s;}
+.delay_7 {-webkit-transition-delay:.7s;-o-transition-delay:.7s;transition-delay:.7s;}
+.delay_8 {-webkit-transition-delay:.8s;-o-transition-delay:.8s;transition-delay:.8s;}
+.delay_9 {-webkit-transition-delay:.9s;-o-transition-delay:.9s;transition-delay:.9s;}
+
+
+
 .display_block {
    display:block;
 }

@@ -55,21 +55,23 @@ ul.skill_tag_list {
    -ms-flex-pack:start;
    justify-content:flex-start;
    gap:0rem;
+
    max-width:100%;
    list-style:none;
    margin:0;
    padding:0 .5rem;
-
    color:white;
    background:var(--bg_dark);background:#36454f;
    color:black;
 }
 @media screen and (max-width: 768px) {
    ul.skill_tag_list {
+      -webkit-box-pack:center;
+      -ms-flex-pack:center;
+      justify-content:center;
       gap:0;
       padding:0;
       margin:0;
-      justify-content:center;
    }
    .skill_tag {
       margin:0;

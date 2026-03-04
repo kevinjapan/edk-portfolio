@@ -151,7 +151,12 @@ section.project_teaser:hover img {
 /* tidy and align in mobile */
 @media screen and (max-width: 610px) {
    section.project_teaser img {
-      max-height:160px !important;
+
+      max-height:180px !important;
+      -o-object-fit:cover;
+      object-fit:cover;
+      -o-object-position:center left;
+      object-position:center left;
    }
 }
 img.teaser_card_img {

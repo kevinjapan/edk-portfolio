@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onBeforeMount, watchEffect } from 'vue'
-import { init_fade_ins } from '@/utilities/intersections/intersections'
+import { onBeforeMount, onUpdated, watchEffect } from 'vue'
+import { init_fade_ins, init_slide_ins } from '@/utilities/intersections/intersections'
 
 
 
@@ -9,8 +9,18 @@ onBeforeMount(async() => {
    setTimeout(() => window.scroll(0,0),100)
 })
 
+onUpdated(() => {
+   setTimeout(() => {
+      init_slide_ins()
+      init_fade_ins()
+   },200)
+})
+
 watchEffect(() => {
-   setTimeout(() => init_fade_ins(),500)
+   setTimeout(() => {
+      init_slide_ins()
+      init_fade_ins()
+   },200)
 })
 
 </script>
@@ -23,14 +33,14 @@ watchEffect(() => {
          HERO
       -->
       <section 
-         class="cover_block hero_block fade_in subtle_zoom_in can_darken darken_img_3 ml_3_lg mr_n3_lg" 
+         class="cover_block hero_block fade_in  can_darken darken_img_3 ml_3_lg mr_n3_lg" 
          style="height:780px;" >
             
             <img class="bg_img" style="object-fit:cover;object-position:right center;max-width:100%;"
                src="/imgs/all-sorts-of-questions.jpg" 
                alt="image of blue sky and starling sitting atop a corrugated shed" /> 
             
-            <div class="text_overlay  "> 
+            <div class="text_overlay  slide_in_left"> 
                <section class="flex flex_cols gap_0 pl_2_lg">
                   <h1 class="bg_dark" style="border:solid 3px white;margin:0;padding:0 .5rem;">Kev Hastie</h1>
                   <div class="display_1 text_white" style="border:solid 3px white;margin:0;padding:0 .5rem;">Portfolio</div>   

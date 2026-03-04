@@ -3,8 +3,8 @@ import { ref, computed, onBeforeMount, onMounted, onUpdated, watch } from 'vue'
 import { useProjectStore } from '@/stores/projectStore.ts'
 import ProjectFilter from '../components/ProjectFilter/ProjectFilter.vue'
 import ProjectTeaser from '../components/ProjectTeaser/ProjectTeaser.vue'
-// import init_slide_ups from '../utilities/intersections/intersections'
 import init_unblurs from '../utilities/intersections/intersections'
+import { init_slide_ups } from '../utilities/intersections/intersections'
 
 
 // ProjectsListView
@@ -21,14 +21,15 @@ const filtered_projects_list = ref<Project[]>([])
 // the current tech filter
 const filter = ref(projectStore.current_filter)
 
-// we scroll to this height on changing filter to set filter_nav at top
-// const filter_nav_top = 125
 
 // our 'loading' flag
-const updating = ref(false)
+const updating = ref<boolean>(false)
 
 // we flag initial mount, so that we don't scroll if we've just loaded this component
-const mounting = ref(true)
+const mounting = ref<boolean>(true)
+
+// incrememnt delay on cards in order of appearance
+// const delay_counter = ref<number>(0)
 
 onBeforeMount(async() => {
 
@@ -58,6 +59,7 @@ onMounted(() => {
    
    // // Firefox needs a delay to render page and effect this scroll
    setTimeout(() => window.scroll(0,0),200)
+   init_slide_ups()
 })
 
 onUpdated(() => {
@@ -66,7 +68,7 @@ onUpdated(() => {
       setTimeout(() => window.scroll(0,0),200)
    }
    init_unblurs()
-   // init_slide_ups()
+   init_slide_ups()
 })
 
 // we introduce a delay to give perception of list changing;
@@ -87,6 +89,8 @@ const current_filter_label = computed(() => {
    return filter.value === '' ? 'all projects' : filter.value
 })
 
+
+
 </script>
 
 <template>
@@ -95,14 +99,27 @@ const current_filter_label = computed(() => {
       
       <h1>Projects</h1>
 
-      <ProjectFilter v-model="filter" :projects_list="projectStore.projects_list" class="sticky filter_nav"/>      
+      <ProjectFilter 
+         v-model="filter" 
+         :projects_list="projectStore.projects_list" 
+         class="sticky filter_nav"
+      />      
       
       <!-- we should simply filter the 'projects_list' from projectStore, but we
          wanted to explore the rendering mechanism; ok method for our dataset size -->
       <ul v-if="updating === false" class="projects_list_grid gap_1">
-         <li class="li_project_teaser" v-for="project in filtered_projects_list" key="project.slug">
-            <ProjectTeaser  :project="project" :filter="filter"/>
+
+         <!-- to do : add incrememented delay_n classes to <li> elements : -->
+
+         <li 
+            class="li_project_teaser slide_up " 
+            
+            v-for="project in filtered_projects_list" key="project.slug">
+               
+               <ProjectTeaser  :project="project" :filter="filter"/>
+
          </li>
+
       </ul>
 
       <p v-else class="loading">
@@ -166,9 +183,6 @@ ul.projects_list_grid {
       margin-right:auto;
       margin-bottom:1rem;
    }
-   section.view_section {
-      margin-top:3rem;
-   }
 }
 @media screen and (max-width: 620px) {
    ul.projects_list_grid {
@@ -215,7 +229,6 @@ h1 {
    h1 {
       text-align:center;
       padding-top:2rem !important;
-      padding-bottom:2rem !important;
    }
 }
 

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { onBeforeMount, onUpdated, onMounted, watch, watchEffect, ref } from 'vue'
-import { init_fade_ins } from '@/utilities/intersections/intersections'
+import { init_fade_ins, reset_slide_ups } from '@/utilities/intersections/intersections'
 import { useResumeStore } from '@/stores/resumeStore.ts'
 import ResumeAspectFilter from '../components/ResumeAspectFilter/ResumeAspectFilter.vue'
 import ResumeItemTeaser from '@/components/ResumeItemTeaser/ResumeItemTeaser.vue'
+import { init_slide_ups } from '../utilities/intersections/intersections'
 
 
 
@@ -76,6 +77,8 @@ onMounted(() => {
    
    // // Firefox needs a delay to render page and effect this scroll
    setTimeout(() => window.scroll(0,0),200)
+
+   init_slide_ups()
 })
 
 onUpdated(() => {
@@ -83,6 +86,9 @@ onUpdated(() => {
       // Firefox needs a delay to render page and effect this scroll
       setTimeout(() => window.scroll(0,0),200)
    }
+   
+   reset_slide_ups()
+   init_slide_ups()
 })
 
 </script>
@@ -93,14 +99,18 @@ onUpdated(() => {
 
       <h1>Resume</h1>
 
-      <ResumeAspectFilter v-model="filter" :resume_items_list="resumeStore.resume_items_list" class="sticky filter_nav"/>   
+      <ResumeAspectFilter 
+         v-model="filter" 
+         :resume_items_list="resumeStore.resume_items_list" 
+         class="sticky filter_nav"
+      />   
 
       <section  v-if="updating === false">
             
-         <section v-if="filter !== ''" class="px_5 px_3_lg">
+         <section v-if="filter !== ''" class="slide_up px_5 px_3_lg">
             <h3>{{  filter }}</h3>
             <ul class="resume_items_list gap_1">
-               <li class="resume_item" v-for="resume_item in filtered_resume_items_list" key="resume_item">
+               <li class="resume_item " v-for="resume_item in filtered_resume_items_list" key="resume_item">
                   <ResumeItemTeaser  :resume_item="resume_item" :filter="filter"/>
                </li>
             </ul>
@@ -109,7 +119,7 @@ onUpdated(() => {
          <section v-else>
             <!-- workaround : static display for 'All' -->
             <section class="px_5 px_3_lg">
-               <section>
+               <section class="slide_up delay_1">
                   <h3>Languages</h3>
                   <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">JavaScript</li>
@@ -120,7 +130,7 @@ onUpdated(() => {
                   </ul>
                </section>
 
-               <section>
+               <section class="slide_up delay_2">
                   <h3>Frameworks</h3>
                   <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">Vue</li>
@@ -130,7 +140,7 @@ onUpdated(() => {
                   </ul>
                </section>
 
-               <section>
+               <section class="slide_up delay_3">
                   <h3>Web Design</h3>
                   <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">Figma</li>
@@ -139,7 +149,7 @@ onUpdated(() => {
                   </ul>
                </section>
 
-               <section>
+               <section class="slide_up delay_4">
                   <h3>Database</h3>
                   <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">MySQL</li>
@@ -147,7 +157,7 @@ onUpdated(() => {
                   </ul>
                </section>
 
-               <section>
+               <section class="slide_up delay_5">
                   <h3>Experience</h3>
                   <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">Web Developer</li>
@@ -157,7 +167,7 @@ onUpdated(() => {
                   </ul>
                </section>
          
-               <section>
+               <section class="slide_up delay_6">
                   <h3>Education</h3>
                   <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">BSc Zoology</li>
@@ -303,9 +313,7 @@ h4 {
    font-weight:400;
 }
 @media screen and (max-width: 768px) {
-   h1 {
-      letter-spacing:1rem;
-   }
+ 
    h2 {
       font-size:3rem;
       letter-spacing:unset;

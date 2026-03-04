@@ -44,13 +44,40 @@ export const init_slide_ups = () => {
    const slide_up_elems = document.querySelectorAll('.slide_up')
    const appearOptions = {
       threshold: 0,
-      rootMargin: "0px 0px -200px 0px"
+      rootMargin: "0px 0px 200px 0px"
    }
    return create_observers(slide_up_elems,'has_slid_up',appearOptions)
 }
 export const reset_slide_ups = () => {
    const slide_up_elems = document.querySelectorAll('.slide_up')
    remove_class(slide_up_elems, 'has_slid_up')  
+}
+
+
+// .slide_in_left / .slide_in_right
+// --------------------------------------------------
+// subtle slide_ins for text
+export const init_slide_ins = () => {
+
+   const slide_in_left_elems = document.querySelectorAll('.slide_in_left')
+   const appearOptions = {
+      threshold: 0,
+      rootMargin: "0px 0px -200px 0px"
+   }
+   create_observers(slide_in_left_elems,'has_slid_in',appearOptions)
+   
+   const slide_in_right_elems = document.querySelectorAll('.slide_in_right')
+   const appearOptions_2 = {
+      threshold: 0,
+      rootMargin: "0px 0px -200px 0px"
+   }
+   return create_observers(slide_in_right_elems,'has_slid_in',appearOptions_2)
+}
+export const reset_slide_ins = () => {
+   const slide_in_left_elems = document.querySelectorAll('.slide_in_left')
+   remove_class(slide_in_left_elems, 'has_slid_in')
+   const slide_in_right_elems = document.querySelectorAll('.slide_in_right')
+   remove_class(slide_in_right_elems, 'has_slid_in')  
 }
 
 

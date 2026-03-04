@@ -19,8 +19,7 @@ export const useResumeStore = defineStore('resume_store', () => {
    const current_filter = ref('')
 
    // getters
-   const 
-   get_resume_item = computed(() => current_resume_item.value)
+   const get_resume_item = computed(() => current_resume_item.value)
 
  
    // async function load_resume_item(resume_item_slug: string) {
