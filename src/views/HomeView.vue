@@ -19,30 +19,32 @@ watchEffect(() => {
 <template>
 
    <section class="home_view">
-
-      <!-- to do : we have two h1 elements on this view : fix & rollout -->
-   <h1>Kev Hastie</h1>
-
-
    
-   <!--
-      HERO
-   -->
-   <section class="cover_block hero_block fade_in subtle_zoom_in can_darken darken_img_3 " style="height:780px;" >
-      <img class="bg_img" style="object-fit:cover;object-position:right center;max-width:100%;"
-         src="/imgs/all-sorts-of-questions.jpg" 
-         alt="to do : alt text" /> 
-      <div class="text_overlay "> 
-         <!-- to do : flex_cols on mobile -->
-         <section class="flex  gap_0">
-            <div class="display_1 text_white">Portfolio</div>   
-         </section>
-      </div>
-   </section>  
+      <!--
+         HERO
+      -->
+      <section class="cover_block hero_block fade_in subtle_zoom_in can_darken darken_img_3 ml_3_lg mr_n3_lg" style="height:780px;" >
+         <img class="bg_img" style="object-fit:cover;object-position:right center;max-width:100%;"
+            src="/imgs/all-sorts-of-questions.jpg" 
+            alt="image of blue sky and starling sitting atop a corrugated shed" /> 
+         <div class="text_overlay  "> 
+            <section class="flex flex_cols gap_0 pl_2_lg">
+               <h1 class="bg_dark" style="border:solid 3px white;margin:0;padding:0 .5rem;">Kev Hastie</h1>
+               <div class="display_1 text_white" style="border:solid 3px white;margin:0;padding:0 .5rem;">Portfolio</div>   
+            </section>
+         </div>
+      </section>  
    </section>
 </template>
 
 <style scoped>
+section.cover_block {
+   
+   /* compensate for ml_3_lg design alignment */
+   width:calc(100% - 3rem);
+
+   overflow:hidden;
+}
 section.home_view {
    user-select:none;
 }
@@ -99,13 +101,29 @@ div.no_wrap {
 
 
 h1 {
+   font-weight:500 !important;
    color:white;
    padding-left:1rem;
 }
 @media screen and (max-width: 768px) {
    h1 {
+      font-size: 2.25em;
+      line-height:3.75rem;
+      font-weight:300;
+      letter-spacing:.21rem;
+   }
+   .display_1 {
+      font-size:5rem;
+      line-height:5.5rem;
+      font-weight:700;
+      width:100%;
+      margin:2rem 0 0 0;
+      padding-bottom:1rem;
       text-align:center;
-      padding-top:2rem !important;
+      letter-spacing:.21rem;
+   }
+   div.text_overlay {
+      margin:0 auto;
    }
 }
 h3 {
@@ -123,18 +141,7 @@ h4 {
 .text_white {
    color:white;
 }
-@media screen and (max-width: 768px) {
-   h1 {
-      letter-spacing:1rem;
-   }
-   h2 {
-      font-size:3rem;
-      letter-spacing:unset;
-   }
-   .meta_grid img {
-      max-width:80%;
-   }
-}
+
 ul {
    margin:0;
 }

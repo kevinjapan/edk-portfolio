@@ -103,9 +103,6 @@ const open_new_tab = (url: string) => {
 
 
 <style scoped>
-
-/* to do : improve on mobile display */
-
 section.project_teaser {
 
    display:-webkit-box;
@@ -129,6 +126,16 @@ section.project_teaser {
    user-select:none;
 }
 
+/* tidy and align in mobile */
+@media screen and (max-width: 610px) {
+   
+   section.project_teaser {
+      width:80%;
+      margin:0 auto;
+   }
+
+}
+
 section.project_teaser img {
    scale:1;
    -webkit-transition: scale 1s;
@@ -140,6 +147,12 @@ section.project_teaser:hover img {
    -webkit-transition: scale 0.5s;
    -o-transition: scale 0.5s;
    transition: scale 0.5s;
+}
+/* tidy and align in mobile */
+@media screen and (max-width: 610px) {
+   section.project_teaser img {
+      max-height:160px !important;
+   }
 }
 img.teaser_card_img {
    -o-object-fit:cover;
@@ -318,10 +331,12 @@ div.teaser_slot.tech_list {
    display:-ms-flexbox;
    display:flex;
 
-   -webkit-box-orient:vertical;
+   -webkit-box-orient:horizontal;
    -webkit-box-direction:normal;
-   -ms-flex-direction:column;
-   flex-direction:column;
+   -ms-flex-direction:row;
+   flex-direction:row;
+   -ms-flex-wrap:wrap;
+   flex-wrap:wrap;
 
    -webkit-box-pack:flex-start;
    -ms-flex-pack:flex-start;
@@ -330,6 +345,8 @@ div.teaser_slot.tech_list {
    -webkit-box-align:left;
    -ms-flex-align:left;
    align-items:left;
+
+   
 
    gap:.15rem;
 
@@ -397,7 +414,6 @@ li {
 
 @media screen and (min-width: 768px) {
 
-   /* to do : list items are not centered in mobile */
    div.teaser_slot.tech_list {
       -webkit-box-orient:horizontal;
       -webkit-box-direction:normal;

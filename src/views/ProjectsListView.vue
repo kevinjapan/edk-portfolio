@@ -3,6 +3,7 @@ import { ref, computed, onBeforeMount, onMounted, onUpdated, watch } from 'vue'
 import { useProjectStore } from '@/stores/projectStore.ts'
 import ProjectFilter from '../components/ProjectFilter/ProjectFilter.vue'
 import ProjectTeaser from '../components/ProjectTeaser/ProjectTeaser.vue'
+// import init_slide_ups from '../utilities/intersections/intersections'
 import init_unblurs from '../utilities/intersections/intersections'
 
 
@@ -65,6 +66,7 @@ onUpdated(() => {
       setTimeout(() => window.scroll(0,0),200)
    }
    init_unblurs()
+   // init_slide_ups()
 })
 
 // we introduce a delay to give perception of list changing;
@@ -84,9 +86,6 @@ watch(filter,() => {
 const current_filter_label = computed(() => {
    return filter.value === '' ? 'all projects' : filter.value
 })
-
-
-// to do : make cards slide_up (distracts from imgs filling in slower than page layout..)
 
 </script>
 

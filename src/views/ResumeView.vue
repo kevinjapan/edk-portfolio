@@ -85,8 +85,6 @@ onUpdated(() => {
    }
 })
 
-// to do : check responsiveness this page : rollout
-
 </script>
 
 <template>
@@ -99,8 +97,7 @@ onUpdated(() => {
 
       <section  v-if="updating === false">
             
-         <!-- to do : flex_cols on mobile ..  -->
-         <section v-if="filter !== ''" class="px_3_lg">
+         <section v-if="filter !== ''" class="px_5 px_3_lg">
             <h3>{{  filter }}</h3>
             <ul class="resume_items_list gap_1">
                <li class="resume_item" v-for="resume_item in filtered_resume_items_list" key="resume_item">
@@ -110,12 +107,11 @@ onUpdated(() => {
          </section>
 
          <section v-else>
-
             <!-- workaround : static display for 'All' -->
-            <section class="px_3_lg">
+            <section class="px_5 px_3_lg">
                <section>
                   <h3>Languages</h3>
-                  <ul class="wee_feature_blocks_list flex">
+                  <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">JavaScript</li>
                      <li class="wee_feature_block">TypeScript</li>
                      <li class="wee_feature_block">PHP</li>
@@ -126,7 +122,7 @@ onUpdated(() => {
 
                <section>
                   <h3>Frameworks</h3>
-                  <ul class="wee_feature_blocks_list flex">
+                  <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">Vue</li>
                      <li class="wee_feature_block">React</li>
                      <li class="wee_feature_block">Electron</li>
@@ -136,7 +132,7 @@ onUpdated(() => {
 
                <section>
                   <h3>Web Design</h3>
-                  <ul class="wee_feature_blocks_list flex">
+                  <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">Figma</li>
                      <li class="wee_feature_block">WordPress</li>
                      <li class="wee_feature_block">SquareSpace</li>
@@ -145,7 +141,7 @@ onUpdated(() => {
 
                <section>
                   <h3>Database</h3>
-                  <ul class="wee_feature_blocks_list flex">
+                  <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">MySQL</li>
                      <li class="wee_feature_block">SQLite</li>
                   </ul>
@@ -153,7 +149,7 @@ onUpdated(() => {
 
                <section>
                   <h3>Experience</h3>
-                  <ul class="wee_feature_blocks_list flex">
+                  <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">Web Developer</li>
                      <li class="wee_feature_block">Senior Software Engineer</li>
                      <li class="wee_feature_block">Technical Lead</li>
@@ -163,7 +159,7 @@ onUpdated(() => {
          
                <section>
                   <h3>Education</h3>
-                  <ul class="wee_feature_blocks_list flex">
+                  <ul class="resume_items_list wee_feature_blocks_list flex">
                      <li class="wee_feature_block">BSc Zoology</li>
                      <li class="wee_feature_block">PGDip Software Engineering</li>
                   </ul>
@@ -192,7 +188,7 @@ ul.resume_items_list {
    display:-webkit-box;
    display:-ms-flexbox;
    display:flex;
-   gap:0 !important;
+   gap:0;
 
    width:100%;
    list-style:none;
@@ -200,6 +196,17 @@ ul.resume_items_list {
    padding:0;
    background:var(--bg_dark);
 }
+/* tidy and align in mobile */
+@media screen and (max-width: 910px) {
+
+   ul.resume_items_list {
+      flex-direction:column;
+      gap:.25rem !important;
+   }
+
+}
+
+
 ul.wee_feature_blocks_list {
    display:-webkit-box;
    display:-ms-flexbox;
