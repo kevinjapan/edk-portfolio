@@ -93,7 +93,7 @@ const current_filter_label = computed(() => {
 
    <section class="view_section projects_list relative pt_3 px_5_lg">
       
-      <h1 >Projects</h1>
+      <h1>Projects</h1>
 
       <ProjectFilter v-model="filter" :projects_list="projectStore.projects_list" class="sticky filter_nav"/>      
       
@@ -122,7 +122,7 @@ const current_filter_label = computed(() => {
 section.projects_list {
    position:relative;
    width:100%;
-   min-height:120vh;
+   min-height:100vh;
    padding-bottom:5rem;
    background:var(--bg_dark);
    user-select:none;
@@ -202,7 +202,7 @@ li.li_project_teaser {
 }
 @media screen and (max-width: 768px) {
    .loading {
-      font-size:4rem;
+      font-size:3rem;
    }
 }
 

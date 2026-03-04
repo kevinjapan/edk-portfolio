@@ -179,7 +179,7 @@ onUpdated(() => {
 section.resume_items_list_view {
    position:relative;
    width:100%;
-   min-height:120vh;
+   min-height:100vh;
    padding-bottom:5rem;
    background:var(--bg_dark);
    user-select:none;

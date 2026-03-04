@@ -13,7 +13,6 @@ watchEffect(() => {
    setTimeout(() => init_fade_ins(),500)
 })
 
-
 </script>
 
 <template>
@@ -23,21 +22,27 @@ watchEffect(() => {
       <!--
          HERO
       -->
-      <section class="cover_block hero_block fade_in subtle_zoom_in can_darken darken_img_3 ml_3_lg mr_n3_lg" style="height:780px;" >
-         <img class="bg_img" style="object-fit:cover;object-position:right center;max-width:100%;"
-            src="/imgs/all-sorts-of-questions.jpg" 
-            alt="image of blue sky and starling sitting atop a corrugated shed" /> 
-         <div class="text_overlay  "> 
-            <section class="flex flex_cols gap_0 pl_2_lg">
-               <h1 class="bg_dark" style="border:solid 3px white;margin:0;padding:0 .5rem;">Kev Hastie</h1>
-               <div class="display_1 text_white" style="border:solid 3px white;margin:0;padding:0 .5rem;">Portfolio</div>   
-            </section>
-         </div>
+      <section 
+         class="cover_block hero_block fade_in subtle_zoom_in can_darken darken_img_3 ml_3_lg mr_n3_lg" 
+         style="height:780px;" >
+            
+            <img class="bg_img" style="object-fit:cover;object-position:right center;max-width:100%;"
+               src="/imgs/all-sorts-of-questions.jpg" 
+               alt="image of blue sky and starling sitting atop a corrugated shed" /> 
+            
+            <div class="text_overlay  "> 
+               <section class="flex flex_cols gap_0 pl_2_lg">
+                  <h1 class="bg_dark" style="border:solid 3px white;margin:0;padding:0 .5rem;">Kev Hastie</h1>
+                  <div class="display_1 text_white" style="border:solid 3px white;margin:0;padding:0 .5rem;">Portfolio</div>   
+               </section>
+            </div>
+
       </section>  
    </section>
 </template>
 
 <style scoped>
+
 section.cover_block {
    
    /* compensate for ml_3_lg design alignment */
@@ -45,6 +50,13 @@ section.cover_block {
 
    overflow:hidden;
 }
+@media screen and (max-width: 1045px) {
+   section.cover_block {
+      /* reset on compensate for ml_3_lg design alignment */
+      width:100%;
+   }
+}
+
 section.home_view {
    user-select:none;
 }
@@ -124,6 +136,16 @@ h1 {
    }
    div.text_overlay {
       margin:0 auto;
+   }
+}
+@media screen and (max-width: 610px) {
+   h1 {
+      font-size: 2em;
+      line-height:3.25rem;
+   }
+   .display_1 {
+      font-size:3.75rem;
+      line-height:4.5rem;
    }
 }
 h3 {
