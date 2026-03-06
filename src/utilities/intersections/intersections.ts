@@ -30,7 +30,7 @@ export const init_fade_ins = () => {
    const faders = document.querySelectorAll('.fade_in')
    const appearOptions = {
       threshold: 0,
-      rootMargin: "0px 0px -200px 0px"
+      rootMargin: "0px 0px 200px 0px"
    }
    return create_observers(faders,'appear',appearOptions)
 }

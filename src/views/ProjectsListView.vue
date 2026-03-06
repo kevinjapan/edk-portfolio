@@ -3,8 +3,7 @@ import { ref, computed, onBeforeMount, onMounted, onUpdated, watch } from 'vue'
 import { useProjectStore } from '@/stores/projectStore.ts'
 import ProjectFilter from '../components/ProjectFilter/ProjectFilter.vue'
 import ProjectTeaser from '../components/ProjectTeaser/ProjectTeaser.vue'
-import init_unblurs from '../utilities/intersections/intersections'
-import { init_slide_ups } from '../utilities/intersections/intersections'
+import { init_slide_ups, init_fade_ins } from '../utilities/intersections/intersections'
 
 
 // ProjectsListView
@@ -60,6 +59,7 @@ onMounted(() => {
    // // Firefox needs a delay to render page and effect this scroll
    setTimeout(() => window.scroll(0,0),200)
    init_slide_ups()
+   init_fade_ins()
 })
 
 onUpdated(() => {
@@ -67,8 +67,8 @@ onUpdated(() => {
       // Firefox needs a delay to render page and effect this scroll
       setTimeout(() => window.scroll(0,0),200)
    }
-   init_unblurs()
    init_slide_ups()
+   init_fade_ins()
 })
 
 // we introduce a delay to give perception of list changing;
@@ -105,18 +105,19 @@ const current_filter_label = computed(() => {
          class="sticky filter_nav"
       />      
       
-      <!-- we should simply filter the 'projects_list' from projectStore, but we
-         wanted to explore the rendering mechanism; ok method for our dataset size -->
+      <!-- 
+      we should simply filter the 'projects_list' from projectStore, but we
+      wanted to explore the rendering mechanism; ok method for our dataset size       
+      future : improve UI tweaking fade_in and slide_up delays
+      -->
+
       <ul v-if="updating === false" class="projects_list_grid gap_1">
 
-         <!-- to do : add incrememented delay_n classes to <li> elements : -->
-
          <li 
-            class="li_project_teaser slide_up " 
-            
-            v-for="project in filtered_projects_list" key="project.slug">
-               
-               <ProjectTeaser  :project="project" :filter="filter"/>
+            v-for="(project, index) in filtered_projects_list" key="project.slug"
+            class="li_project_teaser slide_up " :class="'delay_' + index">
+
+               <ProjectTeaser  :project="project" :filter="filter" :delay="index.toString()"/>
 
          </li>
 

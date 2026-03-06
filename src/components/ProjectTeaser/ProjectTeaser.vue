@@ -4,8 +4,13 @@ import { computed } from 'vue'
 // type-based declaration
 // it is usually more straightforward to define props with pure types via a generic type argument
 // The compiler will try to do its best to infer the equivalent runtime options based on the type argument.
+
+// we rcv delay int from client/parent/container to allow us to match delays 
+// this permits slide_up and fade_in to be combined smoothly
+
 const props = defineProps<{
   project: Project
+  delay: string
   filter: string
 }>()
 
@@ -46,7 +51,7 @@ const open_new_tab = (url: string) => {
 
    <Transition>
 
-      <section class="project_teaser" @click="click_on_card">
+      <section class="project_teaser fade_in" :class="'delay_' + delay" @click="click_on_card">
 
 
          <!-- CARD IMAGE -->
