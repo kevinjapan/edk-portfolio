@@ -21,14 +21,31 @@
       "slug":"khw",
       "status":"just started",
       "file":"",
-      "tagline":"Web dev agency",
+      "tagline":"Web Dev Agency",
       "desc":[
          "Website for web dev agency."
       ],
       "img":"khw-homepage-hero-ad.jpg",
-      "alt":"image of khw homepage hero section",
+      "alt":"image of kev hastie websites website",
       "github":"",
       "site":"https://kevhastiewebsites.netlify.app/",
+      "tech":[
+         {"name":"Vue.js"}
+      ]
+   },
+   {
+      "title":"KhwDesigns",
+      "slug":"khwdesigns",
+      "status":"just started",
+      "file":"",
+      "tagline":"Web Designs",
+      "desc":[
+         "Website for web dev agency."
+      ],
+      "img":"khwdesigns.jpg",
+      "alt":"image of khwDesigns website",
+      "github":"",
+      "site":"https://khwdesigns.netlify.app/",
       "tech":[
          {"name":"Vue.js"}
       ]
@@ -81,7 +98,7 @@
       "img":"all-sorts-of-questions.jpg",
       "alt":"image of blue sky and starling sitting atop a corrugated shed",
       "github":"https://github.com/kevinjapan/edk-portfolio",
-      "site":"",
+      "site":"https://edk-portfolio.netlify.app/",
       "tech":[
          {"name":"Vue.js"},
          {"name":"TypeScript"},

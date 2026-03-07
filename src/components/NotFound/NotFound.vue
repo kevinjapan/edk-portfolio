@@ -9,14 +9,14 @@
       <h1 class="text_center">Page Not Found</h1>
       <p class="text_center">Sorry, a page or resouce was not found.</p>
       <p class="text_center pt_1">You might find what you're looking for here:</p>
-   </section>
-
    <section class="mt_2">
       <div class="flex  justify_center gap_1 text_center align_items_center">
          <RouterLink to="/" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Home</RouterLink>
          <RouterLink to="/projects" class="view_link" activeClass="selected_view" exactActiveClass="selected_view">Projects</RouterLink>
       </div>
    </section>
+   </section>
+
 
 </template>
 
@@ -25,6 +25,7 @@
 section.view_section {
    margin-top:7rem;
    color:white;
+   min-height:80vh;
 }
 
 h1 {
