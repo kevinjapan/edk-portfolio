@@ -206,6 +206,7 @@ li.li_project_teaser {
 .loading {
    white-space: normal;
    font-size:9rem;
+   line-height:9rem;
    font-weight:200;
    color:hsl(0, 0%, 75%);
    width:fit-content;
