@@ -3,7 +3,6 @@ import { onBeforeMount, onUpdated, watchEffect } from 'vue'
 import { init_fade_ins, init_slide_ins } from '@/utilities/intersections/intersections'
 
 
-
 onBeforeMount(async() => {
    // Firefox needs a delay to render page and effect this scroll
    setTimeout(() => window.scroll(0,0),100)

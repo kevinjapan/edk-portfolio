@@ -9,7 +9,7 @@ const copyright_date = ref(today.getFullYear())
 
 <template>
 
-   <section>
+   <section class="fade_in delay_9">
       Copyright &copy; Kev Hastie 2021 - {{ copyright_date }}
    </section>
 
