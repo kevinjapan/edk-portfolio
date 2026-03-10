@@ -94,8 +94,8 @@ const open_new_tab = (url: string) => {
             <!-- Links -->
             <ul class="links_outer_wrap" style="align-items:flex-end;">
                <li class="links_wrap">
-                  <a v-if="props.project.github" class="block" :href="props.project.github" target="_blank">GitHub</a>
-                  <a v-if="props.project.site" :href="props.project.site" target="_blank" class="block">Visit Site</a>
+                  <a v-if="props.project.github" class="block" @click=open_new_tab(props.project.github) target="_blank">GitHub</a>
+                  <a v-if="props.project.site" @click=open_new_tab(props.project.site) target="_blank" class="block">Visit Site</a>
                </li>
             </ul>
 
