@@ -132,6 +132,7 @@ section.cover_block .bg_img {
    background-position:bottom;
 }
 section.cover_block section.text_overlay {
+   /* to do : grid? */
    position:absolute;
    display:-ms-grid;
    display:grid;

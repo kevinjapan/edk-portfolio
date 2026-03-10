@@ -45,7 +45,7 @@
       ],
       "img":"edk-homepage.jpg",
       "alt":"image of Ongaku website homepage",
-      "github":"https://github.com/kevinjapan/ongaku",
+      "github":"",
       "site":"https://evolution-desu-ka.netlify.app",
       "tech":[
          {"name":"React.js"},

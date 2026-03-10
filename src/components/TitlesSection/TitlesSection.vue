@@ -36,6 +36,8 @@ const props = defineProps<{
 <style scoped>
 
 section.titles {
+   /* to do : grid? */
+   /* to do : webkit */
    display:grid;
    grid-template-columns:2fr 1fr;
    gap:2rem;

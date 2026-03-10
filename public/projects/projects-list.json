@@ -17,7 +17,7 @@
       ]
    },
    {
-      "title":"Khw",
+      "title":"KHW",
       "slug":"khw",
       "status":"just started",
       "file":"",
@@ -34,7 +34,7 @@
       ]
    },
    {
-      "title":"KhwDesigns",
+      "title":"KHWDesigns",
       "slug":"khwdesigns",
       "status":"just started",
       "file":"",
@@ -51,8 +51,8 @@
       ]
    },
    {
-      "title":"Ongaku",
-      "slug":"ongaku",
+      "title":"EDK",
+      "slug":"evolutiondesuka",
       "status":"just started",
       "file":"",
       "tagline":"Music Website",
@@ -61,10 +61,10 @@
       ],
       "img":"edk-homepage.jpg",
       "alt":"image of Ongaku website homepage",
-      "github":"https://github.com/kevinjapan/ongaku",
+      "github":"",
       "site":"https://evolution-desu-ka.netlify.app",
       "tech":[
-         {"name":"React.js"},
+         {"name":"Vue.js"},
          {"name":"TypeScript"}
       ]
    },
