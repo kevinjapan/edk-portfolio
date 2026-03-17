@@ -36,9 +36,9 @@ const props = defineProps<{
 <style scoped>
 
 section.titles {
-   /* to do : grid? */
-   /* to do : webkit */
+   display:-ms-grid;
    display:grid;
+   -ms-grid-columns:2fr 1fr;
    grid-template-columns:2fr 1fr;
    gap:2rem;
    width:100%;
@@ -51,8 +51,13 @@ section.titles_img {
 @media screen and (max-width: 768px) {
 
    section.titles {
+      -ms-grid-columns:1fr;
       grid-template-columns:1fr;
+      -webkit-box-align:center;
+      -ms-flex-align:center;
       align-items:center;
+      -webkit-box-pack:center;
+      -ms-flex-pack:center;
       justify-content:center;
    }
    section.titles_img {
@@ -65,14 +70,18 @@ section.titles_img {
       margin-bottom:3rem;
    }
 }
-section.id_tag {
+section.id_tag {   
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+   -webkit-box-orient:vertical;
+   -webkit-box-direction:normal;
+   -ms-flex-direction:column;
    flex-direction:column;
    gap:0;
-   /* border:solid 3px lightgrey; */
+
    width:100%;
    height:fit-content;
-   /* padding:.25rem 1rem; */
    border-radius:1rem;
 }
 section.id_tag h2 {
@@ -98,9 +107,7 @@ img {
 }
 h1 {
    font-size:3.5rem;
-   /* letter-spacing:12px; */
    margin:0;
-   /* font-weight:800; */
    color:#4a4a4a;
    width:100%;
    margin-bottom:1rem;
@@ -110,9 +117,7 @@ h2 {
    font-size:1.5rem  !important;
    white-space:nowrap;
    font-weight:500;
-   /* text-align:center; */
    width:100%;
-   /* border:solid 1px blue; */
    margin:0;
    margin-top:2.5rem !important;
    margin-bottom:1.5rem;

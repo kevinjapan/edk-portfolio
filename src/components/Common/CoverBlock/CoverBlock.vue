@@ -132,7 +132,6 @@ section.cover_block .bg_img {
    background-position:bottom;
 }
 section.cover_block section.text_overlay {
-   /* to do : grid? */
    position:absolute;
    display:-ms-grid;
    display:grid;
@@ -142,7 +141,6 @@ section.cover_block section.text_overlay {
    width:fit-content;
    margin-left:.5rem;
    margin-right:.5rem;
-   /* min-width:fit-content; */
 }
 section.cover_block section.text_overlay > section.text_overlay_texts {
    display:-webkit-box;
