@@ -111,7 +111,7 @@ const current_filter_label = computed(() => {
       future : improve UI tweaking fade_in and slide_up delays
       -->
 
-      <ul v-if="updating === false" class="projects_list_grid gap_1">
+      <ul v-if="updating === false" class="projects_list_grid gap_1.5">
 
          <li 
             v-for="(project, index) in filtered_projects_list" key="project.slug"
@@ -162,7 +162,7 @@ ul.projects_list_grid {
    padding:2rem 1rem;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1300px) {
    ul.projects_list_grid {
       -ms-grid-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) ;
@@ -183,6 +183,7 @@ ul.projects_list_grid {
       margin-left:auto;
       margin-right:auto;
       margin-bottom:1rem;
+      
    }
 }
 @media screen and (max-width: 620px) {

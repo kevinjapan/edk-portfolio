@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppFooter from './components/App/AppFooter/AppFooter.vue'
 
+// to do : are imgs in git?
 </script>
 
 <template>

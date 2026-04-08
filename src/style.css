@@ -322,6 +322,7 @@ button:focus-visible {
    flex-wrap:wrap;
 }
 .gap_1 {gap:1rem;}
+.gap_1\.5 {gap:1.5rem !important;}
 .gap_2 {gap:2rem;}
 
 .flex_col, .flex_cols {
