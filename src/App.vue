@@ -2,6 +2,9 @@
 import AppFooter from './components/App/AppFooter/AppFooter.vue'
 
 // to do : are imgs in git?
+
+// to do : review all image sizes - can replace any w/ webp ?  at 75% quality @ https://towebp.io/ 
+
 </script>
 
 <template>
